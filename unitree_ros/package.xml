@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>unitree_ros</name>
+  <version>0.0.1</version>
+  <description>This is the metapackage of all unitree robots</description>
+  <maintainer email="unitree@todo.todo">TODO</maintainer>
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <export>
+    <metapackage />
+  </export>
+</package>
