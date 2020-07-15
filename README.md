@@ -1,5 +1,5 @@
 # Introduction
-Here are the ROS packages of Unitree robots, namely Laikago, Aliengo and A1. You can load robots and joint controllers in Gazebo. And we also offered a basic standing controller and a tool to generate external force. Besides of these simulation functions, you can also control your real robots in ROS by the `unitree_legged_real`.
+Here are the ROS packages of Unitree robots, namely Laikago, Aliengo and A1. You can load robots and joint controllers in Gazebo. And we also offered a basic standing controller, a position and pose publisher and a tool to generate external force. Besides of these simulation functions, you can also control your real robots in ROS by the `unitree_legged_real`.
 
 ## Packages:
 Robot description: `a1_description`, `aliengo_description`, `laikago_description`
@@ -8,11 +8,9 @@ Robot and joints controller: `unitree_controller`
 
 Basic function: `unitree_legged_msgs`
 
-Simulation related: `unitree_gazebo`, `unitree_worlds`, `unitree_legged_control`
+Simulation related: `unitree_gazebo`, `unitree_legged_control`
 
 Real robot control related: `unitree_legged_real`
-
-Some examples: `unitree_example`
 
 # Dependencies
 * [ROS](https://www.ros.org/) melodic or ROS kinetic(has not been tested)
@@ -45,10 +43,10 @@ Else if your ROS is kinetic:
 sudo apt-get install ros-kinetic-controller-manager ros-kinetic-ros-control ros-kinetic-ros-controllers ros-kinetic-joint-state-controller ros-kinetic-effort-controllers ros-kinetic-velocity-controllers ros-kinetic-position-controllers ros-kinetic-robot-controllers ros-kinetic-robot-state-publisher ros-kinetic-gazebo8-ros ros-kinetic-gazebo8-ros-control ros-kinetic-gazebo8-ros-pkgs ros-kinetic-gazebo8-ros-dev
 ```
 
-And open the file `worlds/stairs.world`. At the end of the file:
+And open the file `unitree_gazebo/worlds/stairs.world`. At the end of the file:
 ```
 <include>
-    <uri>model:///home/unitree/catkin_ws/src/unitree/worlds/building_editor_models/stairs</uri>
+    <uri>model:///home/unitree/catkin_ws/src/unitree_ros/unitree_gazebo/worlds/building_editor_models/stairs</uri>
 </include>
 ```
 Please change the path of `building_editor_models/stairs` to the real path on your PC.
@@ -82,7 +80,8 @@ roslaunch unitree_gazebo normal.launch rname:=a1 wname:=stairs
 ```
 Where the `rname` means robot name, which can be `laikago`, `aliengo` or `a1`. The `wname` means world name, which can be `earth`, `space` or `stairs`. And the default value of `rname` is `laikago`, while the default value of `wname` is `earth`. In Gazebo, the robot should be lying on the ground with joints not activated.
 
-Then you can start to control the robot:
+### Stand controller
+After launching the gazebo simulation, you can start to control the robot:
 ```
 rosrun unitree_controller unitree_servo
 ```
@@ -91,6 +90,15 @@ And you can add external disturbances, like a push or a kick:
 ```
 rosrun unitree_controller unitree_external_force
 ```
+### Position and pose publisher
+Here we showed how to control the position and pose of robot without a controller, which should be useful in SLAM or visual development.
+
+Then run the position and pose publisher in another terminal:
+```
+rosrun unitree_controller unitree_move_kinetic
+```
+The robot will turn around the origin, which is the movement under the world coordinate. And inside of the source file `move_publisher`, we also offered the method to move robot under robot coordinate. You can change the value of `def_frame` to `coord::ROBOT` and run the catkin_make again, then the `unitree_move_publisher` will move robot under its own coordinate.
+
 ## unitree_legged_real
 You can control your real robot(only A1 and Aliengo) from ROS by this package.
 
@@ -113,17 +121,3 @@ torque_lcm
 The `velocity_lcm` and `torque_lcm` have to run under root account too. Please use the same method as runing `real_launch`.
 
 And when you run the high level controller, please make sure the robot is standing on the ground. The high level only has `walk_lcm`.
-
-## unitree_examples:
-### laikago_move:
-In this package, we showed how to control the position and pose of robot without a controller, which should be useful in SLAM or visual development.
-
-First launch a gazobe simulation of Laikago:
-```
-roslaunch unitree_gazebo normal.launch
-```
-Then run the position and pose publisher in another terminal:
-```
-rosrun unitree_examples laikago_move
-```
-The Laikago will turn around the origin.
