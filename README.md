@@ -100,6 +100,30 @@ rosrun unitree_controller unitree_move_kinetic
 The robot will turn around the origin, which is the movement under the world coordinate. And inside of the source file `move_publisher`, we also offered the method to move robot under robot coordinate. You can change the value of `def_frame` to `coord::ROBOT` and run the catkin_make again, then the `unitree_move_publisher` will move robot under its own coordinate.
 
 ## unitree_legged_real
+### Setup the net connection
+First, please connect the network cable between your PC and robot. Then run `ifconfig` in a terminal, you will find your port name. For example, `enx000ec6612921`.
+
+Then, open the `ipconfig.sh` file under the folder `unitree_legged_real`, modify the port name to your own. And run the following commands:
+```
+sudo chmod +x ipconfig.sh
+sudo ./ipconfig.sh
+```
+If you run the `ifconfig` again, you will find that port has `inet` and `netmask` now.
+In order to set your port automatically, you can modify `interfaces`:
+```
+sudo gedit /etc/network/interfaces
+```
+And add the following 4 lines at the end:
+```
+auto enx000ec6612921
+iface enx000ec6612921 inet static
+address 192.168.123.161
+netmask 255.255.255.0
+```
+Where the port name have to change to your own.
+
+
+### Run the package
 You can control your real robot(only A1 and Aliengo) from ROS by this package.
 
 First you have to run the `real_launch` under root account:
