@@ -131,10 +131,10 @@ You can control your real robot(only A1 and Aliengo) from ROS by this package.
 First you have to run the `real_launch` under root account:
 ```
 sudo su
-source ~/catkin_ws/devel/setup.bash
+source /home/yourUserName/catkin_ws/devel/setup.bash
 roslaunch unitree_legged_real real.launch rname:=a1 ctrl_level:=highlevel firmwork:=3_2
 ```
-These commands will launch a LCM server. The `rname` means robot name, which can be `a1` or `aliengo`(case does not matter), and the default value is `a1`. And the `ctrl_level` means the control level, which can be `lowlevel` or `highlevel`(case does not matter), and the default value is `highlevel`. Under the low level, you can control the joints directly. And under the high level, you can control the robot to move or change its pose. The `firmwork` means the firmwork version of the robot. The default value is `3_2` Now all the A1's firmwork version is `3_2`, and most Aliengo's firmwork version is `3_1`.(will update in the future)
+Please watchout that the `/home/yourUserName` means the home directory of yourself. These commands will launch a LCM server. The `rname` means robot name, which can be `a1` or `aliengo`(case does not matter), and the default value is `a1`. And the `ctrl_level` means the control level, which can be `lowlevel` or `highlevel`(case does not matter), and the default value is `highlevel`. Under the low level, you can control the joints directly. And under the high level, you can control the robot to move or change its pose. The `firmwork` means the firmwork version of the robot. The default value is `3_2` Now all the A1's firmwork version is `3_2`, and most Aliengo's firmwork version is `3_1`.(will update in the future)
 
 To do so, you need to run the controller in another terminal(also under root account):
 ```
