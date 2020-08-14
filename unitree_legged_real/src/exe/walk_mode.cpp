@@ -5,47 +5,50 @@ Use of this source code is governed by the MPL-2.0 license, see LICENSE.
 
 #include <ros/ros.h>
 #include <pthread.h>
+#include <string>
 #include <boost/thread.hpp>
 #include <boost/thread/mutex.hpp>
 #include <unitree_legged_msgs/HighCmd.h>
 #include <unitree_legged_msgs/HighState.h>
 #include "unitree_legged_sdk/unitree_legged_sdk.h"
+#include "aliengo_sdk/aliengo_sdk.hpp"
 #include "convert.h"
 
-using namespace UNITREE_LEGGED_SDK;
+// using namespace UNITREE_LEGGED_SDK;
 
+template<typename TLCM>
 void* update_loop(void* param)
 {
-    LCM *data = (LCM *)param;
+    TLCM *data = (TLCM *)param;
     while(ros::ok){
         data->Recv();
         usleep(2000);
     }
 }
 
-int main(int argc, char *argv[])
+template<typename TCmd, typename TState, typename TLCM>
+int mainHelper(int argc, char *argv[])
 {
     std::cout << "WARNING: Control level is set to HIGH-level." << std::endl
               << "Make sure the robot is standing on the ground." << std::endl
               << "Press Enter to continue..." << std::endl;
     std::cin.ignore();
 
-    ros::init(argc, argv, "walk_ros_mode");
     ros::NodeHandle n;
     ros::Rate loop_rate(500);
 
     // SetLevel(HIGHLEVEL);
     long motiontime = 0;
-    HighCmd SendHighLCM = {0};
-    HighState RecvHighLCM = {0};
+    TCmd SendHighLCM = {0};
+    TState RecvHighLCM = {0};
     unitree_legged_msgs::HighCmd SendHighROS;
     unitree_legged_msgs::HighState RecvHighROS;
-    LCM roslcm;
+    TLCM roslcm;
 
     roslcm.SubscribeState();
 
     pthread_t tid;
-    pthread_create(&tid, NULL, update_loop, &roslcm);
+    pthread_create(&tid, NULL, update_loop<TLCM>, &roslcm);
 
     while (ros::ok()){
         motiontime = motiontime+2;
@@ -121,7 +124,7 @@ int main(int argc, char *argv[])
             SendHighROS.mode = 1;
         }
 
-        SendHighLCM = ToLcm(SendHighROS);
+        SendHighLCM = ToLcm(SendHighROS, SendHighLCM);
         roslcm.Send(SendHighLCM);
         ros::spinOnce();
         loop_rate.sleep(); 
@@ -129,3 +132,26 @@ int main(int argc, char *argv[])
     return 0;
 }
 
+int main(int argc, char *argv[]){
+    ros::init(argc, argv, "walk_ros_mode");
+    std::string firmwork;
+    ros::param::get("/firmwork", firmwork);
+
+    if(firmwork == "3_1"){
+        aliengo::Control control(aliengo::HIGHLEVEL);
+        mainHelper<aliengo::HighCmd, aliengo::HighState, aliengo::LCM>(argc, argv);
+    }
+    else if(firmwork == "3_2"){
+        std::string robot_name;
+        UNITREE_LEGGED_SDK::LeggedType rname;
+        ros::param::get("/robot_name", robot_name);
+        if(strcasecmp(robot_name.c_str(), "A1") == 0)
+            rname = UNITREE_LEGGED_SDK::LeggedType::A1;
+        else if(strcasecmp(robot_name.c_str(), "Aliengo") == 0)
+            rname = UNITREE_LEGGED_SDK::LeggedType::Aliengo;
+
+        UNITREE_LEGGED_SDK::Control control(rname, UNITREE_LEGGED_SDK::LOWLEVEL);
+        mainHelper<UNITREE_LEGGED_SDK::HighCmd, UNITREE_LEGGED_SDK::HighState, UNITREE_LEGGED_SDK::LCM>(argc, argv);
+    }
+    
+}

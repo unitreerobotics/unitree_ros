@@ -16,6 +16,7 @@ Real robot control related: `unitree_legged_real`
 * [ROS](https://www.ros.org/) melodic or ROS kinetic(has not been tested)
 * [Gazebo8](http://gazebosim.org/)
 * [unitree_legged_sdk](https://github.com/unitreerobotics)
+* [aliengo_sdk](https://github.com/unitreerobotics)
 
 # Configuration
 Make sure the following exist in your `~/.bashrc` file or export them in terminal. `melodic`, `gazebo-8`, `~/catkin_ws`, `amd64` and the paths to `unitree_legged_sdk` should be replaced in your own case. 
@@ -27,6 +28,7 @@ export ROS_PACKAGE_PATH=~/catkin_ws:${ROS_PACKAGE_PATH}
 export GAZEBO_PLUGIN_PATH=~/catkin_ws/devel/lib:${GAZEBO_PLUGIN_PATH}
 export LD_LIBRARY_PATH=~/catkin_ws/devel/lib:${LD_LIBRARY_PATH}
 export UNITREE_LEGGED_SDK_PATH=~/unitree_legged_sdk
+export ALIENGO_SDK_PATH=~/aliengo_sdk
 #amd64, arm32, arm64
 export UNITREE_PLATFORM="amd64"
 ```
@@ -130,9 +132,11 @@ First you have to run the `real_launch` under root account:
 ```
 sudo su
 source ~/catkin_ws/devel/setup.bash
-roslaunch unitree_legged_real real.launch rname:=a1 ctrl_level:=lowlevel
+roslaunch unitree_legged_real real.launch rname:=a1 ctrl_level:=highlevel firmwork:=3_2
 ```
-These commands will launch a LCM server. The `rname` means robot name, which can be `a1` or `aliengo`(case does not matter), and the default value is `a1`. And the `ctrl_level` means the control level, which can be `lowlevel` or `higelevel`(case does not matter), and the default value is `higelevel`. Under the low level, you can control the joints directly. And under the high level, you can control the robot to move or change its pose. To do so, you need to run the controller in another terminal:
+These commands will launch a LCM server. The `rname` means robot name, which can be `a1` or `aliengo`(case does not matter), and the default value is `a1`. And the `ctrl_level` means the control level, which can be `lowlevel` or `highlevel`(case does not matter), and the default value is `highlevel`. Under the low level, you can control the joints directly. And under the high level, you can control the robot to move or change its pose. The `firmwork` means the firmwork version of the robot. The default value is `3_2` Now all the A1's firmwork version is `3_2`, and most Aliengo's firmwork version is `3_1`.(will update in the future)
+
+To do so, you need to run the controller in another terminal(also under root account):
 ```
 rosrun unitree_legged_real position_lcm
 ```

@@ -11,54 +11,46 @@ Use of this source code is governed by the MPL-2.0 license, see LICENSE.
 #include <unitree_legged_msgs/LowCmd.h>
 #include <unitree_legged_msgs/LowState.h>
 #include "unitree_legged_sdk/unitree_legged_sdk.h"
+#include "aliengo_sdk/aliengo_sdk.hpp"
 #include "convert.h"
 
 using namespace UNITREE_LEGGED_SDK;
 
+template<typename TLCM>
 void* update_loop(void* param)
 {
-    LCM *data = (LCM *)param; 
+    TLCM *data = (TLCM *)param;
     while(ros::ok){
         data->Recv();
         usleep(2000);
     }
 }
 
-int main(int argc, char *argv[])
+template<typename TCmd, typename TState, typename TLCM>
+int mainHelper(int argc, char *argv[])
 {
     std::cout << "WARNING: Control level is set to LOW-level." << std::endl
               << "Make sure the robot is hung up." << std::endl
               << "Press Enter to continue..." << std::endl;
     std::cin.ignore();
 
-    ros::init(argc, argv, "velocity_ros_mode");
     ros::NodeHandle n;
     ros::Rate loop_rate(500);
-
-    std::string robot_name;
-    LeggedType rname;
-    ros::param::get("/robot_name", robot_name);
-    if(strcasecmp(robot_name.c_str(), "A1") == 0)
-        rname = LeggedType::A1;
-    else if(strcasecmp(robot_name.c_str(), "Aliengo") == 0)
-        rname = LeggedType::Aliengo;
-
-    Control control(rname, LOWLEVEL);
 
     long motiontime=0;
     float Kv = 1.5;
     float speed = 0;
     unsigned long int Tpi =0;
-    LowCmd SendLowLCM = {0};
-    LowState RecvLowLCM = {0};
+    TCmd SendLowLCM = {0};
+    TState RecvLowLCM = {0};
     unitree_legged_msgs::LowCmd SendLowROS;
     unitree_legged_msgs::LowState RecvLowROS;
-    LCM roslcm;
+    TLCM roslcm;
 
     roslcm.SubscribeState();
 
     pthread_t tid;
-    pthread_create(&tid, NULL, update_loop, &roslcm);
+    pthread_create(&tid, NULL, update_loop<TLCM>, &roslcm);
 
     SendLowROS.levelFlag = LOWLEVEL;
     for(int i = 0; i<12; i++){
@@ -87,10 +79,34 @@ int main(int argc, char *argv[])
             // try 1 or 3
             speed = 3 * sin(4*M_PI*Tpi/1000.0);
         }
-        SendLowLCM = ToLcm(SendLowROS);
+        SendLowLCM = ToLcm(SendLowROS, SendLowLCM);
         roslcm.Send(SendLowLCM);
         ros::spinOnce();
         loop_rate.sleep();
     }
     return 0;
+}
+
+
+int main(int argc, char *argv[]){
+    ros::init(argc, argv, "velocity_ros_mode");
+    std::string firmwork;
+    ros::param::get("/firmwork", firmwork);
+
+    if(firmwork == "3_1"){
+        aliengo::Control control(aliengo::LOWLEVEL);
+        mainHelper<aliengo::LowCmd, aliengo::LowState, aliengo::LCM>(argc, argv);
+    }
+    else if(firmwork == "3_2"){
+        std::string robot_name;
+        UNITREE_LEGGED_SDK::LeggedType rname;
+        ros::param::get("/robot_name", robot_name);
+        if(strcasecmp(robot_name.c_str(), "A1") == 0)
+            rname = UNITREE_LEGGED_SDK::LeggedType::A1;
+        else if(strcasecmp(robot_name.c_str(), "Aliengo") == 0)
+            rname = UNITREE_LEGGED_SDK::LeggedType::Aliengo;
+            
+        UNITREE_LEGGED_SDK::Control control(rname, UNITREE_LEGGED_SDK::LOWLEVEL);
+        mainHelper<UNITREE_LEGGED_SDK::LowCmd, UNITREE_LEGGED_SDK::LowState, UNITREE_LEGGED_SDK::LCM>(argc, argv);
+    }
 }
