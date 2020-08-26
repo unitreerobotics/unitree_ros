@@ -35,7 +35,7 @@ double jointLinearInterpolation(double initPos, double targetPos, double rate)
 }
 
 template<typename TCmd, typename TState, typename TLCM>
-int mainHelper(int argc, char *argv[])
+int mainHelper(int argc, char *argv[], TLCM &roslcm)
 {
     std::cout << "WARNING: Control level is set to LOW-level." << std::endl
               << "Make sure the robot is hung up." << std::endl
@@ -57,7 +57,7 @@ int mainHelper(int argc, char *argv[])
     TState RecvLowLCM = {0};
     unitree_legged_msgs::LowCmd SendLowROS;
     unitree_legged_msgs::LowState RecvLowROS;
-    TLCM roslcm;
+
     bool initiated_flag = false;  // initiate need time
     int count = 0;
 
@@ -166,7 +166,8 @@ int main(int argc, char *argv[]){
 
     if(firmwork == "3_1"){
         aliengo::Control control(aliengo::LOWLEVEL);
-        mainHelper<aliengo::LowCmd, aliengo::LowState, aliengo::LCM>(argc, argv);
+        aliengo::LCM roslcm;
+        mainHelper<aliengo::LowCmd, aliengo::LowState, aliengo::LCM>(argc, argv, roslcm);
     }
     else if(firmwork == "3_2"){
         std::string robot_name;
@@ -177,7 +178,9 @@ int main(int argc, char *argv[]){
         else if(strcasecmp(robot_name.c_str(), "Aliengo") == 0)
             rname = UNITREE_LEGGED_SDK::LeggedType::Aliengo;
             
-        UNITREE_LEGGED_SDK::Control control(rname, UNITREE_LEGGED_SDK::LOWLEVEL);
-        mainHelper<UNITREE_LEGGED_SDK::LowCmd, UNITREE_LEGGED_SDK::LowState, UNITREE_LEGGED_SDK::LCM>(argc, argv);
+        // UNITREE_LEGGED_SDK::Control control(rname, UNITREE_LEGGED_SDK::LOWLEVEL);
+        UNITREE_LEGGED_SDK::InitEnvironment();
+        UNITREE_LEGGED_SDK::LCM roslcm(LOWLEVEL);
+        mainHelper<UNITREE_LEGGED_SDK::LowCmd, UNITREE_LEGGED_SDK::LowState, UNITREE_LEGGED_SDK::LCM>(argc, argv, roslcm);
     }
 }

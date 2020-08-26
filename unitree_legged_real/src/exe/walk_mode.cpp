@@ -27,7 +27,7 @@ void* update_loop(void* param)
 }
 
 template<typename TCmd, typename TState, typename TLCM>
-int mainHelper(int argc, char *argv[])
+int mainHelper(int argc, char *argv[], TLCM &roslcm)
 {
     std::cout << "WARNING: Control level is set to HIGH-level." << std::endl
               << "Make sure the robot is standing on the ground." << std::endl
@@ -43,7 +43,6 @@ int mainHelper(int argc, char *argv[])
     TState RecvHighLCM = {0};
     unitree_legged_msgs::HighCmd SendHighROS;
     unitree_legged_msgs::HighState RecvHighROS;
-    TLCM roslcm;
 
     roslcm.SubscribeState();
 
@@ -139,7 +138,8 @@ int main(int argc, char *argv[]){
 
     if(firmwork == "3_1"){
         aliengo::Control control(aliengo::HIGHLEVEL);
-        mainHelper<aliengo::HighCmd, aliengo::HighState, aliengo::LCM>(argc, argv);
+        aliengo::LCM roslcm;
+        mainHelper<aliengo::HighCmd, aliengo::HighState, aliengo::LCM>(argc, argv, roslcm);
     }
     else if(firmwork == "3_2"){
         std::string robot_name;
@@ -150,8 +150,9 @@ int main(int argc, char *argv[]){
         else if(strcasecmp(robot_name.c_str(), "Aliengo") == 0)
             rname = UNITREE_LEGGED_SDK::LeggedType::Aliengo;
 
-        UNITREE_LEGGED_SDK::Control control(rname, UNITREE_LEGGED_SDK::LOWLEVEL);
-        mainHelper<UNITREE_LEGGED_SDK::HighCmd, UNITREE_LEGGED_SDK::HighState, UNITREE_LEGGED_SDK::LCM>(argc, argv);
+        UNITREE_LEGGED_SDK::InitEnvironment();
+        UNITREE_LEGGED_SDK::LCM roslcm(UNITREE_LEGGED_SDK::HIGHLEVEL);
+        mainHelper<UNITREE_LEGGED_SDK::HighCmd, UNITREE_LEGGED_SDK::HighState, UNITREE_LEGGED_SDK::LCM>(argc, argv, roslcm);
     }
     
 }
