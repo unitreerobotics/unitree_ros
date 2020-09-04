@@ -17,12 +17,10 @@ catkin_package(
 )
 
 include_directories(
-    # /home/unitree/unitree_legged_sdk/include
     include
     ${Boost_INCLUDE_DIR}
     ${catkin_INCLUDE_DIRS}
     ${EIGEN3_INCLUDE_DIR}
-    # /home/bian/unitree_legged_sdk/include/unitree_legged_sdk
     $ENV{UNITREE_LEGGED_SDK_PATH}/include
     $ENV{ALIENGO_SDK_PATH}/include
 )

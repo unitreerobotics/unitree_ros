@@ -14,7 +14,7 @@ Use of this source code is governed by the MPL-2.0 license, see LICENSE.
 #include <unitree_legged_msgs/MotorCmd.h>
 #include <unitree_legged_msgs/MotorState.h>
 #include <unitree_legged_msgs/IMU.h>
-#include "/home/bian/aliengo_sdk/include/aliengo_sdk/aliengo_sdk.hpp"
+#include "aliengo_sdk/aliengo_sdk.hpp"
 
 enum firmworkVersion{
     V3_1,
