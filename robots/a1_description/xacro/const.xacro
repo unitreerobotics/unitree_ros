@@ -23,12 +23,12 @@
     <xacro:property name="stick_length" value="0.2"/>
 
     <!-- kinematic value -->
-    <xacro:property name="thigh_offset" value="0.08505"/>
+    <xacro:property name="thigh_offset" value="0.0838"/>
     <xacro:property name="thigh_length" value="0.2"/>
     <xacro:property name="calf_length" value="0.2"/>
 
     <!-- leg offset from trunk center value -->
-    <xacro:property name="leg_offset_x" value="0.183"/>
+    <xacro:property name="leg_offset_x" value="0.1805"/>
     <xacro:property name="leg_offset_y" value="0.047"/>
     <xacro:property name="trunk_offset_z" value="0.01675"/>
     <xacro:property name="hip_offset" value="0.065"/>
@@ -38,16 +38,16 @@
     <xacro:property name="friction" value="0"/>
     <xacro:property name="hip_max" value="46"/>
     <xacro:property name="hip_min" value="-46"/>
-    <xacro:property name="hip_velocity_max" value="52.4"/>
-    <xacro:property name="hip_torque_max" value="20"/>
+    <xacro:property name="hip_velocity_max" value="21"/>
+    <xacro:property name="hip_torque_max" value="33.5"/>
     <xacro:property name="thigh_max" value="240"/>
     <xacro:property name="thigh_min" value="-60"/>
-    <xacro:property name="thigh_velocity_max" value="28.6"/>
-    <xacro:property name="thigh_torque_max" value="55"/>
+    <xacro:property name="thigh_velocity_max" value="21"/>
+    <xacro:property name="thigh_torque_max" value="33.5"/>
     <xacro:property name="calf_max" value="-52.5"/>
     <xacro:property name="calf_min" value="-154.5"/>
-    <xacro:property name="calf_velocity_max" value="28.6"/>
-    <xacro:property name="calf_torque_max" value="55"/>
+    <xacro:property name="calf_velocity_max" value="21"/>
+    <xacro:property name="calf_torque_max" value="33.5"/>
 
     <!-- dynamics inertial value -->
     <!-- trunk -->
