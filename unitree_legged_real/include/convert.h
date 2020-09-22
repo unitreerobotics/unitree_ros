@@ -34,9 +34,9 @@ unitree_legged_msgs::IMU ToRos(UNITREE_LEGGED_SDK::IMU& lcm)
     ros.accelerometer[0] = lcm.accelerometer[0];
     ros.accelerometer[1] = lcm.accelerometer[1];
     ros.accelerometer[2] = lcm.accelerometer[2];
-    ros.rpy[0] = lcm.rpy[0];
-    ros.rpy[1] = lcm.rpy[1];
-    ros.rpy[2] = lcm.rpy[2];
+    // ros.rpy[0] = lcm.rpy[0];
+    // ros.rpy[1] = lcm.rpy[1];
+    // ros.rpy[2] = lcm.rpy[2];
     ros.temperature = lcm.temperature;
     return ros;
 }
@@ -53,9 +53,9 @@ unitree_legged_msgs::IMU ToRos(aliengo::IMU& lcm){
     ros.accelerometer[0] = lcm.acceleration[0];
     ros.accelerometer[1] = lcm.acceleration[1];
     ros.accelerometer[2] = lcm.acceleration[2];
-    ros.rpy[0] = lcm.rpy[0];
-    ros.rpy[1] = lcm.rpy[1];
-    ros.rpy[2] = lcm.rpy[2];
+    // ros.rpy[0] = lcm.rpy[0];
+    // ros.rpy[1] = lcm.rpy[1];
+    // ros.rpy[2] = lcm.rpy[2];
     ros.temperature = lcm.temp;
     return ros;
 }

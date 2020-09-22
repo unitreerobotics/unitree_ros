@@ -54,6 +54,15 @@ public:
         lowState.imu.quaternion[1] = msg.orientation.x;
         lowState.imu.quaternion[2] = msg.orientation.y;
         lowState.imu.quaternion[3] = msg.orientation.z;
+
+        lowState.imu.gyroscope[0] = msg.angular_velocity.x;
+        lowState.imu.gyroscope[1] = msg.angular_velocity.y;
+        lowState.imu.gyroscope[2] = msg.angular_velocity.z;
+        
+        lowState.imu.accelerometer[0] = msg.linear_acceleration.x;
+        lowState.imu.accelerometer[1] = msg.linear_acceleration.y;
+        lowState.imu.accelerometer[2] = msg.linear_acceleration.z;
+        
     }
 
     void FRhipCallback(const unitree_legged_msgs::MotorState& msg)
@@ -233,6 +242,7 @@ int main(int argc, char **argv)
         */
         lowState_pub.publish(lowState);
         sendServoCmd();
+
     }
     return 0;
 }
