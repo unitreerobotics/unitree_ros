@@ -51,16 +51,16 @@
 
     <!-- dynamics inertial value -->
     <!-- trunk -->
-    <xacro:property name="trunk_mass" value="4.713"/>
-    <xacro:property name="trunk_com_x" value="0.012731"/>
-    <xacro:property name="trunk_com_y" value="0.002186"/>
-    <xacro:property name="trunk_com_z" value="0.000515"/>
-    <xacro:property name="trunk_ixx" value="0.016839930"/>
-    <xacro:property name="trunk_ixy" value="0.000083902"/>
-    <xacro:property name="trunk_ixz" value="0.000597679"/>
-    <xacro:property name="trunk_iyy" value="0.056579028"/>
-    <xacro:property name="trunk_iyz" value="0.000025134"/>
-    <xacro:property name="trunk_izz" value="0.064713601"/>
+    <xacro:property name="trunk_mass" value="6.0"/>
+    <xacro:property name="trunk_com_x" value="0.0000"/>
+    <xacro:property name="trunk_com_y" value="0.0041"/>
+    <xacro:property name="trunk_com_z" value="-0.0005"/>
+    <xacro:property name="trunk_ixx" value="0.0158533"/>
+    <xacro:property name="trunk_ixy" value="-0.0000366"/>
+    <xacro:property name="trunk_ixz" value="-0.0000611"/>
+    <xacro:property name="trunk_iyy" value="0.0377999"/>
+    <xacro:property name="trunk_iyz" value="-0.0000275"/>
+    <xacro:property name="trunk_izz" value="0.0456542"/>
 
     <!-- hip (left front) -->
     <xacro:property name="hip_mass" value="0.696"/>
