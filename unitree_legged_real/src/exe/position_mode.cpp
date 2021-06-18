@@ -10,11 +10,14 @@ Use of this source code is governed by the MPL-2.0 license, see LICENSE.
 #include <boost/thread/mutex.hpp>
 #include <unitree_legged_msgs/LowCmd.h>
 #include <unitree_legged_msgs/LowState.h>
-#include "unitree_legged_sdk/unitree_legged_sdk.h"
-#include "aliengo_sdk/aliengo_sdk.hpp"
 #include "convert.h"
 
+#ifdef SDK3_1
+using namespace aliengo;
+#endif
+#ifdef SDK3_2
 using namespace UNITREE_LEGGED_SDK;
+#endif
 
 template<typename TLCM>
 void* update_loop(void* param)
@@ -164,12 +167,13 @@ int main(int argc, char *argv[]){
     std::string firmwork;
     ros::param::get("/firmwork", firmwork);
 
-    if(firmwork == "3_1"){
+    #ifdef SDK3_1
         aliengo::Control control(aliengo::LOWLEVEL);
         aliengo::LCM roslcm;
         mainHelper<aliengo::LowCmd, aliengo::LowState, aliengo::LCM>(argc, argv, roslcm);
-    }
-    else if(firmwork == "3_2"){
+    #endif
+
+    #ifdef SDK3_2
         std::string robot_name;
         UNITREE_LEGGED_SDK::LeggedType rname;
         ros::param::get("/robot_name", robot_name);
@@ -179,8 +183,8 @@ int main(int argc, char *argv[]){
             rname = UNITREE_LEGGED_SDK::LeggedType::Aliengo;
             
         // UNITREE_LEGGED_SDK::Control control(rname, UNITREE_LEGGED_SDK::LOWLEVEL);
-        UNITREE_LEGGED_SDK::InitEnvironment();
+        // UNITREE_LEGGED_SDK::InitEnvironment();
         UNITREE_LEGGED_SDK::LCM roslcm(LOWLEVEL);
         mainHelper<UNITREE_LEGGED_SDK::LowCmd, UNITREE_LEGGED_SDK::LowState, UNITREE_LEGGED_SDK::LCM>(argc, argv, roslcm);
-    }
+    #endif
 }

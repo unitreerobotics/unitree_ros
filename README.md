@@ -15,11 +15,14 @@ Real robot control related: `unitree_legged_real`
 # Dependencies
 * [ROS](https://www.ros.org/) melodic or ROS kinetic(has not been tested)
 * [Gazebo8](http://gazebosim.org/)
-* [unitree_legged_sdk](https://github.com/unitreerobotics)
-* [aliengo_sdk](https://github.com/unitreerobotics)
+* [unitree_legged_sdk](https://github.com/unitreerobotics): If your robot is suitable for `unitree_legged_sdk`, then you do not need `aliengo_sdk`.
+* [aliengo_sdk](https://github.com/unitreerobotics): If your robot is suitable for `aliengo_sdk`, then you do not need `unitree_legged_sdk`.
 
 # Configuration
 Make sure the following exist in your `~/.bashrc` file or export them in terminal. `melodic`, `gazebo-8`, `~/catkin_ws`, `amd64` and the paths to `unitree_legged_sdk` should be replaced in your own case. 
+If your use `unitree_legged_sdk`, then you need to set `UNITREE_SDK_VERSION=3_2` and the path `UNITREE_LEGGED_SDK_PATH`.
+Otherwise, if you use `aliengo_sdk`, you need to set `UNITREE_SDK_VERSION=3_1` and the path `ALIENGO_SDK_PATH`.
+
 ```
 source /opt/ros/melodic/setup.bash
 source /usr/share/gazebo-8/setup.sh
@@ -27,14 +30,18 @@ source ~/catkin_ws/devel/setup.bash
 export ROS_PACKAGE_PATH=~/catkin_ws:${ROS_PACKAGE_PATH}
 export GAZEBO_PLUGIN_PATH=~/catkin_ws/devel/lib:${GAZEBO_PLUGIN_PATH}
 export LD_LIBRARY_PATH=~/catkin_ws/devel/lib:${LD_LIBRARY_PATH}
+# 3_1, 3_2
+export UNITREE_SDK_VERSION=3_2
 export UNITREE_LEGGED_SDK_PATH=~/unitree_legged_sdk
 export ALIENGO_SDK_PATH=~/aliengo_sdk
-#amd64, arm32, arm64
+# amd64, arm32, arm64
 export UNITREE_PLATFORM="amd64"
 ```
 
 # Build
-Please run the following command to install relative packages.
+If you just need to send message from the ROS on robot's NX or TX2, you can just copy `unitree_legged_msgs` and `unitree_legged_real` to `catkin_ws/src` folder and run `catkin_make` to compile.
+
+If you would like to fully compile the `unitree_ros`, please run the following command to install relative packages.
 
 If your ROS is melodic:
 ```
@@ -60,6 +67,7 @@ catkin_make
 ```
 
 If you face a dependency problem, you can just run `catkin_make` again.
+
 
 # Detail of Packages
 ## unitree_legged_control:
