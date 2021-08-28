@@ -71,7 +71,7 @@ If you face a dependency problem, you can just run `catkin_make` again.
 
 # Detail of Packages
 ## unitree_legged_control:
-It contains the joints controllers for Gazebo simulation, which allows user to control joints with position, velocity and torque.
+It contains the joints controllers for Gazebo simulation, which allows user to control joints with position, velocity and torque. Refer to "unitree_ros/unitree_controller/src/servo.cpp" for joint control examples in different modes.
 
 ## unitree_legged_msgs:
 ros-type message, including command and state of high-level and low-level control.
