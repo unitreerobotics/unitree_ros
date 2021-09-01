@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:macro name="ultraSound" params="name *origin">
+        <joint name="ultraSound_joint_${name}" type="fixed">
+            <xacro:insert_block name="origin"/>
+            <parent link="trunk"/>
+            <child link="ultraSound_${name}"/>
+        </joint>
+        <link name="ultraSound_${name}">
+            <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <box size=".001 .001 .001"/>
+            </geometry>
+            </collision>
+
+            <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://go1_description/meshes/ultraSound.dae" scale="1 1 1"/>
+            </geometry>
+            <material name="black"/>
+            </visual>
+
+            <inertial>
+            <mass value="1e-5" />
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+            </inertial>
+        </link>
+    </xacro:macro>
+</robot>
