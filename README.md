@@ -1,24 +1,18 @@
 # Introduction
-Here are the ROS simulation packages of Unitree robots, You can load robots and joint controllers in Gazebo, so you can do low-level control(control the torque, position and angular velocity) on the robot joints. Please watch out that the Gazebo simulation cannot do high-level control, namely walking. Besides of these simulation functions, you can also control your real robots in ROS by the [unitree_legged_real](https://github.com/unitreerobotics) package. For real robots, you can do high-level and low-level control by our ROS packages.
+Here are the ROS simulation packages of Unitree robots, You can load robots and joint controllers in Gazebo, so you can do low-level control(control the torque, position and angular velocity) on the robot joints. Please watch out that the Gazebo simulation cannot do high-level control, namely walking. Besides of these simulation functions, you can also control your real robots in ROS by the [unitree_ros_to_real](https://github.com/unitreerobotics) packages. For real robots, you can do high-level and low-level control by our ROS packages.
 
 ## Packages:
 Robot description: `go1_description`, `a1_description`, `aliengo_description`, `laikago_description`
 
 Robot and joints controller: `unitree_controller`
 
-Basic message function: `unitree_legged_msgs`
-
 Simulation related: `unitree_gazebo`, `unitree_legged_control`
-
-<!-- Real robot control related: `unitree_legged_real` -->
 
 # Dependencies
 * [ROS](https://www.ros.org/) melodic or ROS kinetic(has not been tested)
 * [Gazebo8](http://gazebosim.org/)
-
+* [unitree_legged_msgs](https://github.com/unitreerobotics/unitree_ros): `unitree_legged_msgs` is a package under [unitree_ros_to_real](https://github.com/unitreerobotics/unitree_ros).
 # Build
-
-
 <!-- If you would like to fully compile the `unitree_ros`, please run the following command to install relative packages. -->
 
 If your ROS is melodic:
@@ -49,10 +43,6 @@ If you face a dependency problem, you can just run `catkin_make` again.
 # Detail of Packages
 ## unitree_legged_control:
 It contains the joints controllers for Gazebo simulation, which allows users to control joints with position, velocity and torque. Refer to "unitree_ros/unitree_controller/src/servo.cpp" for joint control examples in different modes.
-
-## unitree_legged_msgs:
-ros-type message, including command and state of high-level and low-level control.
-It would be better if it be compiled firstly, otherwise you may have dependency problems (such as that you can't find the header file).
 
 ## The description of robots:
 Namely the description of Go1, A1, Aliengo and Laikago. Each package include mesh, urdf and xacro files of robot. Take Laikago as an example, you can check the model in Rviz by:
