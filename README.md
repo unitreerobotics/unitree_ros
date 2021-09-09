@@ -11,7 +11,7 @@ Simulation related: `unitree_gazebo`, `unitree_legged_control`
 # Dependencies
 * [ROS](https://www.ros.org/) melodic or ROS kinetic(has not been tested)
 * [Gazebo8](http://gazebosim.org/)
-* [unitree_legged_msgs](https://github.com/unitreerobotics/unitree_ros): `unitree_legged_msgs` is a package under [unitree_ros_to_real](https://github.com/unitreerobotics/unitree_ros).
+* [unitree_legged_msgs](https://github.com/unitreerobotics/unitree_ros_to_real): `unitree_legged_msgs` is a package under [unitree_ros_to_real](https://github.com/unitreerobotics/unitree_ros_to_real).
 # Build
 <!-- If you would like to fully compile the `unitree_ros`, please run the following command to install relative packages. -->
 
