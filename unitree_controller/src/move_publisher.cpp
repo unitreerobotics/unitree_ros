@@ -16,6 +16,7 @@ int main(int argc, char **argv)
         ROBOT
     };
     coord def_frame = coord::WORLD;
+    // coord def_frame = coord::ROBOT;
 
     ros::init(argc, argv, "move_publisher");
     ros::NodeHandle nh;

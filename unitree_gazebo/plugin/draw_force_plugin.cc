@@ -44,8 +44,8 @@ namespace gazebo
             }
 
             this->line = this->visual->CreateDynamicLine(rendering::RENDERING_LINE_STRIP);
-            this->line->AddPoint(ignition::math::Vector3d(0, 0, 0), common::Color(0, 1, 0, 1.0));
-            this->line->AddPoint(ignition::math::Vector3d(1, 1, 1), common::Color(0, 1, 0, 1.0));
+            this->line->AddPoint(ignition::math::Vector3d(0, 0, 0), ignition::math::Color(0, 1, 0, 1.0));
+            this->line->AddPoint(ignition::math::Vector3d(1, 1, 1), ignition::math::Color(0, 1, 0, 1.0));
             this->line->setMaterial("Gazebo/Purple");
             this->line->setVisibilityFlags(GZ_VISIBILITY_GUI);
             this->visual->SetVisible(true);

@@ -7,6 +7,7 @@ find_package(catkin REQUIRED COMPONENTS
     roscpp
     geometry_msgs
     unitree_legged_msgs
+    rosbag
 )
 
 catkin_package()
@@ -59,3 +60,20 @@ add_dependencies(torque_lcm ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTE
 add_executable(walk_lcm src/exe/walk_mode.cpp)
 target_link_libraries(walk_lcm ${EXTRA_LIBS} ${catkin_LIBRARIES})
 add_dependencies(walk_lcm ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+
+add_executable(position_own src/exe/position_own.cpp)
+target_link_libraries(position_own ${EXTRA_LIBS} ${catkin_LIBRARIES})
+add_dependencies(position_own ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+add_executable(velocity_own src/exe/velocity_own.cpp)
+target_link_libraries(velocity_own ${EXTRA_LIBS} ${catkin_LIBRARIES})
+add_dependencies(velocity_own ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+add_executable(torque_own src/exe/torque_own.cpp)
+target_link_libraries(torque_own ${EXTRA_LIBS} ${catkin_LIBRARIES})
+add_dependencies(torque_own ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+add_executable(walk_own src/exe/walk_own.cpp)
+target_link_libraries(walk_own ${EXTRA_LIBS} ${catkin_LIBRARIES})
+add_dependencies(walk_own ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})

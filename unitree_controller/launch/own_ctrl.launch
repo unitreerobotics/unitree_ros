@@ -1,0 +1,7 @@
+<launch>
+    <arg name="rname" default="a1"/>
+    <param name="robot_name" value="$(arg rname)"/>
+
+    <!-- <node pkg="unitree_controller" type="position_mode" name="position_mode" respawn="true"/> -->
+
+</launch>

@@ -14,16 +14,28 @@
     <build_depend>robot_state_publisher</build_depend>
     <build_depend>roscpp</build_depend>
     <build_depend>std_msgs</build_depend>
+    <build_depend>pinocchio</build_depend>
+    <build_depend>octomap</build_depend>
+    <build_depend>eigen3</build_depend>
+    <build_depend>inekf</build_depend>
     <build_export_depend>controller_manager</build_export_depend>
     <build_export_depend>joint_state_controller</build_export_depend>
     <build_export_depend>robot_state_publisher</build_export_depend>
     <build_export_depend>roscpp</build_export_depend>
     <build_export_depend>std_msgs</build_export_depend>
+    <build_export_depend>pinocchio</build_export_depend>
+    <build_export_depend>octomap</build_export_depend>
+    <build_export_depend>eigen3</build_export_depend>
+    <build_export_depend>inekf</build_export_depend>
     <exec_depend>controller_manager</exec_depend>
     <exec_depend>joint_state_controller</exec_depend>
     <exec_depend>robot_state_publisher</exec_depend>
     <exec_depend>roscpp</exec_depend>
     <exec_depend>std_msgs</exec_depend>
+    <exec_depend>pinocchio</exec_depend>
+    <exec_depend>octomap</exec_depend>
+    <exec_depend>eigen3</exec_depend>
+    <exec_depend>inekf</exec_depend>
     <depend>unitree_legged_msgs</depend>
 
     <!-- The export tag contains other, unspecified, tags -->
