@@ -1,5 +1,5 @@
 # Introduction
-Here are the ROS simulation packages of Unitree robots, You can load robots and joint controllers in Gazebo, so you can do low-level control(control the torque, position and angular velocity) on the robot joints. Please watch out that the Gazebo simulation cannot do high-level control, namely walking. Besides of these simulation functions, you can also control your real robots in ROS by the [unitree_ros_to_real](https://github.com/unitreerobotics) packages. For real robots, you can do high-level and low-level control by our ROS packages.
+Here are the ROS simulation packages of Unitree robots, You can load robots and joint controllers in Gazebo, so you can do low-level control(control the torque, position and angular velocity) on the robot joints. Please watch out that the Gazebo simulation cannot do high-level control, namely walking. Besides of these simulation functions, you can also control your real robots in ROS by the [unitree_ros_to_real](https://github.com/unitreerobotics/unitree_ros_to_real) packages. For real robots, you can do high-level and low-level control by our ROS packages.
 
 ## Packages:
 Robot description: `go1_description`, `a1_description`, `aliengo_description`, `laikago_description`
