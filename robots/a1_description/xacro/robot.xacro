@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<robot name="a1_description" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="a1" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
     <xacro:include filename="$(find a1_description)/xacro/const.xacro"/>
     <xacro:include filename="$(find a1_description)/xacro/materials.xacro"/>
