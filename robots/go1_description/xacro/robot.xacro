@@ -2,6 +2,8 @@
 
 <robot name="go1" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
+    <xacro:arg name="DEBUG" default="false"/>
+
     <xacro:include filename="$(find go1_description)/xacro/const.xacro"/>
     <xacro:include filename="$(find go1_description)/xacro/materials.xacro"/>
     <xacro:include filename="$(find go1_description)/xacro/leg.xacro"/>

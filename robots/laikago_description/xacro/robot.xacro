@@ -2,6 +2,8 @@
 
 <robot name="laikago" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
+    <xacro:arg name="DEBUG" default="false"/>
+
     <xacro:include filename="$(find laikago_description)/xacro/const.xacro"/>
     <xacro:include filename="$(find laikago_description)/xacro/materials.xacro"/>
     <xacro:include filename="$(find laikago_description)/xacro/leg.xacro"/>

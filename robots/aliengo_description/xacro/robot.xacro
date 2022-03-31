@@ -2,6 +2,8 @@
 
 <robot name="aliengo" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
+    <xacro:arg name="DEBUG" default="false"/>
+
     <xacro:include filename="$(find aliengo_description)/xacro/const.xacro"/>
     <xacro:include filename="$(find aliengo_description)/xacro/materials.xacro"/>
     <xacro:include filename="$(find aliengo_description)/xacro/leg.xacro"/>
