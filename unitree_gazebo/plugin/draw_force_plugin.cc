@@ -44,8 +44,16 @@ namespace gazebo
             }
 
             this->line = this->visual->CreateDynamicLine(rendering::RENDERING_LINE_STRIP);
+#if GAZEBO_MAJOR_VERSION >= 10
+            // https://github.com/osrf/gazebo/blob/gazebo11/Migration.md#gazebo-8x-to-9x
+            // gazebo 9 deprecations removed on gazebo 10
+            // https://github.com/osrf/gazebo/commit/0bd72b9500e7377c873e32d25b8db772e782bd6f
+            this->line->AddPoint(ignition::math::Vector3d(0, 0, 0), ignition::math::Color(0, 1, 0, 1.0));
+            this->line->AddPoint(ignition::math::Vector3d(1, 1, 1), ignition::math::Color(0, 1, 0, 1.0));
+#else
             this->line->AddPoint(ignition::math::Vector3d(0, 0, 0), common::Color(0, 1, 0, 1.0));
             this->line->AddPoint(ignition::math::Vector3d(1, 1, 1), common::Color(0, 1, 0, 1.0));
+#endif
             this->line->setMaterial("Gazebo/Purple");
             this->line->setVisibilityFlags(GZ_VISIBILITY_GUI);
             this->visual->SetVisible(true);
