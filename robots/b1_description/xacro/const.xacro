@@ -33,6 +33,29 @@
     <xacro:property name="trunk_offset_z" value="0.01675"/>
     <xacro:property name="hip_offset" value="0.12675"/>
 
+    <!-- offset of link and rotor locations (left front) -->
+    <xacro:property name="hip_offset_x" value="0.3455"/>
+    <xacro:property name="hip_offset_y" value="0.072"/>
+    <xacro:property name="hip_offset_z" value="0.0"/>
+    <xacro:property name="hip_rotor_offset_x" value="0.1955"/>
+    <xacro:property name="hip_rotor_offset_y" value="0.072"/>
+    <xacro:property name="hip_rotor_offset_z" value="0.0"/>
+
+    <xacro:property name="thigh_offset_x" value="0"/>
+    <xacro:property name="thigh_offset_y" value="0.12675"/>
+    <xacro:property name="thigh_offset_z" value="0.0"/>
+    <xacro:property name="thigh_rotor_offset_x" value="0.0"/>
+    <xacro:property name="thigh_rotor_offset_y" value="0.00935"/>
+    <xacro:property name="thigh_rotor_offset_z" value="0.0"/>
+
+    <xacro:property name="calf_offset_x" value="0.0"/>
+    <xacro:property name="calf_offset_y" value="0.0"/>
+    <xacro:property name="calf_offset_z" value="-0.35"/>
+    <xacro:property name="calf_rotor_offset_x" value="0.0"/>
+    <xacro:property name="calf_rotor_offset_y" value="-0.0519"/>
+    <xacro:property name="calf_rotor_offset_z" value="0.0"/>
+
+
     <!-- joint limits -->
     <xacro:property name="damping" value="0"/>
     <xacro:property name="friction" value="0"/>
