@@ -4,10 +4,21 @@
 
     <xacro:include filename="$(find b1_description)/xacro/transmission.xacro"/>
 
-    <xacro:macro name="leg" params="name mirror mirror_dae front_hind front_hind_dae *origin">
+    <xacro:macro name="leg" params="name mirror mirror_dae front_hind front_hind_dae">
 
         <joint name="${name}_hip_joint" type="revolute">
-            <xacro:insert_block name="origin"/>
+            <xacro:if value="${(mirror_dae == False) and (front_hind_dae == True)}">
+                <origin rpy="0 0 0" xyz="${leg_offset_x} ${-leg_offset_y} 0"/>
+            </xacro:if>
+            <xacro:if value="${(mirror_dae == True) and (front_hind_dae == True)}">
+                <origin rpy="0 0 0" xyz="${leg_offset_x} ${leg_offset_y} 0"/>
+            </xacro:if>
+            <xacro:if value="${(mirror_dae == False) and (front_hind_dae == False)}">
+                <origin rpy="0 0 0" xyz="${-leg_offset_x} ${-leg_offset_y} 0"/>
+            </xacro:if>
+            <xacro:if value="${(mirror_dae == True) and (front_hind_dae == False)}">
+                <origin rpy="0 0 0" xyz="${-leg_offset_x} ${leg_offset_y} 0"/>
+            </xacro:if>
             <parent link="trunk"/>
             <child link="${name}_hip"/>
             <axis xyz="1 0 0"/>
@@ -18,6 +29,23 @@
             <xacro:if value="${(mirror_dae == False)}">
                 <limit effort="${hip_torque_max}" velocity="${hip_velocity_max}" lower="${-hip_position_max}" upper="${-hip_position_min}"/>
             </xacro:if>            
+        </joint>
+
+        <joint name="${name}_hip_rotor_joint" type="fixed">
+            <xacro:if value="${(mirror_dae == False) and (front_hind_dae == True)}">
+                <origin rpy="0 0 0" xyz="${hip_rotor_offset_x} ${-hip_rotor_offset_y} 0"/>
+            </xacro:if>
+            <xacro:if value="${(mirror_dae == True) and (front_hind_dae == True)}">
+                <origin rpy="0 0 0" xyz="${hip_rotor_offset_x} ${hip_rotor_offset_y} 0"/>
+            </xacro:if>
+            <xacro:if value="${(mirror_dae == False) and (front_hind_dae == False)}">
+                <origin rpy="0 0 0" xyz="${-hip_rotor_offset_x} ${-hip_rotor_offset_y} 0"/>
+            </xacro:if>
+            <xacro:if value="${(mirror_dae == True) and (front_hind_dae == False)}">
+                <origin rpy="0 0 0" xyz="${-hip_rotor_offset_x} ${hip_rotor_offset_y} 0"/>
+            </xacro:if>
+            <parent link="trunk"/>
+            <child link="${name}_hip_rotor"/>         
         </joint>
 
         <link name="${name}_hip">
@@ -55,21 +83,29 @@
             </inertial>
         </link>
 
-        <!-- <joint name="${name}_hip_fixed" type="fixed">
-            <origin rpy="0 0 0" xyz="0 ${(thigh_shoulder_length/2.0+hip_offset)*mirror} 0"/>
-            <parent link="${name}_hip"/>
-            <child link="${name}_thigh_shoulder"/>
-        </joint> -->
-
-        <!-- this link is only for collision -->
-        <!-- <link name="${name}_thigh_shoulder">
-            <collision>
-                <origin rpy="${PI/2.0} 0 0" xyz="0 0 0"/>
+        <link name="${name}_hip_rotor">
+            <visual>
+                <origin rpy="0 ${PI/2.0} 0" xyz="0 0 0"/>
                 <geometry>
-                    <cylinder length="${thigh_shoulder_length}" radius="${thigh_shoulder_radius}"/>
+                    <cylinder length="0.02" radius="0.05"/>
+                </geometry>
+                <material name="green"/>
+            </visual>
+            <collision>
+                <origin rpy="0 ${PI/2.0} 0" xyz="0 0 0"/>
+                <geometry>
+                    <cylinder length="0.02" radius="0.05"/>
                 </geometry>
             </collision>
-        </link> -->
+            <inertial>
+                <origin rpy="0 0 0" xyz="${hip_rotor_com_x} ${hip_rotor_com_y} ${hip_rotor_com_z}"/>
+                <mass value="${hip_rotor_mass}"/>
+                <inertia
+                    ixx="${hip_rotor_ixx}" ixy="${hip_rotor_ixy}" ixz="${hip_rotor_ixz}"
+                    iyy="${hip_rotor_iyy}" iyz="${hip_rotor_iyz}"
+                    izz="${hip_rotor_izz}"/>              
+            </inertial>
+        </link>
 
         <joint name="${name}_thigh_joint" type="revolute">
             <origin rpy="0 0 0" xyz="0 ${thigh_offset*mirror} 0"/>
@@ -78,6 +114,12 @@
             <axis xyz="0 1 0"/>
             <dynamics damping="${damping}" friction="${friction}"/>
             <limit effort="${thigh_torque_max}" velocity="${thigh_velocity_max}" lower="${thigh_position_min}" upper="${thigh_position_max}"/>
+        </joint>
+
+        <joint name="${name}_thigh_rotor_joint" type="fixed">
+            <origin rpy="0 0 0" xyz="${thigh_rotor_offset_x} ${thigh_rotor_offset_y*mirror} 0"/>
+            <parent link="${name}_hip"/>
+            <child link="${name}_thigh_rotor"/>         
         </joint>
 
         <link name="${name}_thigh">
@@ -109,6 +151,30 @@
             </inertial>
         </link>
 
+        <link name="${name}_thigh_rotor">
+            <visual>
+                <origin rpy="${PI/2.0} 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <cylinder length="0.02" radius="0.05"/>
+                </geometry>
+                <material name="green"/>
+            </visual>
+            <collision>
+                <origin rpy="${PI/2.0} 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <cylinder length="0.02" radius="0.05"/>
+                </geometry>
+            </collision>
+            <inertial>
+                <origin rpy="0 0 0" xyz="${thigh_rotor_com_x} ${thigh_rotor_com_y} ${thigh_rotor_com_z}"/>
+                <mass value="${thigh_rotor_mass}"/>
+                <inertia
+                    ixx="${thigh_rotor_ixx}" ixy="${thigh_rotor_ixy}" ixz="${thigh_rotor_ixz}"
+                    iyy="${thigh_rotor_iyy}" iyz="${thigh_rotor_iyz}"
+                    izz="${thigh_rotor_izz}"/>       
+            </inertial>
+        </link>
+
         <joint name="${name}_calf_joint" type="revolute">
             <origin rpy="0 0 0" xyz="0 0 ${-thigh_length}"/>
             <parent link="${name}_thigh"/>
@@ -116,6 +182,12 @@
             <axis xyz="0 1 0"/>
             <dynamics damping="${damping}" friction="${friction}"/>
             <limit effort="${calf_torque_max}" velocity="${calf_velocity_max}" lower="${calf_position_min}" upper="${calf_position_max}"/>
+        </joint>
+
+        <joint name="${name}_calf_rotor_joint" type="fixed">
+            <origin rpy="0 0 0" xyz="${calf_rotor_offset_x} ${calf_rotor_offset_y*mirror} 0"/>
+            <parent link="${name}_thigh"/>
+            <child link="${name}_calf_rotor"/>         
         </joint>
 
         <link name="${name}_calf">
@@ -139,6 +211,30 @@
                     ixx="${calf_ixx}" ixy="${calf_ixy}" ixz="${calf_ixz}"
                     iyy="${calf_iyy}" iyz="${calf_iyz}"
                     izz="${calf_izz}"/>       
+            </inertial>
+        </link>
+
+        <link name="${name}_calf_rotor">
+            <visual>
+                <origin rpy="${PI/2.0} 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <cylinder length="0.02" radius="0.05"/>
+                </geometry>
+                <material name="green"/>
+            </visual>
+            <collision>
+                <origin rpy="${PI/2.0} 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <cylinder length="0.02" radius="0.05"/>
+                </geometry>
+            </collision>
+            <inertial>
+                <origin rpy="0 0 0" xyz="${calf_rotor_com_x} ${calf_rotor_com_y} ${calf_rotor_com_z}"/>
+                <mass value="${calf_rotor_mass}"/>
+                <inertia
+                    ixx="${calf_rotor_ixx}" ixy="${calf_rotor_ixy}" ixz="${calf_rotor_ixz}"
+                    iyy="${calf_rotor_iyy}" iyz="${calf_rotor_iyz}"
+                    izz="${calf_rotor_izz}"/>     
             </inertial>
         </link>
 

@@ -66,11 +66,11 @@
     <xacro:property name="thigh_position_max" value="3.5"/>
     <xacro:property name="thigh_position_min" value="-1.0"/>
     <xacro:property name="thigh_velocity_max" value="23.32"/>
-    <xacro:property name="thigh_torque_max" value="138.672"/>
+    <xacro:property name="thigh_torque_max" value="93.33"/>
     <xacro:property name="calf_position_max" value="-0.6"/>
     <xacro:property name="calf_position_min" value="-2.6"/>
     <xacro:property name="calf_velocity_max" value="15.55"/>
-    <xacro:property name="calf_torque_max" value="208"/>
+    <xacro:property name="calf_torque_max" value="140"/>
 
     <!-- dynamics inertial value -->
     <!-- trunk -->

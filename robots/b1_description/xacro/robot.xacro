@@ -7,8 +7,8 @@
     <xacro:include filename="$(find b1_description)/xacro/leg.xacro"/>
     <xacro:include filename="$(find b1_description)/xacro/gazebo.xacro"/>
 
-    <!-- Rollover Protection mode will add an additional stick on the top, use "true" or "false" to switch it. -->
-    <xacro:property name="rolloverProtection" value="false"/>
+    <!-- Rotor related joint and link is only for demonstrate location. -->
+    <!-- Actually, the rotor will rotate and the joint is not fixed. Reduction ratio should be considered. -->
 
     <!-- Debug mode will hung up the robot, use "true" or "false" to switch it. -->
     <!-- <xacro:if value="$(arg DEBUG)">
@@ -65,37 +65,6 @@
         </inertial>
     </link>
 
-    <xacro:if value="${(rolloverProtection == 'true')}">
-        <joint name="stick_joint" type="fixed">
-            <parent link="trunk"/>
-            <child link="stick_link"/>
-            <origin rpy="0 0 0" xyz="${0.18} 0 ${stick_length/2.0+0.08}"/>
-        </joint>
-
-        <link name="stick_link">
-            <visual>
-                <geometry>
-                    <cylinder length="${stick_length}" radius="${stick_radius}"/>
-                </geometry>
-                <origin rpy="0 0 0" xyz="0 0 0"/>
-                <material name="white"/>
-            </visual>
-            <collision>
-                <geometry>
-                    <cylinder length="${stick_length}" radius="${stick_radius}"/>
-                </geometry>
-                <origin rpy="0 0 0" xyz="0 0 0"/>
-            </collision>
-            <inertial>
-                <mass value="${stick_mass}"/>
-                <inertia
-                    ixx="${stick_mass / 2.0 * (stick_radius*stick_radius)}" ixy="0.0" ixz="0.0"
-                    iyy="${stick_mass / 12.0 * (3*stick_radius*stick_radius + stick_length*stick_length)}" iyz="0.0"
-                    izz="${stick_mass / 12.0 * (3*stick_radius*stick_radius + stick_length*stick_length)}"/>                   
-            </inertial>
-        </link>
-    </xacro:if> 
-
     <joint name="imu_joint" type="fixed">
         <parent link="trunk"/>
         <child link="imu_link"/>
@@ -123,21 +92,10 @@
         </collision>
     </link>
 
-    <xacro:leg name="FR" mirror="-1" mirror_dae= "False" front_hind="1" front_hind_dae="True">
-        <origin rpy="0 0 0" xyz="${leg_offset_x} ${-leg_offset_y} 0"/>
-    </xacro:leg>
-
-    <xacro:leg name="FL" mirror="1" mirror_dae="True" front_hind="1" front_hind_dae="True">
-        <origin rpy="0 0 0" xyz="${leg_offset_x} ${leg_offset_y} 0"/>
-    </xacro:leg>
-
-    <xacro:leg name="RR" mirror="-1" mirror_dae="False" front_hind="-1" front_hind_dae="False">
-        <origin rpy="0 0 0" xyz="${-leg_offset_x} ${-leg_offset_y} 0"/>
-    </xacro:leg>
-
-    <xacro:leg name="RL" mirror="1" mirror_dae="True" front_hind="-1" front_hind_dae="False">
-        <origin rpy="0 0 0" xyz="${-leg_offset_x} ${leg_offset_y} 0"/>
-    </xacro:leg>
+    <xacro:leg name="FR" mirror="-1" mirror_dae= "False" front_hind="1"  front_hind_dae="True"  />
+    <xacro:leg name="FL" mirror="1"  mirror_dae="True"   front_hind="1"  front_hind_dae="True"  />
+    <xacro:leg name="RR" mirror="-1" mirror_dae="False"  front_hind="-1" front_hind_dae="False" />
+    <xacro:leg name="RL" mirror="1"  mirror_dae="True"   front_hind="-1" front_hind_dae="False" />
 
     <!-- <xacro:stairs stairs="15" xpos="0" ypos="2.0" zpos="0" /> -->
 
