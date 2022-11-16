@@ -7,6 +7,7 @@
     <xacro:include filename="$(find z1_description)/xacro/transmission.xacro"/>
 
     <!-- <xacro:property name="UnitreeGripper" value="false"/> -->
+    <xacro:arg name="UnitreeGripper" default="false"/>
 
     <link name="world"/>
 
