@@ -2,9 +2,9 @@
 Here are the ROS simulation packages for Unitree robots, You can load robots and joint controllers in Gazebo, so you can perform low-level control (control the torque, position and angular velocity) of the robot joints. Please be aware that the Gazebo simulation cannot do high-level control, namely walking. Aside from these simulation functions, you can also control your real robots in ROS with the [unitree_ros_to_real](https://github.com/unitreerobotics/unitree_ros_to_real) packages. For real robots, you can do high-level and low-level control using our ROS packages.
 
 ## Packages:
-Robot description: `go1_description`, `a1_description`, `aliengo_description`, `laikago_description`
+Robot description: `go1_description`, `a1_description`, `aliengo_description`, `laikago_description`, `z1_description`
 
-Robot and joints controller: `unitree_controller`
+Robot and joints controller: `unitree_controller`, `z1_controller`
 
 Simulation related: `unitree_gazebo`, `unitree_legged_control`
 
@@ -57,7 +57,7 @@ roslaunch unitree_gazebo normal.launch rname:=a1 wname:=stairs
 ```
 Where the `rname` means robot name, which can be `laikago`, `aliengo`, `a1` or `go1`. The `wname` means world name, which can be `earth`, `space` or `stairs`. And the default value of `rname` is `laikago`, while the default value of `wname` is `earth`. In Gazebo, the robot should be lying on the ground with joints not activated.
 
-### Stand controller
+### 1. Stand controller
 After launching the gazebo simulation, you can start to control the robot:
 ```
 rosrun unitree_controller unitree_servo
@@ -67,7 +67,7 @@ And you can add external disturbances, like a push or a kick:
 ```
 rosrun unitree_controller unitree_external_force
 ```
-### Position and pose publisher
+### 2. Position and pose publisher
 Here we demonstrated how to control the position and pose of robot without a controller, which should be useful in SLAM or visual development.
 
 Then run the position and pose publisher in another terminal:
@@ -75,3 +75,17 @@ Then run the position and pose publisher in another terminal:
 rosrun unitree_controller unitree_move_kinetic
 ```
 The robot will turn around the origin, which is the movement under the world coordinate frame. And inside of the source file [move_publisher.cpp](https://github.com/unitreerobotics/unitree_ros/blob/master/unitree_controller/src/move_publisher.cpp), we also provide the method to move using the robot coordinate frame. You can change the value of `def_frame` to `coord::ROBOT` and run the catkin_make again, then the `unitree_move_publisher` will move robot under its own coordinate frame.
+
+## z1_controller
+
+You can launch the z1 Gazebo simulation with the following command:
+
+```
+roslaunch unitree_gazebo z1.launch
+```
+
+After launching the gazebo simulation, you can start to control the z1 robot by z1_sdk. see [z1_documentation](dev-z1.unitree.com/5-sdk/run.html)  
+You can also send ros commands derectly to z1 robot:
+```
+rosrun z1_controller unitree_move_z1
+```
