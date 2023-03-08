@@ -19,14 +19,14 @@
     <!-- Actually, the rotor will rotate and the joint is not fixed. Reduction ratio should be considered. -->
 
     <!-- Debug mode will hung up the robot, use "true" or "false" to switch it. -->
-    <!-- <xacro:if value="$(arg DEBUG)">
+    <xacro:if value="$(arg DEBUG)">
         <link name="world"/>
         <joint name="base_static_joint" type="fixed">
             <origin rpy="0 0 0" xyz="0 0 0"/>
             <parent link="world"/>
             <child link="base"/>
         </joint>
-    </xacro:if>  -->
+    </xacro:if> 
 
     <link name="base">
         <visual>
