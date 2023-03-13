@@ -36,7 +36,6 @@ add_library(${PROJECT_NAME}
     src/body.cpp 
 )
 
-add_dependencies(${PROJECT_NAME} unitree_legged_msgs_gencpp)
 
 target_link_libraries(${PROJECT_NAME}
   ${catkin_LIBRARIES} ${EXTRA_LIBS}
