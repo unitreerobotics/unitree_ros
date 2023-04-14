@@ -6,7 +6,6 @@
     <xacro:include filename="$(find z1_description)/xacro/gazebo.xacro"/>
     <xacro:include filename="$(find z1_description)/xacro/transmission.xacro"/>
 
-    <!-- <xacro:property name="UnitreeGripper" value="false"/> -->
     <xacro:arg name="UnitreeGripper" default="false"/>
 
     <link name="world"/>
@@ -21,7 +20,7 @@
         <visual>
             <origin rpy="0 0 0" xyz="0 0 0"/>
             <geometry>
-                <mesh filename="package://z1_description/meshes/z1_Link00.dae" scale="1 1 1"/>
+                <mesh filename="package://z1_description/meshes/visual/z1_Link00.dae" scale="1 1 1"/>
             </geometry>
         </visual>
         <collision>
@@ -53,7 +52,7 @@
         <visual>
             <origin rpy="0 0 0" xyz="0 0 0"/>
             <geometry>
-                <mesh filename="package://z1_description/meshes/z1_Link01.dae" scale="1 1 1"/>
+                <mesh filename="package://z1_description/meshes/visual/z1_Link01.dae" scale="1 1 1"/>
             </geometry>
         </visual>
         <!-- <collision>
@@ -85,7 +84,7 @@
         <visual>
             <origin rpy="0 0 0" xyz="0 0 0"/>
             <geometry>
-                <mesh filename="package://z1_description/meshes/z1_Link02.dae" scale="1 1 1"/>
+                <mesh filename="package://z1_description/meshes/visual/z1_Link02.dae" scale="1 1 1"/>
             </geometry>
         </visual>
         <collision>
@@ -129,7 +128,7 @@
         <visual>
             <origin rpy="0 0 0" xyz="0 0 0"/>
             <geometry>
-                <mesh filename="package://z1_description/meshes/z1_Link03.dae" scale="1 1 1"/>
+                <mesh filename="package://z1_description/meshes/visual/z1_Link03.dae" scale="1 1 1"/>
             </geometry>
         </visual>
         <collision>
@@ -167,7 +166,7 @@
         <visual>
             <origin rpy="0 0 0" xyz="0 0 0"/>
             <geometry>
-                <mesh filename="package://z1_description/meshes/z1_Link04.dae" scale="1 1 1"/>
+                <mesh filename="package://z1_description/meshes/visual/z1_Link04.dae" scale="1 1 1"/>
             </geometry>
         </visual>
         <collision>
@@ -199,7 +198,7 @@
         <visual>
             <origin rpy="0 0 0" xyz="0 0 0"/>
             <geometry>
-                <mesh filename="package://z1_description/meshes/z1_Link05.dae" scale="1 1 1"/>
+                <mesh filename="package://z1_description/meshes/visual/z1_Link05.dae" scale="1 1 1"/>
             </geometry>
         </visual>
         <inertial>
@@ -225,7 +224,7 @@
         <visual>
             <origin rpy="0 0 0" xyz="0 0 0"/>
             <geometry>
-                <mesh filename="package://z1_description/meshes/z1_Link06.dae" scale="1 1 1"/>
+                <mesh filename="package://z1_description/meshes/visual/z1_Link06.dae" scale="1 1 1"/>
             </geometry>
         </visual>
         <collision>
@@ -253,18 +252,15 @@
 
         <link name="gripperStator">
             <visual>
-                <origin rpy="0 0 0" xyz="0 0 0"/>
                 <geometry>
-                    <mesh filename="package://z1_description/meshes/z1_GripperStator.dae" scale="1 1 1"/>
+                    <mesh filename="package://z1_description/meshes/visual/z1_GripperStator.dae" scale="1 1 1"/>
                 </geometry>
             </visual>
             <collision>
                 <geometry>
-                    <cylinder length="${motor_height}" radius="${motor_diameter}"/>
+                    <mesh filename="package://z1_description/meshes/collision/z1_GripperStator.STL" scale="1 1 1"/>
                 </geometry>
-                <origin rpy="0 0 0" xyz="0 0 0"/>
             </collision>
-
             <inertial>
                 <origin rpy="0 0 0" xyz="${GripperStator_ComX} ${GripperStator_ComY} ${GripperStator_ComZ}"/>
                 <mass value="${GripperStator_Mass}"/>
@@ -286,11 +282,15 @@
 
         <link name="gripperMover">
             <visual>
-                <origin rpy="0 0 0" xyz="0 0 0"/>
                 <geometry>
-                    <mesh filename="package://z1_description/meshes/z1_GripperMover.dae" scale="1 1 1"/>
+                    <mesh filename="package://z1_description/meshes/visual/z1_GripperMover.dae" scale="1 1 1"/>
                 </geometry>
             </visual>
+            <collision>
+                <geometry>
+                    <mesh filename="package://z1_description/meshes/collision/z1_GripperMover.STL" scale="1 1 1"/>
+                </geometry>
+            </collision>
             <inertial>
                 <origin rpy="0 0 0" xyz="${GripperMover_ComX} ${GripperMover_ComY} ${GripperMover_ComZ}"/>
                 <mass value="${GripperMover_Mass}"/>
