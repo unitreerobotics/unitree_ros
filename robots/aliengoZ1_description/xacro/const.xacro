@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<robot name="aliengoZ1_description" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:include filename="$(find aliengo_description)/xacro/const.xacro"/>
+
+      <!-- the base of arm offset -->
+    <xacro:property name="arm_offset_x" value="${trunk_length/2.0 - 0.07}"/>
+    <xacro:property name="arm_offset_y" value="0"/>
+    <xacro:property name="arm_offset_z" value="${trunk_height/2.0}"/>
+    <xacro:property name="arm_offset_r" value="0"/>
+    <xacro:property name="arm_offset_p" value="0"/>
+    <xacro:property name="arm_offset_yaw" value="0"/>
+
+</robot>
