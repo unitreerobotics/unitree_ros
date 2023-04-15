@@ -117,7 +117,7 @@
         </inertial>
     </link>
 
-    <joint name="joint1" type="revolute">
+   <joint name="joint1" type="revolute">
         <origin rpy="0 0 0" xyz="0 0 0.0585"/>
         <parent link="link00"/>
         <child link="link01"/>
@@ -133,12 +133,12 @@
                 <mesh filename="package://z1_description/meshes/visual/z1_Link01.dae" scale="1 1 1"/>
             </geometry>
         </visual>
-        <!-- <collision>
+        <collision>
             <geometry>
                 <cylinder length="${2*motor_height}" radius="${motor_diameter}"/>
             </geometry>
             <origin rpy="0 0 0" xyz="0 0 0"/>
-        </collision> -->
+        </collision> 
         <inertial>
             <origin rpy="0 0 0" xyz="${L01_ComX} ${L01_ComY} ${L01_ComZ}"/>
             <mass value="${L01_Mass}"/>
@@ -192,7 +192,7 @@
                 izz="${L02_Izz}"/>  
         </inertial>
     </link>
-
+ 
     <joint name="joint3" type="revolute">
         <origin rpy="0 0 0" xyz="-0.35 0 0"/>
         <parent link="link02"/>
@@ -320,7 +320,7 @@
                 izz="${L06_Izz}"/> 
         </inertial>
     </link>
-
+ 
     <xacro:if value="$(arg UnitreeGripper)">
         <joint name="gripperStator" type="fixed">
             <origin rpy="0 0 0" xyz="0.051 0.0 0.0"/>
@@ -397,20 +397,9 @@
     <xacro:motorTransmission name="5"/>
     <xacro:motorTransmission name="6"/>
 
-    <xacro:leg name="FR" mirror="-1" mirror_dae= "False" front_hind="1" front_hind_dae="True">
-        <origin rpy="0 0 0" xyz="${leg_offset_x} ${-leg_offset_y} 0"/>
-    </xacro:leg>
-
-    <xacro:leg name="FL" mirror="1" mirror_dae="True" front_hind="1" front_hind_dae="True">
-        <origin rpy="0 0 0" xyz="${leg_offset_x} ${leg_offset_y} 0"/>
-    </xacro:leg>
-
-    <xacro:leg name="RR" mirror="-1" mirror_dae="False" front_hind="-1" front_hind_dae="False">
-        <origin rpy="0 0 0" xyz="${-leg_offset_x} ${-leg_offset_y} 0"/>
-    </xacro:leg>
-
-    <xacro:leg name="RL" mirror="1" mirror_dae="True" front_hind="-1" front_hind_dae="False">
-        <origin rpy="0 0 0" xyz="${-leg_offset_x} ${leg_offset_y} 0"/>
-    </xacro:leg>
+    <xacro:leg name="FR" mirror="-1" mirror_dae= "False" front_hind="1"  front_hind_dae="True"  />
+    <xacro:leg name="FL" mirror="1"  mirror_dae="True"   front_hind="1"  front_hind_dae="True"  />
+    <xacro:leg name="RR" mirror="-1" mirror_dae="False"  front_hind="-1" front_hind_dae="False" />
+    <xacro:leg name="RL" mirror="1"  mirror_dae="True"   front_hind="-1" front_hind_dae="False" />
 
 </robot>
