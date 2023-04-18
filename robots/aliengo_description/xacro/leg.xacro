@@ -91,12 +91,12 @@
                 </geometry>
                 <material name="green"/>
             </visual>
-            <collision>
+            <!-- <collision>
                 <origin rpy="0 ${PI/2.0} 0" xyz="0 0 0"/>
                 <geometry>
                     <cylinder length="0.02" radius="0.035"/>
                 </geometry>
-            </collision>
+            </collision> -->
             <inertial>
                 <origin rpy="0 0 0" xyz="${hip_rotor_com_x} ${hip_rotor_com_y} ${hip_rotor_com_z}"/>
                 <mass value="${hip_rotor_mass}"/>
@@ -159,12 +159,12 @@
                 </geometry>
                 <material name="green"/>
             </visual>
-            <collision>
+            <!-- <collision>
                 <origin rpy="${PI/2.0} 0 0" xyz="0 0 0"/>
                 <geometry>
                     <cylinder length="0.02" radius="0.035"/>
                 </geometry>
-            </collision>
+            </collision> -->
             <inertial>
                 <origin rpy="0 0 0" xyz="${thigh_rotor_com_x} ${thigh_rotor_com_y} ${thigh_rotor_com_z}"/>
                 <mass value="${thigh_rotor_mass}"/>
@@ -222,12 +222,12 @@
                 </geometry>
                 <material name="green"/>
             </visual>
-            <collision>
+            <!-- <collision>
                 <origin rpy="${PI/2.0} 0 0" xyz="0 0 0"/>
                 <geometry>
                     <cylinder length="0.02" radius="0.035"/>
                 </geometry>
-            </collision>
+            </collision> -->
             <inertial>
                 <origin rpy="0 0 0" xyz="${calf_rotor_com_x} ${calf_rotor_com_y} ${calf_rotor_com_z}"/>
                 <mass value="${calf_rotor_mass}"/>
