@@ -8,6 +8,7 @@ find_package(catkin REQUIRED COMPONENTS
     roscpp
     realtime_tools
     unitree_legged_msgs
+        urdf
 )
 
 catkin_package(
@@ -17,6 +18,7 @@ catkin_package(
     hardware_interface
     pluginlib
     roscpp
+        urdf
     INCLUDE_DIRS include
     LIBRARIES ${PROJECT_NAME}
 )
