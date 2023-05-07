@@ -29,8 +29,8 @@
 
     <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
     <!-- Set trunk and joint positions at startup -->
-<!--     <node pkg="gazebo_ros" type="spawn_model" name="urdf_spawner" respawn="false" output="screen" -->
-<!--           args="-urdf -z 0.0 -model $(arg rname)_gazebo -param robot_description -unpause"/> -->
+    <node pkg="gazebo_ros" type="spawn_model" name="urdf_spawner" respawn="false" output="screen"
+          args="-urdf -z 0.0 -model $(arg rname)_gazebo -param robot_description -unpause"/>
 
     <!-- Load joint controller configurations from YAML file to parameter server -->
     <rosparam file="$(arg dollar)$(arg robot_path)/config/robot_control.yaml" command="load"/>

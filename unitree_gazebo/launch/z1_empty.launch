@@ -32,29 +32,5 @@
 <!--     <node pkg="gazebo_ros" type="spawn_model" name="urdf_spawner" respawn="false" output="screen" -->
 <!--           args="-urdf -z 0.0 -model $(arg rname)_gazebo -param robot_description -unpause"/> -->
 
-    <!-- Load joint controller configurations from YAML file to parameter server -->
-    <rosparam file="$(arg dollar)$(arg robot_path)/config/robot_control.yaml" command="load"/>
-
-    <!-- load the controllers -->
-    <group unless="$(arg UnitreeGripperYN)">
-        <node pkg="controller_manager" type="spawner" name="controller_spawner" respawn="false"
-            output="screen" ns="/$(arg rname)_gazebo" args="joint_state_controller 
-            Joint01_controller Joint02_controller Joint03_controller
-            Joint04_controller Joint05_controller Joint06_controller"/>
-    </group>
-
-    <group if="$(arg UnitreeGripperYN)">
-        <node pkg="controller_manager" type="spawner" name="controller_spawner" respawn="false"
-            output="screen" ns="/$(arg rname)_gazebo" args="joint_state_controller 
-            Joint01_controller Joint02_controller Joint03_controller 
-            Joint04_controller Joint05_controller Joint06_controller 
-            gripper_controller"/>
-    </group>
-
-    <!-- convert joint states to TF transforms for rviz, etc -->
-    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"
-          respawn="false" output="screen">
-        <remap from="/joint_states" to="/$(arg rname)_gazebo/joint_states"/>
-    </node>
 
 </launch>
