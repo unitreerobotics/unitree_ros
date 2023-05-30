@@ -33,3 +33,4 @@ add_library( unitree_legged_control
 )
 add_dependencies(${PROJECT_NAME} unitree_legged_msgs_gencpp)
 target_link_libraries(unitree_legged_control ${catkin_LIBRARIES} unitree_joint_control_tool_arm64)
+target_link_libraries(unitree_legged_control ${catkin_LIBRARIES} unitree_joint_control_tool)
