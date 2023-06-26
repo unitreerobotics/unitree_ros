@@ -10,6 +10,7 @@
     <build_depend>hardware_interface</build_depend>
     <build_depend>pluginlib</build_depend>
     <build_depend>roscpp</build_depend>
+    <build_depend>urdf</build_depend>
     <build_export_depend>controller_interface</build_export_depend>
     <build_export_depend>hardware_interface</build_export_depend>
     <build_export_depend>pluginlib</build_export_depend>
@@ -18,6 +19,7 @@
     <exec_depend>hardware_interface</exec_depend>
     <exec_depend>pluginlib</exec_depend>
     <exec_depend>roscpp</exec_depend>
+    <exec_depend>urdf</exec_depend>
     <depend>unitree_legged_msgs</depend>
     <!-- The export tag contains other, unspecified, tags -->
     <export>

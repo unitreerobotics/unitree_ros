@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.0.1)
 project(unitree_legged_control)
 
 find_package(catkin REQUIRED COMPONENTS
@@ -8,6 +8,7 @@ find_package(catkin REQUIRED COMPONENTS
     roscpp
     realtime_tools
     unitree_legged_msgs
+        urdf
 )
 
 catkin_package(
@@ -17,16 +18,19 @@ catkin_package(
     hardware_interface
     pluginlib
     roscpp
+        urdf
     INCLUDE_DIRS include
     LIBRARIES ${PROJECT_NAME}
 )
+set(CMAKE_CXX_FLAGS "-std=c++11 ${CMAKE_CXX_FLAGS}")
 
 include_directories(include ${catkin_INCLUDE_DIRS} ${Boost_INCLUDE_DIR})
 
-link_directories($(catkin_LIB_DIRS) lib)
+link_directories(${catkin_LIB_DIRS} lib)
 
 add_library( unitree_legged_control 
     src/joint_controller.cpp
 )
 add_dependencies(${PROJECT_NAME} unitree_legged_msgs_gencpp)
-target_link_libraries(unitree_legged_control ${catkin_LIBRARIES} unitree_joint_control_tool)
+# target_link_libraries(unitree_legged_control ${catkin_LIBRARIES} unitree_joint_control_tool_arm64)
+target_link_libraries(unitree_legged_control ${catkin_LIBRARIES} unitree_joint_control_tool_${CMAKE_HOST_SYSTEM_PROCESSOR})
