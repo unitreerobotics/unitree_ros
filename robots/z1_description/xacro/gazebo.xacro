@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 <robot>
-    <!-- ros_control plugin -->
     <gazebo>
         <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
             <robotNamespace>/z1_gazebo</robotNamespace>
@@ -19,6 +18,4 @@
     <gazebo reference="link06">
         <self_collide>true</self_collide>
     </gazebo>
-
-
 </robot>

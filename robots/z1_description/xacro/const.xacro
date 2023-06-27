@@ -114,23 +114,21 @@
     <xacro:property name="GripperMover_Izz" value="0.00035728"/>
 
     <!-- joint limits -->
-    <!-- <xacro:property name="jointDamping" value="3.0"/> -->
-    <!-- <xacro:property name="jointFriction" value="2.0"/> -->
     <xacro:property name="jointDamping" value="1.0"/>
     <xacro:property name="jointFriction" value="1.0"/>
 
     <xacro:property name="torqueMax" value="30.0"/>
-    <xacro:property name="velocityMax" value="10"/>
+    <xacro:property name="velocityMax" value="3.1415"/>
     <xacro:property name="joint1_PositionMin" value="${-PI*150/180}"/>
     <xacro:property name="joint1_PositionMax" value="${PI*150/180}"/>
     <xacro:property name="joint2_PositionMin" value="0.0"/>
-    <xacro:property name="joint2_PositionMax" value="${PI}"/>
-    <xacro:property name="joint3_PositionMin" value="${-PI*274/180}"/>
+    <xacro:property name="joint2_PositionMax" value="${PI*170/180}"/>
+    <xacro:property name="joint3_PositionMin" value="${-PI*165/180}"/>
     <xacro:property name="joint3_PositionMax" value="0.0"/>
-    <xacro:property name="joint4_PositionMin" value="${-PI*100/180}"/>
-    <xacro:property name="joint4_PositionMax" value="${PI*90/180}"/>
-    <xacro:property name="joint5_PositionMin" value="${-PI*99/180}"/>
-    <xacro:property name="joint5_PositionMax" value="${PI*99/180}"/>
+    <xacro:property name="joint4_PositionMin" value="${-PI*87/180}"/>
+    <xacro:property name="joint4_PositionMax" value="${PI*87/180}"/>
+    <xacro:property name="joint5_PositionMin" value="${-PI*77/180}"/>
+    <xacro:property name="joint5_PositionMax" value="${PI*77/180}"/>
     <xacro:property name="joint6_PositionMin" value="${-PI*160/180}"/>
     <xacro:property name="joint6_PositionMax" value="${PI*160/180}"/>
     <xacro:property name="Gripper_PositionMin" value="${-PI*90/180}"/>

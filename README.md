@@ -85,8 +85,4 @@ roslaunch unitree_gazebo z1.launch
 ```
 
 After launching the gazebo simulation, you can start to control the z1 robot by z1_sdk.  
-see [z1_documentation](dev-z1.unitree.com/5-sdk/run.html)  
-You can also send ros commands directly to z1 robot:
-```
-rosrun z1_controller unitree_move_z1
-```
+see [z1_documentation](https://dev-z1.unitree.com)

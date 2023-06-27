@@ -55,12 +55,6 @@
                 <mesh filename="package://z1_description/meshes/visual/z1_Link01.dae" scale="1 1 1"/>
             </geometry>
         </visual>
-        <!-- <collision>
-            <geometry>
-                <cylinder length="${2*motor_height}" radius="${motor_diameter}"/>
-            </geometry>
-            <origin rpy="0 0 0" xyz="0 0 0"/>
-        </collision> -->
         <inertial>
             <origin rpy="0 0 0" xyz="${L01_ComX} ${L01_ComY} ${L01_ComZ}"/>
             <mass value="${L01_Mass}"/>
@@ -141,7 +135,7 @@
             <geometry>
                 <cylinder length="0.059" radius="${motor_diameter}"/>
             </geometry>
-            <origin rpy="0 ${PI/2.0} 0" xyz="${0.065+0.185-0.059/2.0} 0 0.055"/>
+            <origin rpy="0 ${PI/2.0} ${PI/2.0}" xyz="${0.065+0.185-0.059/2.0} 0 0.055"/>
         </collision>
         <inertial>
             <origin rpy="0 0 0" xyz="${L03_ComX} ${L03_ComY} ${L03_ComZ}"/>
@@ -171,9 +165,9 @@
         </visual>
         <collision>
             <geometry>
-                <cylinder length="0.073" radius="${motor_diameter}"/>
+                <cylinder length="${motor_height + 2*0.008}" radius="${motor_diameter}"/>
             </geometry>
-            <origin rpy="${PI/2.0} 0 0" xyz="0.0472 0 0"/>
+            <origin rpy="0 0 0" xyz="0.072 0 0"/>
         </collision>
         <inertial>
             <origin rpy="0 0 0" xyz="${L04_ComX} ${L04_ComY} ${L04_ComZ}"/>

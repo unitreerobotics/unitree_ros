@@ -4,7 +4,6 @@
 <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
 <!-- =================================================================================== -->
 <robot name="z1_description">
-  <!-- ros_control plugin -->
   <gazebo>
     <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
       <robotNamespace>/z1_gazebo</robotNamespace>
@@ -30,7 +29,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://z1_description/meshes/z1_Link00.dae" scale="1 1 1"/>
+        <mesh filename="package://z1_description/meshes/visual/z1_Link00.dae" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
@@ -57,15 +56,9 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://z1_description/meshes/z1_Link01.dae" scale="1 1 1"/>
+        <mesh filename="package://z1_description/meshes/visual/z1_Link01.dae" scale="1 1 1"/>
       </geometry>
     </visual>
-    <!-- <collision>
-            <geometry>
-                <cylinder length="${2*motor_height}" radius="${motor_diameter}"/>
-            </geometry>
-            <origin rpy="0 0 0" xyz="0 0 0"/>
-        </collision> -->
     <inertial>
       <origin rpy="0 0 0" xyz="2.47e-06 -0.00025198 0.02317169"/>
       <mass value="0.67332551"/>
@@ -78,13 +71,13 @@
     <child link="link02"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="2.0" friction="2.0"/>
-    <limit effort="60.0" lower="0.0" upper="3.141592653589793" velocity="10"/>
+    <limit effort="60.0" lower="0.0" upper="2.9670597283903604" velocity="10"/>
   </joint>
   <link name="link02">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://z1_description/meshes/z1_Link02.dae" scale="1 1 1"/>
+        <mesh filename="package://z1_description/meshes/visual/z1_Link02.dae" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
@@ -117,13 +110,13 @@
     <child link="link03"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="1.0" friction="1.0"/>
-    <limit effort="30.0" lower="-4.782202150464463" upper="0.0" velocity="10"/>
+    <limit effort="30.0" lower="-2.8797932657906435" upper="0.0" velocity="10"/>
   </joint>
   <link name="link03">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://z1_description/meshes/z1_Link03.dae" scale="1 1 1"/>
+        <mesh filename="package://z1_description/meshes/visual/z1_Link03.dae" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
@@ -136,7 +129,7 @@
       <geometry>
         <cylinder length="0.059" radius="0.0325"/>
       </geometry>
-      <origin rpy="0 1.5707963267948966 0" xyz="0.2205 0 0.055"/>
+      <origin rpy="0 1.5707963267948966 1.5707963267948966" xyz="0.2205 0 0.055"/>
     </collision>
     <inertial>
       <origin rpy="0 0 0" xyz="0.10609208 -0.00541815 0.03476383"/>
@@ -150,20 +143,20 @@
     <child link="link04"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="1.0" friction="1.0"/>
-    <limit effort="30.0" lower="-1.7453292519943295" upper="1.5707963267948966" velocity="10"/>
+    <limit effort="30.0" lower="-1.5184364492350666" upper="1.5184364492350666" velocity="10"/>
   </joint>
   <link name="link04">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://z1_description/meshes/z1_Link04.dae" scale="1 1 1"/>
+        <mesh filename="package://z1_description/meshes/visual/z1_Link04.dae" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <cylinder length="0.073" radius="0.0325"/>
+        <cylinder length="0.067" radius="0.0325"/>
       </geometry>
-      <origin rpy="1.5707963267948966 0 0" xyz="0.0472 0 0"/>
+      <origin rpy="0 0 0" xyz="0.072 0 0"/>
     </collision>
     <inertial>
       <origin rpy="0 0 0" xyz="0.04366681 0.00364738 -0.00170192"/>
@@ -177,13 +170,13 @@
     <child link="link05"/>
     <axis xyz="0 0 1"/>
     <dynamics damping="1.0" friction="1.0"/>
-    <limit effort="30.0" lower="-1.7278759594743864" upper="1.7278759594743864" velocity="10"/>
+    <limit effort="30.0" lower="-1.3439035240356338" upper="1.3439035240356338" velocity="10"/>
   </joint>
   <link name="link05">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://z1_description/meshes/z1_Link05.dae" scale="1 1 1"/>
+        <mesh filename="package://z1_description/meshes/visual/z1_Link05.dae" scale="1 1 1"/>
       </geometry>
     </visual>
     <inertial>
@@ -204,7 +197,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://z1_description/meshes/z1_Link06.dae" scale="1 1 1"/>
+        <mesh filename="package://z1_description/meshes/visual/z1_Link06.dae" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
