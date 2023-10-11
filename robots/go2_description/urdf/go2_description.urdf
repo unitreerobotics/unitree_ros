@@ -280,8 +280,8 @@ Stephen Brawner (brawner@gmail.com)
     <limit
       lower="-2.7227"
       upper="-0.83776"
-      effort="35.55"
-      velocity="20.07" />
+      effort="45.43"
+      velocity="15.70" />
   </joint>
   <link
     name="FL_calflower">
@@ -539,8 +539,8 @@ Stephen Brawner (brawner@gmail.com)
     <limit
       lower="-2.7227"
       upper="-0.83776"
-      effort="35.55"
-      velocity="20.07" />
+      effort="45.43"
+      velocity="15.70" />
   </joint>
   <link
     name="FR_calflower">
@@ -798,8 +798,8 @@ Stephen Brawner (brawner@gmail.com)
     <limit
       lower="-2.7227"
       upper="-0.83776"
-      effort="35.55"
-      velocity="20.07" />
+      effort="45.43"
+      velocity="15.70" />
   </joint>
   <link
     name="RL_calflower">
@@ -1057,8 +1057,8 @@ Stephen Brawner (brawner@gmail.com)
     <limit
       lower="-2.7227"
       upper="-0.83776"
-      effort="35.55"
-      velocity="20.07" />
+      effort="45.43"
+      velocity="15.70" />
   </joint>
   <link
     name="RR_calflower">
