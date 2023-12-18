@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="intel_realsense_mount" params="prefix frame topic parent_link">
+     <material name="white">
+        <color rgba="1 1 1 1"/>
+     </material>
+     <material name="black">
+        <color rgba="0 0 0 1"/>
+     </material>
+
+    <xacro:macro name="intel_realsense" params="
+               frame:=camera          topic:=realsense
+               h_fov:=1.5184351666666667 v_fov:=1.0122901111111111
+               min_range:=0.105          max_range:=15
+               width:=848                height:=480
+               update_rate:=15
+               robot_namespace:=/">
+
+      <!-- this link is the origin for the camera's data -->
+      <link name="${frame}" />
+
+      <!--
+        The gazebo plugin aligns the depth data with the Z axis, with X=left and Y=up
+        ROS expects the depth data along the X axis, with Y=left and Z=up
+        This link only exists to give the gazebo plugin the correctly-oriented frame
+      -->
+      <link name="${frame}_link" />
+      <joint name="${frame}_link_joint" type="fixed">
+        <parent link="${frame}"/>
+        <child link="${frame}_link"/>
+        <origin xyz="0.0 0 0" rpy="-1.5707963267948966 0 -1.5707963267948966"/>
+      </joint>
+
+
+      <!-- Some arbitrary link to simulate the realsense -->
+      <link name="${prefix}_link" />
+      <link name="${prefix}_depth_frame" />
+      <link name="${prefix}_depth_optical_frame" />
+
+      <joint name="${frame}_${prefix}_link_joint" type="fixed">
+        <parent link="${frame}"/>
+        <child link="${prefix}_link"/>
+        <origin xyz="0.0 0 0" rpy="0 0 0"/>
+      </joint>
+
+      <joint name="${prefix}_link_depth_frame_joint" type="fixed">
+        <parent link="${prefix}_link"/>
+        <child link="${prefix}_depth_frame"/>
+        <origin xyz="0.0 0 0" rpy="0 0 0"/>
+      </joint>
+
+      <joint name="${prefix}_depth_frame_depth_optical_frame_joint" type="fixed">
+        <parent link="${prefix}_depth_frame"/>
+        <child link="${prefix}_depth_optical_frame"/>
+        <origin xyz="0.0 0 0" rpy="-1.5707963267948966 0 -1.5707963267948966"/>
+      </joint>
+
+
+      <gazebo reference="${frame}">
+        <turnGravityOff>true</turnGravityOff>
+        <sensor type="depth" name="${prefix}_realsense_depth">
+          <update_rate>${update_rate}</update_rate>
+          <camera>
+            <!-- 75x65 degree FOV for the depth sensor -->
+            <horizontal_fov>${h_fov}</horizontal_fov>
+            <vertical_fov>${v_fov}</vertical_fov>
+
+            <image>
+              <width>${width}</width>
+              <height>${height}</height>
+              <!-- TODO: check what format the Realsense hardware delivers and set this to match! -->
+              <format>RGB_INT8</format>
+            </image>
+            <clip>
+              <!-- give the color sensor a maximum range of 50m so that the simulation renders nicely -->
+              <near>0.01</near>
+              <far>50.0</far>
+            </clip>
+          </camera>
+          <plugin name="kinect_controller" filename="libgazebo_ros_openni_kinect.so">
+            <baseline>0.2</baseline>
+            <alwaysOn>true</alwaysOn>
+            <updateRate>${update_rate}</updateRate>
+            <cameraName>${topic}</cameraName>
+            <imageTopicName>color/image_raw</imageTopicName>
+            <cameraInfoTopicName>color/camera_info</cameraInfoTopicName>
+            <depthImageTopicName>depth/image_rect_raw</depthImageTopicName>
+            <depthImageInfoTopicName>depth/camera_info</depthImageInfoTopicName>
+            <pointCloudTopicName>depth/color/points</pointCloudTopicName>
+            <frameName>${frame}_link</frameName>
+            <pointCloudCutoff>${min_range}</pointCloudCutoff>
+            <pointCloudCutoffMax>${max_range}</pointCloudCutoffMax>
+            <distortionK1>0.00000001</distortionK1>
+            <distortionK2>0.00000001</distortionK2>
+            <distortionK3>0.00000001</distortionK3>
+            <distortionT1>0.00000001</distortionT1>
+            <distortionT2>0.00000001</distortionT2>
+            <CxPrime>0</CxPrime>
+            <Cx>0</Cx>
+            <Cy>0</Cy>
+            <focalLength>0</focalLength>
+            <hackBaseline>0</hackBaseline>
+          </plugin>
+        </sensor>
+      </gazebo>
+    </xacro:macro>
+
+    <link name="${prefix}_realsense_lens">
+      <visual>
+        <!--
+          the model's origin is in the middle & it's rotated to lie in
+          the optical standard with X left, Y up, and Z forward
+        -->
+        <origin xyz="0.0115 0 0.0100" rpy="1.570796 0 1.570796" />
+        <geometry>
+          <!-- Origin of this mesh is the base of the bracket. -->
+          <box size="0.042 0.042 0.023" />
+        </geometry>
+        <material name="black" />
+      </visual>
+    </link>
+
+    <joint type="fixed" name="${prefix}_realsense_lens_joint">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <parent link="${parent_link}" />
+      <child link="${prefix}_realsense_lens" />
+    </joint>
+    <joint type="fixed" name="${prefix}_realsense_joint">
+      <origin xyz="0.025 0 0" rpy="0 0 0" />
+      <parent link="${prefix}_realsense_lens" />
+      <child link="${prefix}_realsense" />
+    </joint>
+
+    <xacro:intel_realsense frame="${prefix}_realsense" topic="${topic}"/>
+  </xacro:macro>
+</robot>

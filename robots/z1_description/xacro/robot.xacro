@@ -7,6 +7,8 @@
     <xacro:include filename="$(find z1_description)/xacro/transmission.xacro"/>
 
     <xacro:arg name="UnitreeGripper" default="false"/>
+    <xacro:arg name="RealSense" default="true"/>
+    <xacro:arg name="HitbotGripper" default="true"/>
 
     <link name="world"/>
 
@@ -304,6 +306,56 @@
         <gazebo reference="gripperMover">
             <self_collide>true</self_collide>
         </gazebo>
+        
+    </xacro:if>
+
+    <xacro:if value="$(arg RealSense)">
+        <!--  Sensors  -->
+        <xacro:include filename="$(find z1_description)/xacro/sensors/intel_realsense.urdf.xacro"/>
+        <!-- add the intel realsense to the sensor arch if needed -->
+        <link name="realsense_mountpoint"/>
+        <joint name="realsense_mountpoint_joint" type="fixed">
+            <origin xyz="0.15 0 0.05" rpy="0 0 0" />
+            <parent link="link06"/>
+            <child link="realsense_mountpoint" />
+        </joint>
+        <xacro:intel_realsense_mount prefix="camera" frame="camera" topic="camera" parent_link="realsense_mountpoint"/>
+    </xacro:if>
+
+    <xacro:if value="$(arg HitbotGripper)">
+        <joint name="gripper_mount" type="fixed">
+            <origin xyz="0.1 0 -0.08" rpy="0 0 0" />
+            <parent link="link06"/>
+            <child link="link_gripper" />
+        </joint>
+        <link name="link_gripper">
+            <inertial>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <mass value="0.290087803254386" />
+                <inertia
+                    ixx="0.000122722161885507"
+                    ixy="2.8456952860616E-06"
+                    ixz="3.69598304197937E-06"
+                    iyy="0.000255921213582023"
+                    iyz="1.99093327058819E-07"
+                    izz="0.00032692475873505" />
+                </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://z1_description/xacro/gripper/hitbot_gripper.STL" />
+                </geometry>
+                <material name="">
+                    <color  rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="0.5 0 0.2" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://z1_description/xacro/gripper/hitbot_gripper.STL" />
+                </geometry>
+            </collision>
+        </link>
     </xacro:if>
 
     <xacro:motorTransmission name="1"/>
