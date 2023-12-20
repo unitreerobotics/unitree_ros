@@ -250,7 +250,7 @@
                 xyz="0 0 0"
                 rpy="0 0 0" />
             <geometry>
-                <cylinder length="0.05" radius="0.032" />
+                <sphere radius="0.032" />
             </geometry>
             </collision>
             <inertial>

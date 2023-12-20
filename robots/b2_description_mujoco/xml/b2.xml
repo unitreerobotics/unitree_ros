@@ -88,7 +88,7 @@
             <geom size="0.075 0.01225 0.0075" pos="0.036 0 -0.225" quat="0.721382 0 0.692537 0" type="box" rgba="0.7 0.7 0.7 1" class="collision"/>
             <geom size="0.025 0.014 0.0175" pos="0.023 0 -0.31" quat="0.540302 0 0.841471 0" type="box" rgba="0.7 0.7 0.7 1" class="collision"/>
             <geom pos="0 8.6986e-05 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.15 0.15 0.15 1" mesh="FL_foot" friction="0.4 0.005 0.0001"/>
-            <geom size="0.032 0.025" pos="0 8.6986e-05 -0.35" quat="0.707388 0.706825 0 0" type="cylinder" rgba="0.15 0.15 0.15 1" class="collision" friction="0.4 0.005 0.0001"/>
+            <geom size="0.032" pos="0 8.6986e-05 -0.35" quat="0.707388 0.706825 0 0" type="sphere" rgba="0.15 0.15 0.15 1" class="collision" friction="0.4 0.005 0.0001"/>
           </body>
         </body>
       </body>
@@ -112,7 +112,7 @@
             <geom size="0.075 0.01225 0.0075" pos="0.036 0 -0.225" quat="0.721382 0 0.692537 0" type="box" rgba="0.7 0.7 0.7 1" class="collision"/>
             <geom size="0.025 0.014 0.0175" pos="0.023 0 -0.31" quat="0.540302 0 0.841471 0" type="box" rgba="0.7 0.7 0.7 1" class="collision"/>
             <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.15 0.15 0.15 1" mesh="FR_foot" friction="0.4 0.005 0.0001"/>
-            <geom size="0.032 0.025" pos="0 0 -0.35" quat="0.707388 0.706825 0 0" type="cylinder" rgba="0.15 0.15 0.15 1" class="collision" friction="0.4 0.005 0.0001"/>
+            <geom size="0.032" pos="0 8.6986e-05 -0.35" quat="0.707388 0.706825 0 0" type="sphere" rgba="0.15 0.15 0.15 1" class="collision" friction="0.4 0.005 0.0001"/>
           </body>
         </body>
       </body>
@@ -136,7 +136,7 @@
             <geom size="0.075 0.01225 0.0075" pos="0.036 0 -0.225" quat="0.721382 0 0.692537 0" type="box" rgba="0.7 0.7 0.7 1" class="collision"/>
             <geom size="0.025 0.014 0.0175" pos="0.023 0 -0.31" quat="0.540302 0 0.841471 0" type="box" rgba="0.7 0.7 0.7 1" class="collision"/>
             <geom pos="0 8.6986e-05 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.15 0.15 0.15 1" mesh="RL_foot" friction="0.4 0.005 0.0001"/>
-            <geom size="0.032 0.025" pos="0 8.6986e-05 -0.35" quat="0.707388 0.706825 0 0" type="cylinder" rgba="0.15 0.15 0.15 1" class="collision" friction="0.4 0.005 0.0001"/>
+            <geom size="0.032" pos="0 8.6986e-05 -0.35" quat="0.707388 0.706825 0 0" type="sphere" rgba="0.15 0.15 0.15 1" class="collision" friction="0.4 0.005 0.0001"/>
           </body>
         </body>
       </body>
@@ -160,7 +160,7 @@
             <geom size="0.075 0.01225 0.0075" pos="0.036 0 -0.225" quat="0.721382 0 0.692537 0" type="box" rgba="0.7 0.7 0.7 1" class="collision"/>
             <geom size="0.025 0.014 0.0175" pos="0.023 0 -0.31" quat="0.540302 0 0.841471 0" type="box" rgba="0.7 0.7 0.7 1" class="collision"/>
             <geom pos="0 -8.6984e-05 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.15 0.15 0.15 1" mesh="RR_foot" friction="0.4 0.005 0.0001"/>
-            <geom size="0.032 0.025" pos="0 -8.6984e-05 -0.35" quat="0.707388 0.706825 0 0" type="cylinder" rgba="0.15 0.15 0.15 1" class="collision" friction="0.4 0.005 0.0001"/>
+            <geom size="0.032" pos="0 8.6986e-05 -0.35" quat="0.707388 0.706825 0 0" type="sphere" rgba="0.15 0.15 0.15 1" class="collision" friction="0.4 0.005 0.0001"/>
           </body>
         </body>
       </body>
