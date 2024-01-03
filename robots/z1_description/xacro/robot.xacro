@@ -315,7 +315,7 @@
         <!-- add the intel realsense to the sensor arch if needed -->
         <link name="realsense_mountpoint"/>
         <joint name="realsense_mountpoint_joint" type="fixed">
-            <origin xyz="0.15 0 0.05" rpy="0 0 0" />
+            <origin xyz="0.148 0 0.084" rpy="0 0.175 0" />
             <parent link="link06"/>
             <child link="realsense_mountpoint" />
         </joint>
