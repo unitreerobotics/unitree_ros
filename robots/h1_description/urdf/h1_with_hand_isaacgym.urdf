@@ -2725,7 +2725,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://h1_description/meshes/logo_link.STL" />
+          filename="package://h1_description/meshes/logo_link_gray.dae" />
       </geometry>
       <material
         name="">
