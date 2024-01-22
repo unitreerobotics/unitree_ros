@@ -72,11 +72,10 @@
     </visual>
     <collision>
       <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+        xyz="-0.067 0 0"
+        rpy="0 1.57075 0" />
       <geometry>
-        <mesh
-          filename="package://h1_description/meshes/left_hip_yaw_link.STL" />
+        <cylinder length="0.07" radius="0.06" />
       </geometry>
     </collision>
   </link>
@@ -362,11 +361,10 @@
     </visual>
     <collision>
       <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+        xyz="-0.067 0 0"
+        rpy="0 1.57075 0" />
       <geometry>
-        <mesh
-          filename="package://h1_description/meshes/right_hip_yaw_link.STL" />
+        <cylinder length="0.07" radius="0.06" />
       </geometry>
     </collision>
   </link>
