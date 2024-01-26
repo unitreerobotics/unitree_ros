@@ -12,8 +12,8 @@
                frame:=camera          topic:=realsense
                h_fov:=1.5184351666666667 v_fov:=1.0122901111111111
                min_range:=0.105          max_range:=15
-               width:=848                height:=480
-               update_rate:=15
+               width:=640                height:=480
+               update_rate:=30
                robot_namespace:=/">
 
       <!-- this link is the origin for the camera's data -->

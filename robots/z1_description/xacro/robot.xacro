@@ -331,7 +331,8 @@
         <link name="link_gripper">
             <inertial>
                 <origin xyz="0 0 0" rpy="0 0 0" />
-                <mass value="0.290087803254386" />
+                <!-- <mass value="0.290087803254386" /> -->
+                <mass value="0" />
                 <inertia
                     ixx="0.000122722161885507"
                     ixy="2.8456952860616E-06"
