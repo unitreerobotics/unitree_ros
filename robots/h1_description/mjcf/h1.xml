@@ -64,7 +64,7 @@
           <body name="left_hip_pitch_link" pos="0 0.11536 0">
             <inertial pos="0.00746 -0.02346 -0.08193" quat="0.979828 0.0513522 -0.0169854 -0.192382" mass="4.152"
               diaginertia="0.0829503 0.0821457 0.00510909"/>
-            <joint name="left_hip_pitch_joint" axis="0 1 0" range="-1.57 1.57"/>
+            <joint name="left_hip_pitch_joint" axis="0 1 0" range="-3.14 2.53"/>
             <geom class="visual" mesh="left_hip_pitch_link"/>
             <geom class="collision" mesh="left_hip_pitch_link"/>
             <body name="left_knee_link" pos="0 0 -0.4">
@@ -99,7 +99,7 @@
           <body name="right_hip_pitch_link" pos="0 -0.11536 0">
             <inertial pos="0.00746 0.02346 -0.08193" quat="0.979828 -0.0513522 -0.0169854 0.192382" mass="4.152"
               diaginertia="0.0829503 0.0821457 0.00510909"/>
-            <joint name="right_hip_pitch_joint" axis="0 1 0" range="-1.57 1.57"/>
+            <joint name="right_hip_pitch_joint" axis="0 1 0" range="-3.14 2.53"/>
             <geom class="visual" mesh="right_hip_pitch_link"/>
             <geom class="collision" mesh="right_hip_pitch_link"/>
             <body name="right_knee_link" pos="0 0 -0.4">
