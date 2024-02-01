@@ -3,7 +3,7 @@
     name="model" />
   <param
     name="robot_description"
-    textfile="$(find h1_description)/urdf/h1.urdf" />
+    textfile="$(find h1_description)/urdf/h1_with_hand.urdf" />
   <node
     name="joint_state_publisher_gui"
     pkg="joint_state_publisher_gui"
