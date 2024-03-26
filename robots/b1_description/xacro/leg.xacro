@@ -68,9 +68,20 @@
                 <material name="orange"/>
             </visual>
             <collision>
-                <origin rpy="${PI/2.0} 0 0" xyz="0 ${hip_offset*mirror} 0"/>
+                <xacro:if value="${(mirror_dae == True) and (front_hind_dae == True)}">
+                    <origin rpy="0 0 0" xyz="0 0 0"/>
+                </xacro:if>
+                <xacro:if value="${(mirror_dae == False) and (front_hind_dae == True)}">
+                    <origin rpy="${PI} 0 0" xyz="0 0 0"/>
+                </xacro:if>
+                <xacro:if value="${(mirror_dae == True) and (front_hind_dae == False)}">
+                    <origin rpy="0 ${PI} 0" xyz="0 0 0"/>
+                </xacro:if>
+                <xacro:if value="${(mirror_dae == False) and (front_hind_dae == False)}">
+                    <origin rpy="${PI} ${PI} 0" xyz="0 0 0"/>
+                </xacro:if>
                 <geometry>
-                    <cylinder length="${hip_length}" radius="${hip_radius}"/>
+                    <mesh filename="package://b1_description/meshes/hip.dae" scale="1 1 1"/>
                 </geometry>
             </collision>
             <inertial>
@@ -136,10 +147,15 @@
                 <material name="orange"/>
             </visual>
             <collision>
-                <origin rpy="0 ${PI/2.0} 0" xyz="0 0 ${-thigh_length/2.0}"/>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
                 <geometry>
-                    <box size="${thigh_length} ${thigh_width} ${thigh_height}"/>
-                </geometry>      
+                    <xacro:if value="${mirror_dae == True}">
+                        <mesh filename="package://b1_description/meshes/thigh.dae" scale="1 1 1"/>
+                    </xacro:if>
+                    <xacro:if value="${mirror_dae == False}">
+                        <mesh filename="package://b1_description/meshes/thigh_mirror.dae" scale="1 1 1"/>
+                    </xacro:if>
+                </geometry>
             </collision>
             <inertial>
                 <origin rpy="0 0 0" xyz="${thigh_com_x} ${thigh_com_y*mirror} ${thigh_com_z}"/>
@@ -199,10 +215,10 @@
                 <material name="orange"/>
             </visual>
             <collision>
-                <origin rpy="0 ${PI/2.0} 0" xyz="0 0 ${-calf_length/2.0}"/>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
                 <geometry>
-                    <box size="${calf_length} ${calf_width} ${calf_height}"/>
-                </geometry>      
+                    <mesh filename="package://b1_description/meshes/calf.dae" scale="1 1 1"/>
+                </geometry>
             </collision>
             <inertial>
                 <origin rpy="0 0 0" xyz="${calf_com_x} ${calf_com_y} ${calf_com_z}"/>
