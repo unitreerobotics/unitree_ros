@@ -86,6 +86,78 @@
         </collision>
     </link>
 
+    <joint name="left_side_camera_joint" type="fixed">
+	    <parent link="trunk"/>
+	    <child link="left_side_camera_link"/>
+	    <origin rpy="-0.331612 0 0" xyz="-0.1086 0.1371 -0.03077"/>
+    </joint>
+
+    <link name="left_side_camera_link">
+        <inertial>
+            <mass value="0.001"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+        </inertial>
+    </link>
+
+	    
+    <joint name="right_side_camera_joint" type="fixed">
+	    <parent link="trunk"/>
+	    <child link="right_side_camera_link"/>
+	    <origin rpy="0.331612 0 0" xyz="-0.10190 -0.1371 -0.03077"/>
+    </joint>
+
+    <link name="right_side_camera_link">
+        <inertial>
+            <mass value="0.001"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+        </inertial>
+    </link>
+-
+    <joint name="head_camera_1_joint" type="fixed">
+	    <parent link="trunk"/>
+	    <child link="head_camera_1_link"/>
+	    <origin rpy="0 0 0" xyz="0.48883 0 0.0255"/>
+    </joint>
+
+    <link name="head_camera_1_link">
+        <inertial>
+            <mass value="0.001"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+        </inertial>
+    </link>
+
+    <joint name="head_camera_2_joint" type="fixed">
+	    <parent link="trunk"/>
+	    <child link="head_camera_2_link"/>
+	    <origin rpy="0 0 0" xyz="0.45430 0 -0.081"/>
+    </joint>
+
+    <link name="head_camera_2_link">
+        <inertial>
+            <mass value="0.001"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+        </inertial>
+    </link>
+
+    <joint name="tail_camera_joint" type="fixed">
+	    <parent link="trunk"/>
+	    <child link="tail_camera_link"/>
+	    <origin rpy="0 0 0" xyz="-0.459 0 -0.081"/>
+    </joint>
+
+    <link name="tail_camera_link">
+        <inertial>
+            <mass value="0.001"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+        </inertial>
+    </link>
+
+
     <xacro:leg name="FR" mirror="-1" mirror_dae= "False" front_hind="1"  front_hind_dae="True"  />
     <xacro:leg name="FL" mirror="1"  mirror_dae="True"   front_hind="1"  front_hind_dae="True"  />
     <xacro:leg name="RR" mirror="-1" mirror_dae="False"  front_hind="-1" front_hind_dae="False" />
