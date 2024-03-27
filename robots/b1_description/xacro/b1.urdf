@@ -314,15 +314,9 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <box size="0.647 0.3 0.15"/>
+        <mesh filename="package://b1_description/meshes/trunk.dae" scale="1 1 1"/>
       </geometry>
     </collision>
-    <!-- <collision>
-            <origin rpy="0 0 0" xyz="0 0 0"/>
-            <geometry>
-                <mesh filename="package://b1_description/meshes/trunk.dae" scale="1 1 1"/>
-            </geometry>
-        </collision> -->
     <inertial>
       <origin rpy="0 0 0" xyz="0.008987 0.002243 0.003013"/>
       <mass value="25"/>
@@ -376,9 +370,9 @@
       <material name="orange"/>
     </visual>
     <collision>
-      <origin rpy="1.5707963267948966 0 0" xyz="0 -0.12675 0"/>
+      <origin rpy="3.141592653589793 0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.04" radius="0.09"/>
+        <mesh filename="package://b1_description/meshes/hip.dae" scale="1 1 1"/>
       </geometry>
     </collision>
     <inertial>
@@ -429,9 +423,9 @@
       <material name="orange"/>
     </visual>
     <collision>
-      <origin rpy="0 1.5707963267948966 0" xyz="0 0 -0.175"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <box size="0.35 0.05 0.08"/>
+        <mesh filename="package://b1_description/meshes/thigh_mirror.dae" scale="1 1 1"/>
       </geometry>
     </collision>
     <inertial>
@@ -482,9 +476,9 @@
       <material name="orange"/>
     </visual>
     <collision>
-      <origin rpy="0 1.5707963267948966 0" xyz="0 0 -0.175"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <box size="0.35 0.04 0.05"/>
+        <mesh filename="package://b1_description/meshes/calf.dae" scale="1 1 1"/>
       </geometry>
     </collision>
     <inertial>
@@ -589,9 +583,9 @@
       <material name="orange"/>
     </visual>
     <collision>
-      <origin rpy="1.5707963267948966 0 0" xyz="0 0.12675 0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.04" radius="0.09"/>
+        <mesh filename="package://b1_description/meshes/hip.dae" scale="1 1 1"/>
       </geometry>
     </collision>
     <inertial>
@@ -642,9 +636,9 @@
       <material name="orange"/>
     </visual>
     <collision>
-      <origin rpy="0 1.5707963267948966 0" xyz="0 0 -0.175"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <box size="0.35 0.05 0.08"/>
+        <mesh filename="package://b1_description/meshes/thigh.dae" scale="1 1 1"/>
       </geometry>
     </collision>
     <inertial>
@@ -695,9 +689,9 @@
       <material name="orange"/>
     </visual>
     <collision>
-      <origin rpy="0 1.5707963267948966 0" xyz="0 0 -0.175"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <box size="0.35 0.04 0.05"/>
+        <mesh filename="package://b1_description/meshes/calf.dae" scale="1 1 1"/>
       </geometry>
     </collision>
     <inertial>
@@ -802,9 +796,9 @@
       <material name="orange"/>
     </visual>
     <collision>
-      <origin rpy="1.5707963267948966 0 0" xyz="0 -0.12675 0"/>
+      <origin rpy="3.141592653589793 3.141592653589793 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.04" radius="0.09"/>
+        <mesh filename="package://b1_description/meshes/hip.dae" scale="1 1 1"/>
       </geometry>
     </collision>
     <inertial>
@@ -855,9 +849,9 @@
       <material name="orange"/>
     </visual>
     <collision>
-      <origin rpy="0 1.5707963267948966 0" xyz="0 0 -0.175"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <box size="0.35 0.05 0.08"/>
+        <mesh filename="package://b1_description/meshes/thigh_mirror.dae" scale="1 1 1"/>
       </geometry>
     </collision>
     <inertial>
@@ -908,9 +902,9 @@
       <material name="orange"/>
     </visual>
     <collision>
-      <origin rpy="0 1.5707963267948966 0" xyz="0 0 -0.175"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <box size="0.35 0.04 0.05"/>
+        <mesh filename="package://b1_description/meshes/calf.dae" scale="1 1 1"/>
       </geometry>
     </collision>
     <inertial>
@@ -1015,9 +1009,9 @@
       <material name="orange"/>
     </visual>
     <collision>
-      <origin rpy="1.5707963267948966 0 0" xyz="0 0.12675 0"/>
+      <origin rpy="0 3.141592653589793 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.04" radius="0.09"/>
+        <mesh filename="package://b1_description/meshes/hip.dae" scale="1 1 1"/>
       </geometry>
     </collision>
     <inertial>
@@ -1068,9 +1062,9 @@
       <material name="orange"/>
     </visual>
     <collision>
-      <origin rpy="0 1.5707963267948966 0" xyz="0 0 -0.175"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <box size="0.35 0.05 0.08"/>
+        <mesh filename="package://b1_description/meshes/thigh.dae" scale="1 1 1"/>
       </geometry>
     </collision>
     <inertial>
@@ -1121,9 +1115,9 @@
       <material name="orange"/>
     </visual>
     <collision>
-      <origin rpy="0 1.5707963267948966 0" xyz="0 0 -0.175"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <box size="0.35 0.04 0.05"/>
+        <mesh filename="package://b1_description/meshes/calf.dae" scale="1 1 1"/>
       </geometry>
     </collision>
     <inertial>
