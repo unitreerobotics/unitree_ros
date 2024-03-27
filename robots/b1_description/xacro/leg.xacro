@@ -63,7 +63,7 @@
                     <origin rpy="${PI} ${PI} 0" xyz="0 0 0"/>
                 </xacro:if>
                 <geometry>
-                    <mesh filename="package://b1_description/meshes/hip.dae" scale="1 1 1"/>
+                    <mesh filename="package://b1_description/meshes/hipb.dae" scale="1 1 1"/>
                 </geometry>
                 <material name="orange"/>
             </visual>
@@ -81,7 +81,7 @@
                     <origin rpy="${PI} ${PI} 0" xyz="0 0 0"/>
                 </xacro:if>
                 <geometry>
-                    <mesh filename="package://b1_description/meshes/hip.dae" scale="1 1 1"/>
+                    <mesh filename="package://b1_description/meshes/hipb.dae" scale="1 1 1"/>
                 </geometry>
             </collision>
             <inertial>
@@ -138,10 +138,10 @@
                 <origin rpy="0 0 0" xyz="0 0 0"/>
                 <geometry>
                     <xacro:if value="${mirror_dae == True}">
-                        <mesh filename="package://b1_description/meshes/thigh.dae" scale="1 1 1"/>
+                        <mesh filename="package://b1_description/meshes/thighb.dae" scale="1 1 1"/>
                     </xacro:if>
                     <xacro:if value="${mirror_dae == False}">
-                        <mesh filename="package://b1_description/meshes/thigh_mirror.dae" scale="1 1 1"/>
+                        <mesh filename="package://b1_description/meshes/thigh_mirrorb.dae" scale="1 1 1"/>
                     </xacro:if>
                 </geometry>
                 <material name="orange"/>
@@ -150,10 +150,10 @@
                 <origin rpy="0 0 0" xyz="0 0 0"/>
                 <geometry>
                     <xacro:if value="${mirror_dae == True}">
-                        <mesh filename="package://b1_description/meshes/thigh.dae" scale="1 1 1"/>
+                        <mesh filename="package://b1_description/meshes/thighb.dae" scale="1 1 1"/>
                     </xacro:if>
                     <xacro:if value="${mirror_dae == False}">
-                        <mesh filename="package://b1_description/meshes/thigh_mirror.dae" scale="1 1 1"/>
+                        <mesh filename="package://b1_description/meshes/thigh_mirrorb.dae" scale="1 1 1"/>
                     </xacro:if>
                 </geometry>
             </collision>
@@ -210,14 +210,14 @@
             <visual>
                 <origin rpy="0 0 0" xyz="0 0 0"/>
                 <geometry>
-                    <mesh filename="package://b1_description/meshes/calf.dae" scale="1 1 1"/>
+                    <mesh filename="package://b1_description/meshes/calfb.dae" scale="1 1 1"/>
                 </geometry>
                 <material name="orange"/>
             </visual>
             <collision>
                 <origin rpy="0 0 0" xyz="0 0 0"/>
                 <geometry>
-                    <mesh filename="package://b1_description/meshes/calf.dae" scale="1 1 1"/>
+                    <mesh filename="package://b1_description/meshes/calfb.dae" scale="1 1 1"/>
                 </geometry>
             </collision>
             <inertial>
