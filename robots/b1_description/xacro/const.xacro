@@ -74,7 +74,7 @@
 
     <!-- dynamics inertial value -->
     <!-- trunk -->
-    <xacro:property name="trunk_mass" value="25"/>
+    <xacro:property name="trunk_mass" value="29.45"/>
     <xacro:property name="trunk_com_x" value="0.008987"/>
     <xacro:property name="trunk_com_y" value="0.002243"/>
     <xacro:property name="trunk_com_z" value="0.003013"/>
@@ -86,7 +86,7 @@
     <xacro:property name="trunk_izz" value="0.783777558"/>
 
     <!-- hip (left front) -->
-    <xacro:property name="hip_mass" value="2.1"/>
+    <xacro:property name="hip_mass" value="2.15"/>
     <xacro:property name="hip_com_x" value="-0.020298"/>
     <xacro:property name="hip_com_y" value="0.009758"/>
     <xacro:property name="hip_com_z" value="0.000109"/>
@@ -109,7 +109,7 @@
     <xacro:property name="hip_rotor_izz" value="0.000219397"/>
 
     <!-- thigh -->
-    <xacro:property name="thigh_mass" value="3.934"/>
+    <xacro:property name="thigh_mass" value="4.3"/>
     <xacro:property name="thigh_com_x" value="-0.000235"/>
     <xacro:property name="thigh_com_y" value="-0.028704"/>
     <xacro:property name="thigh_com_z" value="-0.054169"/>
@@ -132,7 +132,7 @@
     <xacro:property name="thigh_rotor_izz" value="0.000485657"/>
 
     <!-- calf -->
-    <xacro:property name="calf_mass" value="0.857"/>
+    <xacro:property name="calf_mass" value="1.05"/>
     <xacro:property name="calf_com_x" value="0.005237"/>
     <xacro:property name="calf_com_y" value="0.0"/>
     <xacro:property name="calf_com_z" value="-0.202805"/>
