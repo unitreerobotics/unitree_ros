@@ -1143,4 +1143,127 @@ Stephen Brawner (brawner@gmail.com)
     <axis
       xyz="0 0 0" />
   </joint>
+
+
+
+  <link
+    name="d435_left_imager_link">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <sphere
+          radius="0.001" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <sphere
+          radius="0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="d435_left_imager_joint"
+    type="fixed">
+    <origin
+      xyz="0.10848474394 0.0175 0.69317107367"
+      rpy="-2.45735 0 -1.57080" />
+    <parent
+      link="torso_link" />
+    <child
+      link="d435_left_imager_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="d435_rgb_module_link">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <sphere
+          radius="0.001" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <sphere
+          radius="0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="d435_rgb_module_joint"
+    type="fixed">
+    <origin
+      xyz="0.10848474394 0.0325 0.69317107367"
+      rpy="-2.45735 0 -1.57080" />
+    <parent
+      link="torso_link" />
+    <child
+      link="d435_rgb_module_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="mid360_link">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <sphere
+          radius="0.001" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <sphere
+          radius="0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="mid360_joint"
+    type="fixed">
+    <origin
+      xyz="0.04729990180 0 0.67492878653"
+      rpy="0 0.243124 0" />
+    <parent
+      link="torso_link" />
+    <child
+      link="mid360_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+
+  
 </robot>
