@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<!-- configurable constant parameters for b1z1_description -->
+<robot name="b1z1_description" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- include B1 constants -->
+    <xacro:include filename="$(find b1_description)/xacro/const.xacro"/>
+
+    <!-- Z1 mounting point with respect to B1 trunk -->
+    <xacro:property name="arm_offset_x" value="${hip_offset_x}"/>
+    <xacro:property name="arm_offset_y" value="0"/>
+    <xacro:property name="arm_offset_z" value="${trunk_height/2.0 + 0.01}"/>
+    <xacro:property name="arm_offset_r" value="0"/>
+    <xacro:property name="arm_offset_p" value="0"/>
+    <xacro:property name="arm_offset_yaw" value="0"/>
+
+</robot>

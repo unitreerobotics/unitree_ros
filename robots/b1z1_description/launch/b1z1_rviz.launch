@@ -1,0 +1,18 @@
+<launch>
+
+    <arg name="user_debug" default="false"/>
+    <arg name="UnitreeGripperYN" default="true"/>
+
+    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find b1z1_description)/xacro/robot.xacro'
+            DEBUG:=$(arg user_debug) UnitreeGripper:=$(arg UnitreeGripperYN)"/>
+
+    <node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="joint_state_publisher"/>
+
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+        <param name="publish_frequency" type="double" value="1000.0"/>
+    </node>
+
+    <node pkg="rviz" type="rviz" name="rviz" respawn="false" output="screen"
+        args="-d $(find b1_description)/launch/check_joint.rviz"/>
+
+</launch>
