@@ -2,6 +2,7 @@
 
 <robot name="z1_description" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
+    <!-- Z1 macro: describes Unitree Z1 robotic arm -->
     <xacro:macro name="z1" params="UnitreeGripper:=false">
 
         <xacro:include filename="$(find z1_description)/xacro/const.xacro"/>

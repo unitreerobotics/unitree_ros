@@ -2,6 +2,7 @@
 
 <robot name="b1_description" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
+    <!-- B1 macro: describes Unitree B1 quadruped robot -->
     <xacro:macro name="b1">
 
         <xacro:include filename="$(find b1_description)/xacro/const.xacro"/>

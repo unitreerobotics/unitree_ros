@@ -1,14 +1,21 @@
 <?xml version="1.0"?>
 
+<!-- b1_description: Unitree B1 quadruped robot -->
 <robot name="b1_description" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <xacro:arg name="DEBUG" default="false"/>
+    <!-- define arguments -->
+    <xacro:arg name="DEBUG" default="false"/> <!-- debug mode switch -->
 
+    <!-- include xacro files -->
     <xacro:include filename="$(find b1_description)/xacro/b1.xacro"/>
     <xacro:include filename="$(find b1_description)/xacro/gazebo.xacro"/>
 
-    <!-- Debug mode will hung up the robot, use "true" or "false" to switch it. -->
+    <!-- B1 macro: expands to describe B1 quadruped robot -->
+    <xacro:b1/>
+
+    <!-- debug mode configuration -->
     <xacro:if value="$(arg DEBUG)">
+        <!-- statically affix B1 base to world; i.e. "hang up" the robot -->
         <link name="world"/>
         <joint name="base_static_joint" type="fixed">
             <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -16,9 +23,5 @@
             <child link="base"/>
         </joint>
     </xacro:if>
-
-    <xacro:b1/>
-
-    <!-- <xacro:stairs stairs="15" xpos="0" ypos="2.0" zpos="0" /> -->
 
 </robot>

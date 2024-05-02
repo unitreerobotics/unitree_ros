@@ -13,7 +13,7 @@
     <xacro:include filename="$(find b1z1_description)/xacro/const.xacro"/>
     <xacro:include filename="$(find b1z1_description)/xacro/gazebo.xacro"/>
 
-    <!-- B1 macro: expands to describe B1 quadruped -->
+    <!-- B1 macro: expands to describe B1 quadruped robot -->
     <xacro:b1/>
 
     <!-- Z1 macro: expands to describe Z1 robotic arm -->
@@ -22,7 +22,8 @@
     <!-- define joint affixing Z1 to B1 -->
     <joint name="trunk_arm_joint" type="fixed">
         <!-- Z1 mounting point wrt B1 trunk; configurable in const.xacro -->
-        <origin rpy="${arm_offset_r} ${arm_offset_p} ${arm_offset_yaw}" xyz="${arm_offset_x} ${arm_offset_y} ${arm_offset_z}"/>
+        <origin rpy="${arm_offset_r} ${arm_offset_p} ${arm_offset_yaw}"
+            xyz="${arm_offset_x} ${arm_offset_y} ${arm_offset_z}"/>
         <!-- define parent and child links -->
         <parent link="trunk"/>
         <child link="link00"/>
@@ -30,7 +31,7 @@
 
     <!-- debug mode configuration -->
     <xacro:if value="$(arg DEBUG)">
-        <!-- debug mode hangs up the robot; i.e., statically affixes B1 base to world -->
+        <!-- statically affix B1 base to world; i.e. "hang up" the robot -->
         <link name="world"/>
         <joint name="base_static_joint" type="fixed">
             <origin rpy="0 0 0" xyz="0 0 0"/>

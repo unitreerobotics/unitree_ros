@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
+
+<!-- Gazebo-specific elements for b1z1_description -->
 <robot>
-      <!-- ros_control plugin -->
+
+    <!-- ros_control plugin -->
     <gazebo>
         <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
             <robotNamespace>/b1z1_gazebo</robotNamespace>
