@@ -8,7 +8,7 @@ This package includes a streamlined robot description (URDF & MJCF) for the [Uni
   <img src="g1.png" width="500"/>
 </p>
 
-Unitree G1 have 37 DOFs:
+Current G1 have 37 DOFs:
 
 ```text
 root [⚓] => /pelvis/
@@ -60,8 +60,7 @@ root [⚓] => /pelvis/
 
    ```bash
    pip install mujoco
-
    python -m mujoco.viewer
    ```
 
-2. Drag and drop the MJCF/URDF model file (`scene.xml`/`g1.urdf`) to the MuJoCo Viewer.
+2. Drag and drop the MJCF model file (`scene.xml`) to the MuJoCo Viewer.
