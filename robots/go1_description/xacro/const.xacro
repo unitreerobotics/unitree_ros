@@ -56,8 +56,8 @@
     <xacro:property name="calf_rotor_offset_z" value="0.0"/>
 
     <!-- joint limits -->
-    <xacro:property name="damping" value="0.01"/>
-    <xacro:property name="friction" value="0.2"/>
+    <xacro:property name="damping" value="0.0"/>
+    <xacro:property name="friction" value="0.0"/>
     <xacro:property name="hip_position_max" value="0.863"/>
     <xacro:property name="hip_position_min" value="-0.863"/>
     <xacro:property name="hip_velocity_max" value="30.1"/>
