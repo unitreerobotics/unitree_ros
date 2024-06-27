@@ -1,0 +1,252 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:include filename="$(find g1_description)/xacro/leg_transmission.xacro"/>
+    <xacro:macro name="leg" params="name mirror">
+
+        <!-- checked -->
+        <joint name="${name}_hip_pitch_joint" type="revolute">
+            <origin xyz="${hip_pitch_joint_offset_x} ${mirror*hip_pitch_joint_offset_y} ${hip_pitch_joint_offset_z}" rpy="0 ${hip_pitch_joint_offset_pitch} 0"/>
+            <parent link="pelvis"/>
+            <child link="${name}_hip_pitch_link"/>
+            <axis xyz="0 1 0"/>
+            <limit lower="${hip_pitch_joint_position_min}" upper="${hip_pitch_joint_position_max}" effort="${hip_pitch_joint_torque_max}" velocity="${hip_pitch_joint_velocity_max}"/>
+        </joint>
+
+        <!-- Leg -->
+        <link name="${name}_hip_pitch_link">
+            <inertial>
+                <origin xyz="${hip_pitch_link_com_x} ${mirror*hip_pitch_link_com_y} ${hip_pitch_link_com_z}" rpy="0 0 0"/>
+                <mass value="${hip_pitch_link_mass}"/>
+                <inertia 
+                    ixx="${hip_pitch_link_ixx}" ixy="${mirror*hip_pitch_link_ixy}" ixz="${hip_pitch_link_ixz}" 
+                    iyy="${hip_pitch_link_iyy}" iyz="${mirror*hip_pitch_link_iyz}" 
+                    izz="${hip_pitch_link_izz}"/>
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://g1_description/meshes/${name}_hip_pitch_link.STL"/>
+                </geometry>
+                <material name="">
+                    <color rgba="0.2 0.2 0.2 1"/>
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="-0.005 ${mirror*0.05} 0" rpy="0 1.5707 0"/>
+                <geometry>
+                    <cylinder radius="0.05" length="0.06"/>
+                </geometry>
+            </collision>
+        </link>
+        
+        <joint name="${name}_hip_roll_joint" type="revolute">
+            <origin xyz="${hip_roll_joint_offset_x} ${mirror*hip_roll_joint_offset_y} ${hip_roll_joint_offset_z}" rpy="0 0 0"/>
+            <parent link="${name}_hip_pitch_link"/>
+            <child link="${name}_hip_roll_link"/>
+            <axis xyz="1 0 0"/>
+            <xacro:if value="${mirror == 1}">
+                <limit lower="${hip_roll_joint_position_min}" upper="${hip_roll_joint_position_max}" effort="${hip_roll_joint_torque_max}" velocity="${hip_roll_joint_velocity_max}"/>
+            </xacro:if>
+            <xacro:if value="${mirror == -1}">
+                <limit lower="${mirror*hip_roll_joint_position_max}" upper="${mirror*hip_roll_joint_position_min}" effort="${hip_roll_joint_torque_max}" velocity="${hip_roll_joint_velocity_max}"/>
+            </xacro:if>
+        </joint>
+        
+        <link name="${name}_hip_roll_link">
+            <inertial>
+                <origin xyz="${hip_roll_link_com_x} ${mirror*hip_roll_link_com_y} ${hip_roll_link_com_z}" rpy="0 0 0"/>
+                <mass value="${hip_roll_link_mass}"/>
+                <inertia 
+                    ixx="${hip_roll_link_ixx}" ixy="${mirror*hip_roll_link_ixy}" ixz="${hip_roll_link_ixz}" 
+                    iyy="${hip_roll_link_iyy}" iyz="${mirror*hip_roll_link_iyz}" 
+                    izz="${hip_roll_link_izz}"/>
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://g1_description/meshes/${name}_hip_roll_link.STL"/>
+                </geometry>
+                <material name="">
+                    <color rgba="0.7 0.7 0.7 1"/>
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="0.019 -0.0 -0.11" rpy="0 0 0"/>
+                <geometry>
+                    <box size="0.1 0.070 0.02"/>
+                </geometry>
+            </collision>
+        </link>
+        
+        <joint name="${name}_hip_yaw_joint" type="revolute">
+            <origin xyz="${hip_yaw_joint_offset_x} ${mirror*hip_yaw_joint_offset_y} ${hip_yaw_joint_offset_z}" rpy="0 0 0"/>
+            <parent link="${name}_hip_roll_link"/>
+            <child link="${name}_hip_yaw_link"/>
+            <axis xyz="0 0 1"/>
+            <limit lower="${hip_yaw_joint_position_min}" upper="${hip_yaw_joint_position_max}" effort="${hip_yaw_joint_torque_max}" velocity="${hip_yaw_joint_velocity_max}"/>
+        </joint>
+   
+        <link name="${name}_hip_yaw_link">
+            <inertial>
+                <origin xyz="${hip_yaw_link_com_x} ${mirror*hip_yaw_link_com_y} ${hip_yaw_link_com_z}" rpy="0 0 0"/>
+                <mass value="${hip_yaw_link_mass}"/>
+                <inertia 
+                    ixx="${hip_yaw_link_ixx}" ixy="${mirror*hip_yaw_link_ixy}" ixz="${hip_yaw_link_ixz}" 
+                    iyy="${hip_yaw_link_iyy}" iyz="${mirror*hip_yaw_link_iyz}" 
+                    izz="${hip_yaw_link_izz}"/>
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://g1_description/meshes/${name}_hip_yaw_link.STL"/>
+                </geometry>
+                <material name="">
+                    <color rgba="0.7 0.7 0.7 1"/>
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="-0.075 0 -0.18" rpy="1.5707 0 0"/>
+                <geometry>
+                    <cylinder radius="0.045" length="0.06"/>
+                </geometry>
+            </collision>
+        </link>
+        
+        <joint name="${name}_knee_joint" type="revolute">
+            <origin xyz="${knee_joint_offset_x} ${mirror*knee_joint_offset_y} ${knee_joint_offset_z}" rpy="0 ${knee_joint_offset_pitch} 0"/>
+            <parent link="${name}_hip_yaw_link"/>
+            <child link="${name}_knee_link"/>
+            <axis xyz="0 1 0"/>
+            <limit lower="${knee_joint_position_min}" upper="${knee_joint_position_max}" effort="${knee_joint_torque_max}" velocity="${knee_joint_velocity_max}"/>
+        </joint>
+        
+        <link name="${name}_knee_link">
+            <inertial>
+                <origin xyz="${knee_link_com_x} ${mirror*knee_link_com_y} ${knee_link_com_z}" rpy="0 0 0"/>
+                <mass value="${knee_link_mass}"/>
+                <inertia 
+                    ixx="${knee_link_ixx}" ixy="${mirror*knee_link_ixy}" ixz="${knee_link_ixz}" 
+                    iyy="${knee_link_iyy}" iyz="${mirror*knee_link_iyz}" 
+                    izz="${knee_link_izz}"/>
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://g1_description/meshes/${name}_knee_link.STL"/>
+                </geometry>
+                <material name="">
+                    <color rgba="0.7 0.7 0.7 1"/>
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="0.007 ${mirror*0.005} -0.15" rpy="0 0 0"/>
+                <geometry>
+                    <cylinder radius="0.015" length="0.15"/>
+                </geometry>
+            </collision>
+        </link>
+        
+        <joint name="${name}_ankle_pitch_joint" type="revolute">
+            <origin xyz="${ankle_pitch_joint_offset_x} ${mirror*ankle_pitch_joint_offset_y} ${ankle_pitch_joint_offset_z}" rpy="0 ${ankle_pitch_joint_offset_pitch} 0"/>
+            <parent link="${name}_knee_link"/>
+            <child link="${name}_ankle_pitch_link"/>
+            <axis xyz="0 1 0"/>
+            <limit lower="${ankle_pitch_joint_position_min}" upper="${ankle_pitch_joint_position_max}" effort="${ankle_pitch_joint_torque_max}" velocity="${ankle_pitch_joint_velocity_max}"/>
+        </joint>
+
+        <link name="${name}_ankle_pitch_link">
+            <inertial>
+                <origin xyz="${ankle_pitch_link_com_x} ${mirror*ankle_pitch_link_com_y} ${ankle_pitch_link_com_z}" rpy="0 0 0"/>
+                <mass value="${ankle_pitch_link_mass}"/>
+                <inertia 
+                    ixx="${ankle_pitch_link_ixx}" ixy="${mirror*ankle_pitch_link_ixy}" ixz="${ankle_pitch_link_ixz}" 
+                    iyy="${ankle_pitch_link_iyy}" iyz="${mirror*ankle_pitch_link_iyz}" 
+                    izz="${ankle_pitch_link_izz}"/>
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                <mesh filename="package://g1_description/meshes/${name}_ankle_pitch_link.STL"/>
+                </geometry>
+                <material name="">
+                <color rgba="0.7 0.7 0.7 1"/>
+                </material>
+            </visual>
+        </link>
+
+        <joint name="${name}_ankle_roll_joint" type="revolute">
+            <origin xyz="${ankle_roll_joint_offset_x} ${mirror*ankle_roll_joint_offset_y} ${ankle_roll_joint_offset_z}" rpy="0 0 0"/>
+            <parent link="${name}_ankle_pitch_link"/>
+            <child link="${name}_ankle_roll_link"/>
+            <axis xyz="1 0 0"/>
+            <limit lower="${ankle_roll_joint_position_min}" upper="${ankle_roll_joint_position_max}" effort="${ankle_roll_joint_torque_max}" velocity="${ankle_roll_joint_velocity_max}"/>
+        </joint>
+
+        <link name="${name}_ankle_roll_link">
+            <inertial>
+                <origin xyz="${ankle_roll_link_com_x} ${mirror*ankle_roll_link_com_y} ${ankle_roll_link_com_z}" rpy="0 0 0"/>
+                <mass value="${ankle_roll_link_mass}"/>
+                <inertia 
+                    ixx="${ankle_roll_link_ixx}" ixy="${mirror*ankle_roll_link_ixy}" ixz="${ankle_roll_link_ixz}" 
+                    iyy="${ankle_roll_link_iyy}" iyz="${mirror*ankle_roll_link_ixz}" 
+                    izz="${ankle_roll_link_izz}"/>
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                <mesh filename="package://g1_description/meshes/${name}_ankle_roll_link.STL"/>
+                </geometry>
+                <material name="">
+                <color rgba="0.2 0.2 0.2 1"/>
+                </material>
+            </visual>
+            <!-- <collision>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                <mesh filename="package://g1_description/meshes/${name}_ankle_roll_link.STL"/>
+                </geometry>
+            </collision> -->
+            <collision>
+                <origin xyz="-0.07 0.03 -0.03" rpy="0 0 0"/>
+                <geometry>
+                    <sphere radius="0.003"/>
+                </geometry>
+            </collision>
+            <collision>
+            <origin xyz="-0.07 -0.03 -0.03" rpy="0 0 0"/>
+                <geometry>
+                    <sphere radius="0.003"/>
+                </geometry>
+            </collision>
+            <collision>
+                <origin xyz="0.14 0.03 -0.03" rpy="0 0 0"/>
+                <geometry>
+                    <sphere radius="0.003"/>
+                </geometry>
+            </collision>
+            <collision>
+                <origin xyz="0.14 -0.03 -0.03" rpy="0 0 0"/>
+                <geometry>
+                    <sphere radius="0.003"/>
+                </geometry>
+            </collision>
+            <collision>
+                <origin xyz="-0.060 0.010 0.020" rpy="0 0 0"/>
+                <geometry>
+                    <sphere radius="0.003"/>
+                </geometry>
+            </collision>
+            <collision>
+                <origin xyz="-0.060 -0.010 0.020" rpy="0 0 0"/>
+                <geometry>
+                    <sphere radius="0.003"/>
+                </geometry>
+            </collision>
+        </link>
+
+        <xacro:leg_transmission name="${name}"/>
+
+    </xacro:macro>
+</robot>

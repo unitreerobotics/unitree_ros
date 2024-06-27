@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:include filename="$(find g1_description)/xacro/arm_transmission.xacro"/>
+
+    <xacro:macro name="arm" params="name mirror">
+
+        <joint name="${name}_shoulder_pitch_joint" type="revolute">
+            <origin xyz="${shoulder_pitch_joint_offset_x} ${mirror*shoulder_pitch_joint_offset_y} ${shoulder_pitch_joint_offset_z}" rpy="${mirror*shoulder_pitch_joint_offset_roll} 0 0"/>
+            <parent link="torso_link"/>
+            <child link="${name}_shoulder_pitch_link"/>
+            <axis xyz="0 1 0"/>
+            <limit lower="${shoulder_pitch_joint_position_min}" upper="${shoulder_pitch_joint_position_max}" effort="${shoulder_pitch_joint_torque_max}" velocity="${shoulder_pitch_joint_velocity_max}"/>
+        </joint>
+
+        <link name="${name}_shoulder_pitch_link">
+            <inertial>
+                <origin xyz="${shoulder_pitch_link_com_x} ${mirror*shoulder_pitch_link_com_y} ${shoulder_pitch_link_com_z}" rpy="0 0 0"/>
+                <mass value="${shoulder_pitch_link_mass}"/>
+                <inertia 
+                    ixx="${shoulder_pitch_link_ixx}" ixy="${mirror*shoulder_pitch_link_ixy}" ixz="${shoulder_pitch_link_ixz}" 
+                    iyy="${shoulder_pitch_link_iyy}" iyz="${mirror*shoulder_pitch_link_iyz}" 
+                    izz="${shoulder_pitch_link_izz}"/>
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://g1_description/meshes/${name}_shoulder_pitch_link.STL"/>
+                </geometry>
+                <material name="">
+                    <color rgba="0.7 0.7 0.7 1"/>
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="0 ${mirror*0.06} 0" rpy="0 1.5707 0"/>
+                <geometry>
+                    <cylinder radius="0.03" length="0.065"/>
+                </geometry>
+            </collision>
+        </link>
+
+        <joint name="${name}_shoulder_roll_joint" type="revolute">
+            <origin xyz="${shoulder_roll_joint_offset_x} ${mirror*shoulder_roll_joint_offset_y} ${shoulder_roll_joint_offset_z}" rpy="${mirror*shoulder_roll_joint_offset_roll} 0 0"/>
+            <parent link="${name}_shoulder_pitch_link"/>
+            <child link="${name}_shoulder_roll_link"/>
+            <axis xyz="1 0 0"/>
+            <limit lower="${shoulder_roll_joint_position_min}" upper="${shoulder_roll_joint_position_max}" effort="${shoulder_roll_joint_torque_max}" velocity="${shoulder_roll_joint_velocity_max}"/>
+             <xacro:if value="${mirror == 1}">
+                <limit lower="${shoulder_roll_joint_position_min}" upper="${shoulder_roll_joint_position_max}" effort="${shoulder_roll_joint_torque_max}" velocity="${shoulder_roll_joint_velocity_max}"/>
+            </xacro:if>
+            <xacro:if value="${mirror == -1}">
+                <limit lower="${mirror*shoulder_roll_joint_position_max}" upper="${mirror*shoulder_roll_joint_position_min}" effort="${shoulder_roll_joint_torque_max}" velocity="${shoulder_roll_joint_velocity_max}"/>
+            </xacro:if>
+       </joint>
+
+        <link name="${name}_shoulder_roll_link">
+            <inertial>
+                <origin xyz="${shoulder_roll_link_com_x} ${mirror*shoulder_roll_link_com_y} ${shoulder_roll_link_com_z}" rpy="0 0 0"/>
+                <mass value="${shoulder_roll_link_mass}"/>
+                <inertia 
+                    ixx="${shoulder_roll_link_ixx}" ixy="${mirror*shoulder_roll_link_ixy}" ixz="${shoulder_roll_link_ixz}" 
+                    iyy="${shoulder_roll_link_iyy}" iyz="${mirror*shoulder_roll_link_iyz}" 
+                    izz="${shoulder_roll_link_izz}"/>
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://g1_description/meshes/${name}_shoulder_roll_link.STL"/>
+                </geometry>
+                <material name="">
+                    <color rgba="0.7 0.7 0.7 1"/>
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="-0.005 ${mirror*0.01} -0.080" rpy="0 0 0"/>
+                <geometry>
+                    <cylinder radius="0.03" length="0.03"/>
+                </geometry>
+            </collision>
+        </link>
+
+        <joint name="${name}_shoulder_yaw_joint" type="revolute">
+            <origin xyz="${shoulder_yaw_joint_offset_x} ${mirror*shoulder_yaw_joint_offset_y} ${shoulder_yaw_joint_offset_z}" rpy="0 0 0"/>
+            <parent link="${name}_shoulder_roll_link"/>
+            <child link="${name}_shoulder_yaw_link"/>
+            <axis xyz="0 0 1"/>
+            <limit lower="${shoulder_yaw_joint_position_min}" upper="${shoulder_yaw_joint_position_max}" effort="${shoulder_yaw_joint_torque_max}" velocity="${shoulder_yaw_joint_velocity_max}"/>
+        </joint>
+
+        <link name="${name}_shoulder_yaw_link">
+            <inertial>
+                <origin xyz="${shoulder_yaw_link_com_x} ${mirror*shoulder_yaw_link_com_y} ${shoulder_yaw_link_com_z}" rpy="0 0 0"/>
+                <mass value="${shoulder_yaw_link_mass}"/>
+                <inertia 
+                    ixx="${shoulder_yaw_link_ixx}" ixy="${mirror*shoulder_yaw_link_ixy}" ixz="${shoulder_yaw_link_ixz}" 
+                    iyy="${shoulder_yaw_link_iyy}" iyz="${mirror*shoulder_yaw_link_iyz}" 
+                    izz="${shoulder_yaw_link_izz}"/>
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://g1_description/meshes/${name}_shoulder_yaw_link.STL"/>
+                </geometry>
+                <material name="">
+                    <color rgba="0.7 0.7 0.7 1"/>
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="-0.0 -0.0 -0.05" rpy="0 0 0"/>
+                <geometry>
+                    <cylinder radius="0.03" length="0.03"/>
+                </geometry>
+            </collision>
+        </link>
+
+        <joint name="${name}_elbow_pitch_joint" type="revolute">
+            <origin xyz="${elbow_pitch_joint_offset_x} ${mirror*elbow_pitch_joint_offset_y} ${elbow_pitch_joint_offset_z}" rpy="0 0 0"/>
+            <parent link="${name}_shoulder_yaw_link"/>
+            <child link="${name}_elbow_pitch_link"/>
+            <axis xyz="0 1 0"/>
+            <limit lower="${elbow_pitch_joint_position_min}" upper="${elbow_pitch_joint_position_max}" effort="${elbow_pitch_joint_torque_max}" velocity="${elbow_pitch_joint_velocity_max}"/>
+        </joint>
+
+        <link name="${name}_elbow_pitch_link">
+            <inertial>
+                <origin xyz="${elbow_pitch_link_com_x} ${mirror*elbow_pitch_link_com_y} ${elbow_pitch_link_com_z}" rpy="0 0 0"/>
+                <mass value="${elbow_pitch_link_mass}"/>
+                <inertia 
+                    ixx="${elbow_pitch_link_ixx}" ixy="${mirror*elbow_pitch_link_ixy}" ixz="${elbow_pitch_link_ixz}" 
+                    iyy="${elbow_pitch_link_iyy}" iyz="${mirror*elbow_pitch_link_iyz}" 
+                    izz="${elbow_pitch_link_izz}"/>
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://g1_description/meshes/${name}_elbow_pitch_link.STL"/>
+                </geometry>
+                <material name="">
+                    <color rgba="0.7 0.7 0.7 1"/>
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="0.07 -0.0 -0.0" rpy="0 1.5707 0"/>
+                <geometry>
+                    <cylinder radius="0.03" length="0.03"/>
+                </geometry>
+            </collision>
+        </link>
+
+        <joint name="${name}_elbow_roll_joint" type="revolute">
+            <origin xyz="${elbow_roll_joint_offset_x} ${mirror*elbow_roll_joint_offset_y} ${elbow_roll_joint_offset_z}" rpy="0 0 0"/>
+            <parent link="${name}_elbow_pitch_link"/>
+            <child link="${name}_elbow_roll_link"/>
+            <axis xyz="1 0 0"/>
+            <limit lower="${elbow_roll_joint_position_min}" upper="${elbow_roll_joint_position_max}" effort="${elbow_roll_joint_torque_max}" velocity="${elbow_roll_joint_velocity_max}"/>
+        </joint>
+
+        <link name="${name}_elbow_roll_link">
+            <inertial>
+                <origin xyz="${elbow_roll_link_com_x} ${mirror*elbow_roll_link_com_y} ${elbow_roll_link_com_z}" rpy="0 0 0"/>
+                <mass value="${elbow_roll_link_mass}"/>
+                <inertia 
+                    ixx="${elbow_roll_link_ixx}" ixy="${mirror*elbow_roll_link_ixy}" ixz="${elbow_roll_link_ixz}" 
+                    iyy="${elbow_roll_link_iyy}" iyz="${mirror*elbow_roll_link_iyz}" 
+                    izz="${elbow_roll_link_izz}"/>
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                <mesh filename="package://g1_description/meshes/${name}_elbow_roll_link.STL"/>
+                </geometry>
+                <material name="">
+                <color rgba="0.7 0.7 0.7 1"/>
+                </material>
+            </visual>
+            <collision>
+            <origin xyz="0.09 0.005 -0.0" rpy="0 1.5707 0"/>
+            <geometry>
+                <cylinder radius="0.025" length="0.03"/>
+            </geometry>
+            </collision>
+        </link>
+
+        <xacro:arm_transmission name="${name}"/>
+
+    </xacro:macro>
+</robot>
