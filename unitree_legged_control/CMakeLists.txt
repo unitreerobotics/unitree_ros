@@ -23,10 +23,9 @@ catkin_package(
 
 include_directories(include ${catkin_INCLUDE_DIRS} ${Boost_INCLUDE_DIR})
 
-link_directories(${catkin_LIB_DIRS} lib)
-
 add_library( unitree_legged_control 
     src/joint_controller.cpp
+    src/unitree_joint_control_tool.cpp
 )
 add_dependencies(${PROJECT_NAME} unitree_legged_msgs_gencpp)
-target_link_libraries(unitree_legged_control ${catkin_LIBRARIES} unitree_joint_control_tool)
+target_link_libraries(unitree_legged_control ${catkin_LIBRARIES})
