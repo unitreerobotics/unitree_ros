@@ -43,7 +43,7 @@ Stephen Brawner (brawner@gmail.com)
           filename="package://h1_description/meshes/pelvis.dae" />
       </geometry>
       <material
-        name="">
+        name="dark">
         <color
           rgba="0.1 0.1 0.1 1" />
       </material>
@@ -80,7 +80,7 @@ Stephen Brawner (brawner@gmail.com)
           filename="package://h1_description/meshes/left_hip_yaw_link.dae" />
       </geometry>
       <material
-        name="">
+        name="dark">
         <color
           rgba="0.1 0.1 0.1 1" />
       </material>
@@ -135,7 +135,7 @@ Stephen Brawner (brawner@gmail.com)
           filename="package://h1_description/meshes/left_hip_roll_link.dae" />
       </geometry>
       <material
-        name="">
+        name="dark">
         <color
           rgba="0.1 0.1 0.1 1" />
       </material>
@@ -190,7 +190,7 @@ Stephen Brawner (brawner@gmail.com)
           filename="package://h1_description/meshes/left_hip_pitch_link.dae" />
       </geometry>
       <material
-        name="">
+        name="dark">
         <color
           rgba="0.1 0.1 0.1 1" />
       </material>
@@ -245,7 +245,7 @@ Stephen Brawner (brawner@gmail.com)
           filename="package://h1_description/meshes/left_knee_link.dae" />
       </geometry>
       <material
-        name="">
+        name="dark">
         <color
           rgba="0.1 0.1 0.1 1" />
       </material>
@@ -300,7 +300,7 @@ Stephen Brawner (brawner@gmail.com)
           filename="package://h1_description/meshes/left_ankle_link.dae" />
       </geometry>
       <material
-        name="">
+        name="dark">
         <color
           rgba="0.1 0.1 0.1 1" />
       </material>
@@ -355,7 +355,7 @@ Stephen Brawner (brawner@gmail.com)
           filename="package://h1_description/meshes/right_hip_yaw_link.dae" />
       </geometry>
       <material
-        name="">
+        name="dark">
         <color
           rgba="0.1 0.1 0.1 1" />
       </material>
@@ -410,7 +410,7 @@ Stephen Brawner (brawner@gmail.com)
           filename="package://h1_description/meshes/right_hip_roll_link.dae" />
       </geometry>
       <material
-        name="">
+        name="dark">
         <color
           rgba="0.1 0.1 0.1 1" />
       </material>
@@ -465,7 +465,7 @@ Stephen Brawner (brawner@gmail.com)
           filename="package://h1_description/meshes/right_hip_pitch_link.dae" />
       </geometry>
       <material
-        name="">
+        name="dark">
         <color
           rgba="0.1 0.1 0.1 1" />
       </material>
@@ -520,7 +520,7 @@ Stephen Brawner (brawner@gmail.com)
           filename="package://h1_description/meshes/right_knee_link.dae" />
       </geometry>
       <material
-        name="">
+        name="dark">
         <color
           rgba="0.1 0.1 0.1 1" />
       </material>
@@ -575,7 +575,7 @@ Stephen Brawner (brawner@gmail.com)
           filename="package://h1_description/meshes/right_ankle_link.dae" />
       </geometry>
       <material
-        name="">
+        name="dark">
         <color
           rgba="0.1 0.1 0.1 1" />
       </material>
@@ -630,7 +630,7 @@ Stephen Brawner (brawner@gmail.com)
           filename="package://h1_description/meshes/torso_link.dae" />
       </geometry>
       <material
-        name="">
+        name="dark">
         <color
           rgba="0.1 0.1 0.1 1" />
       </material>
@@ -685,7 +685,7 @@ Stephen Brawner (brawner@gmail.com)
           filename="package://h1_description/meshes/left_shoulder_pitch_link.dae" />
       </geometry>
       <material
-        name="">
+        name="dark">
         <color
           rgba="0.1 0.1 0.1 1" />
       </material>
@@ -740,7 +740,7 @@ Stephen Brawner (brawner@gmail.com)
           filename="package://h1_description/meshes/left_shoulder_roll_link.dae" />
       </geometry>
       <material
-        name="">
+        name="dark">
         <color
           rgba="0.1 0.1 0.1 1" />
       </material>
@@ -795,7 +795,7 @@ Stephen Brawner (brawner@gmail.com)
           filename="package://h1_description/meshes/left_shoulder_yaw_link.dae" />
       </geometry>
       <material
-        name="">
+        name="dark">
         <color
           rgba="0.1 0.1 0.1 1" />
       </material>
@@ -850,7 +850,7 @@ Stephen Brawner (brawner@gmail.com)
           filename="package://h1_description/meshes/left_elbow_link.dae" />
       </geometry>
       <material
-        name="">
+        name="dark">
         <color
           rgba="0.1 0.1 0.1 1" />
       </material>
@@ -905,7 +905,7 @@ Stephen Brawner (brawner@gmail.com)
           filename="package://h1_description/meshes/right_shoulder_pitch_link.dae" />
       </geometry>
       <material
-        name="">
+        name="dark">
         <color
           rgba="0.1 0.1 0.1 1" />
       </material>
@@ -960,7 +960,7 @@ Stephen Brawner (brawner@gmail.com)
           filename="package://h1_description/meshes/right_shoulder_roll_link.dae" />
       </geometry>
       <material
-        name="">
+        name="dark">
         <color
           rgba="0.1 0.1 0.1 1" />
       </material>
@@ -1015,7 +1015,7 @@ Stephen Brawner (brawner@gmail.com)
           filename="package://h1_description/meshes/right_shoulder_yaw_link.dae" />
       </geometry>
       <material
-        name="">
+        name="dark">
         <color
           rgba="0.1 0.1 0.1 1" />
       </material>
@@ -1070,7 +1070,7 @@ Stephen Brawner (brawner@gmail.com)
           filename="package://h1_description/meshes/right_elbow_link.dae" />
       </geometry>
       <material
-        name="">
+        name="dark">
         <color
           rgba="0.1 0.1 0.1 1" />
       </material>
@@ -1123,7 +1123,7 @@ Stephen Brawner (brawner@gmail.com)
           filename="package://h1_description/meshes/logo_link.dae" />
       </geometry>
       <material
-        name="">
+        name="white">
         <color
           rgba="1 1 1 1" />
       </material>
@@ -1157,7 +1157,7 @@ Stephen Brawner (brawner@gmail.com)
           radius="0.001" />
       </geometry>
       <material
-        name="">
+        name="white">
         <color
           rgba="1 1 1 1" />
       </material>
@@ -1196,7 +1196,7 @@ Stephen Brawner (brawner@gmail.com)
           radius="0.001" />
       </geometry>
       <material
-        name="">
+        name="white">
         <color
           rgba="1 1 1 1" />
       </material>
@@ -1235,7 +1235,7 @@ Stephen Brawner (brawner@gmail.com)
           radius="0.001" />
       </geometry>
       <material
-        name="">
+        name="white">
         <color
           rgba="1 1 1 1" />
       </material>
