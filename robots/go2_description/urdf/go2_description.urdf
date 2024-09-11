@@ -173,6 +173,18 @@ Stephen Brawner (brawner@gmail.com)
       effort="23.7"
       velocity="30.1" />
   </joint>
+  <link name="FL_hip_rotor">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.089"/>
+      <inertia ixx="0.000111842" ixy="0.0" ixz="0.0" iyy="0.000059647" iyz="0.0" izz="0.000059647"/>
+    </inertial>
+  </link>
+  <joint name="FL_hip_rotor_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0.11215 0.04675 0"/>
+    <parent link="base"/>
+    <child link="FL_hip_rotor"/>
+  </joint>
   <link
     name="FL_thigh">
     <inertial>
@@ -227,6 +239,18 @@ Stephen Brawner (brawner@gmail.com)
       upper="3.4907"
       effort="23.7"
       velocity="30.1" />
+  </joint>
+  <link name="FL_thigh_rotor">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.089"/>
+      <inertia ixx="0.000059647" ixy="0.0" ixz="0.0" iyy="0.000111842" iyz="0.0" izz="0.000059647"/>
+    </inertial>
+  </link>
+  <joint name="FL_thigh_rotor_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 -0.00015 0"/>
+    <parent link="FL_hip"/>
+    <child link="FL_thigh_rotor"/>
   </joint>
   <link
     name="FL_calf">
@@ -326,6 +350,18 @@ Stephen Brawner (brawner@gmail.com)
       link="FL_calflower1" />
     <axis
       xyz="0 0 0" />
+  </joint>
+  <link name="FL_calf_rotor">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.089"/>
+      <inertia ixx="0.000059647" ixy="0.0" ixz="0.0" iyy="0.000111842" iyz="0.0" izz="0.000059647"/>
+    </inertial>
+  </link>
+  <joint name="FL_calf_rotor_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 -0.03235 0"/>
+    <parent link="FL_thigh"/>
+    <child link="FL_calf_rotor"/>
   </joint>
   <link
     name="FL_foot">
@@ -432,6 +468,18 @@ Stephen Brawner (brawner@gmail.com)
       effort="23.7"
       velocity="30.1" />
   </joint>
+  <link name="FR_hip_rotor">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.089"/>
+      <inertia ixx="0.000111842" ixy="0.0" ixz="0.0" iyy="0.000059647" iyz="0.0" izz="0.000059647"/>
+    </inertial>
+  </link>
+  <joint name="FR_hip_rotor_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0.11215 -0.04675 0"/>
+    <parent link="base"/>
+    <child link="FR_hip_rotor"/>
+  </joint>
   <link
     name="FR_thigh">
     <inertial>
@@ -486,6 +534,18 @@ Stephen Brawner (brawner@gmail.com)
       upper="3.4907"
       effort="23.7"
       velocity="30.1" />
+  </joint>
+  <link name="FR_thigh_rotor">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.089"/>
+      <inertia ixx="0.000059647" ixy="0.0" ixz="0.0" iyy="0.000111842" iyz="0.0" izz="0.000059647"/>
+    </inertial>
+  </link>
+  <joint name="FR_thigh_rotor_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0.00015 0"/>
+    <parent link="FR_hip"/>
+    <child link="FR_thigh_rotor"/>
   </joint>
   <link
     name="FR_calf">
@@ -585,6 +645,18 @@ Stephen Brawner (brawner@gmail.com)
       link="FR_calflower1" />
     <axis
       xyz="0 0 0" />
+  </joint>
+  <link name="FR_calf_rotor">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.089"/>
+      <inertia ixx="0.000059647" ixy="0.0" ixz="0.0" iyy="0.000111842" iyz="0.0" izz="0.000059647"/>
+    </inertial>
+  </link>
+  <joint name="FR_calf_rotor_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0.03235 0"/>
+    <parent link="FR_thigh"/>
+    <child link="FR_calf_rotor"/>
   </joint>
   <link
     name="FR_foot">
@@ -691,6 +763,18 @@ Stephen Brawner (brawner@gmail.com)
       effort="23.7"
       velocity="30.1" />
   </joint>
+  <link name="RL_hip_rotor">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.089"/>
+      <inertia ixx="0.000111842" ixy="0.0" ixz="0.0" iyy="0.000059647" iyz="0.0" izz="0.000059647"/>
+    </inertial>
+  </link>
+  <joint name="RL_hip_rotor_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="-0.11215 0.04675 0"/>
+    <parent link="base"/>
+    <child link="RL_hip_rotor"/>
+  </joint>
   <link
     name="RL_thigh">
     <inertial>
@@ -745,6 +829,18 @@ Stephen Brawner (brawner@gmail.com)
       upper="4.5379"
       effort="23.7"
       velocity="30.1" />
+  </joint>
+  <link name="RL_thigh_rotor">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.089"/>
+      <inertia ixx="0.000059647" ixy="0.0" ixz="0.0" iyy="0.000111842" iyz="0.0" izz="0.000059647"/>
+    </inertial>
+  </link>
+  <joint name="RL_thigh_rotor_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 -0.00015 0"/>
+    <parent link="RL_hip"/>
+    <child link="RL_thigh_rotor"/>
   </joint>
   <link
     name="RL_calf">
@@ -844,6 +940,18 @@ Stephen Brawner (brawner@gmail.com)
       link="RL_calflower1" />
     <axis
       xyz="0 0 0" />
+  </joint>
+  <link name="RL_calf_rotor">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.089"/>
+      <inertia ixx="0.000059647" ixy="0.0" ixz="0.0" iyy="0.000111842" iyz="0.0" izz="0.000059647"/>
+    </inertial>
+  </link>
+  <joint name="RL_calf_rotor_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 -0.03235 0"/>
+    <parent link="RL_thigh"/>
+    <child link="RL_calf_rotor"/>
   </joint>
   <link
     name="RL_foot">
@@ -950,6 +1058,18 @@ Stephen Brawner (brawner@gmail.com)
       effort="23.7"
       velocity="30.1" />
   </joint>
+  <link name="RR_hip_rotor">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.089"/>
+      <inertia ixx="0.000111842" ixy="0.0" ixz="0.0" iyy="0.000059647" iyz="0.0" izz="0.000059647"/>
+    </inertial>
+  </link>
+  <joint name="RR_hip_rotor_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="-0.11215 -0.04675 0"/>
+    <parent link="base"/>
+    <child link="RR_hip_rotor"/>
+  </joint>
   <link
     name="RR_thigh">
     <inertial>
@@ -1004,6 +1124,18 @@ Stephen Brawner (brawner@gmail.com)
       upper="4.5379"
       effort="23.7"
       velocity="30.1" />
+  </joint>
+  <link name="RR_thigh_rotor">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.089"/>
+      <inertia ixx="0.000059647" ixy="0.0" ixz="0.0" iyy="0.000111842" iyz="0.0" izz="0.000059647"/>
+    </inertial>
+  </link>
+  <joint name="RR_thigh_rotor_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0.00015 0"/>
+    <parent link="RR_hip"/>
+    <child link="RR_thigh_rotor"/>
   </joint>
   <link
     name="RR_calf">
@@ -1103,6 +1235,18 @@ Stephen Brawner (brawner@gmail.com)
       link="RR_calflower1" />
     <axis
       xyz="0 0 0" />
+  </joint>
+  <link name="RR_calf_rotor">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.089"/>
+      <inertia ixx="0.000059647" ixy="0.0" ixz="0.0" iyy="0.000111842" iyz="0.0" izz="0.000059647"/>
+    </inertial>
+  </link>
+  <joint name="RR_calf_rotor_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0.03235 0"/>
+    <parent link="RR_thigh"/>
+    <child link="RR_calf_rotor"/>
   </joint>
   <link
     name="RR_foot">
