@@ -2,7 +2,7 @@
 
 ## Overview
 
-This package includes a streamlined robot description (URDF & MJCF) for the [Unitree G1](https://www.unitree.com/g1/), developed by [Unitree Robotics](https://www.unitree.com/).
+This package includes a universal humanoid robot description (URDF & MJCF) for the [Unitree G1](https://www.unitree.com/g1/), developed by [Unitree Robotics](https://www.unitree.com/).
 
 <p align="center">
   <img src="images/g1_23dof.png" width="45%"/>

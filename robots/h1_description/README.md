@@ -2,8 +2,7 @@
 
 ## Overview
 
-This package includes a streamlined robot description (URDF & MJCF) for the [H1 Humanoid
-Robot](https://www.unitree.com/h1), developed by [Unitree Robotics](https://www.unitree.com/).
+This package includes a universal humanoid robot description (URDF & MJCF) for the [Unitree H1](https://www.unitree.com/h1), developed by [Unitree Robotics](https://www.unitree.com/).
 
 The file `urdf/h1.urdf` is description for H1 without hands, and `urdf/h1_with_hand.urdf` for H1 with dexterous hands. Both `urdf/h1.urdf` and `urdf/h1_with_hand.urdf` support isaacgym environment.
 
