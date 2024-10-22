@@ -110,7 +110,7 @@
     <parent link="left_hip_pitch_link"/>
     <child link="left_hip_roll_link"/>
     <axis xyz="1 0 0"/>
-    <limit lower="-0.5236" upper="2.9671" effort="88" velocity="32"/>
+    <limit lower="-0.5236" upper="2.9671" effort="139" velocity="20"/>
   </joint>
   <link name="left_hip_yaw_link">
     <inertial>
@@ -302,7 +302,7 @@
     <parent link="right_hip_pitch_link"/>
     <child link="right_hip_roll_link"/>
     <axis xyz="1 0 0"/>
-    <limit lower="-2.9671" upper="0.5236" effort="88" velocity="32"/>
+    <limit lower="-2.9671" upper="0.5236" effort="139" velocity="20"/>
   </joint>
   <link name="right_hip_yaw_link">
     <inertial>
