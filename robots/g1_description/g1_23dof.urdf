@@ -579,11 +579,18 @@
   </joint>
 
   <!-- IMU -->
-  <link name="imu_link"></link>
-  <joint name="imu_joint" type="fixed">
+  <link name="imu_in_torso"></link>
+  <joint name="imu_in_torso_joint" type="fixed">
     <origin xyz="-0.03959 -0.00224 0.13792" rpy="0 0 0"/>
     <parent link="torso_link"/>
-    <child link="imu_link"/>
+    <child link="imu_in_torso"/>
+  </joint>
+
+  <link name="imu_in_pelvis"></link>
+  <joint name="imu_in_pelvis_joint" type="fixed">
+    <origin xyz="0.04525 0 -0.08339" rpy="0 0 0"/>
+    <parent link="pelvis"/>
+    <child link="imu_in_pelvis"/>
   </joint>
 
   <!-- d435 -->
