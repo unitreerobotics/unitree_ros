@@ -2,11 +2,29 @@
 Here are the ROS simulation packages for Unitree robots, You can load robots and joint controllers in Gazebo, so you can perform low-level control (control the torque, position and angular velocity) of the robot joints. Please be aware that the Gazebo simulation cannot do high-level control, namely walking. Aside from these simulation functions, you can also control your real robots in ROS with the [unitree_ros_to_real](https://github.com/unitreerobotics/unitree_ros_to_real) packages. For real robots, you can do high-level and low-level control using our ROS packages.
 
 ## Packages:
-Robot description: `go1_description`, `a1_description`, `aliengo_description`, `laikago_description`, `z1_description`
+Robot description:
+* `a1_description`
+* `aliengo_description`
+* `aliengoZ1_description`
+* `b1_description`
+* `b2_description`
+* `b2w_description`
+* `g1_description`
+* `go1_description`
+* `go2_description`
+* `go2w_description`
+* `h1_2_description`
+* `h1_description`
+* `laikago_description`
+* `z1_description`
 
-Robot and joints controller: `unitree_controller`, `z1_controller`
+Robot and joints controller:
+* `unitree_controller`
+* `z1_controller`
 
-Simulation related: `unitree_gazebo`, `unitree_legged_control`
+Simulation related:
+* `unitree_gazebo`
+* `unitree_legged_control`
 
 # Dependencies
 * [ROS](https://www.ros.org/) Melodic or ROS Kinetic (has not been tested)

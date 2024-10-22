@@ -4,19 +4,17 @@
 
 This package includes a universal humanoid robot description (URDF & MJCF) for the [Unitree G1](https://www.unitree.com/g1/), developed by [Unitree Robotics](https://www.unitree.com/).
 
-<p align="center">
-  <img src="images/g1_23dof.png" width="45%"/>
-  <img src="images/g1_29dof.png" width="45%"/>
-  <img src="images/g1_29dof_with_hand.png" width="45%"/>
-  <img src="images/g1_dual_arm.png" width="45%"/>
-</p>
+MJCF/URDF for the G1 robot:
 
-As shown, there are a total of 4 versions of MJCF/URDF for the G1 robot:
-
-* `g1_23dof`
-* `g1_29dof`
-* `g1_29dof_with_hand`
-* `g1_dual_arm`
+| MJCF/URDF file name                             | `mode_machine` |
+| ----------------------------------------------- | :------------: |
+| `g1_23dof`                                      |       1        |
+| `g1_29dof`/`g1_29dof_with_hand`                 |       2        |
+| `g1_29dof_lock_waist`                           |       3        |
+| `g1_23dof_rev_1_0`                              |       4        |
+| `g1_29dof_rev_1_0`/`g1_29dof_with_hand_rev_1_0` |       5        |
+| `g1_29dof_lock_waist_rev_1_0`                   |       6        |
+| `g1_dual_arm`                                   |       9        |
 
 ## Visulization with [MuJoCo](https://github.com/google-deepmind/mujoco)
 
