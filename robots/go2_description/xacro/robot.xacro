@@ -91,6 +91,16 @@
             </geometry>
         </collision>
     </link>
+
+    <joint name="front_camera_joint" type="fixed">
+        <parent link="trunk"/>
+        <child link="front_camera"/>
+        <origin rpy="0 0 0" xyz="0.32715 -0.00003 0.04297"/>
+    </joint>
+
+    <link name="front_camera">
+    </link>
+
     <!--
     <joint name="load_joint" type="fixed">
         <parent link="trunk"/>
