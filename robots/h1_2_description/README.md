@@ -17,4 +17,4 @@ This package includes a universal humanoid robot description (URDF & MJCF) for t
    python -m mujoco.viewer
    ```
 
-2. Drag and drop the MJCF model file (`scene.xml`) to the MuJoCo Viewer.
+2. Drag and drop the MJCF model file (`h1_2.xml` or `h1_2_handless.xml`) to the MuJoCo Viewer.
