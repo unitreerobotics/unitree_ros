@@ -842,7 +842,7 @@
     <axis xyz="0 1 0"/>
     <parent link="left_hand_palm_link"/>
     <child link="left_hand_thumb_0_link"/>
-    <limit effort="2.45" velocity="6.857" lower="-1.04719755" upper="1.04719755"/>
+    <limit effort="2.45" velocity="3.14" lower="-1.04719755" upper="1.04719755"/>
   </joint>
   <link name="left_hand_thumb_0_link">
     <inertial>
@@ -1275,7 +1275,7 @@
     <axis xyz="0 1 0"/>
     <parent link="right_hand_palm_link"/>
     <child link="right_hand_thumb_0_link"/>
-    <limit effort="2.45" velocity="6.857" lower="-1.04719755" upper="1.04719755"/>
+    <limit effort="2.45" velocity="3.14" lower="-1.04719755" upper="1.04719755"/>
   </joint>
   <link name="right_hand_thumb_0_link">
     <inertial>
