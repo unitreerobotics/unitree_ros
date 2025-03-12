@@ -3,20 +3,21 @@ Here are the ROS simulation packages for Unitree robots, You can load robots and
 
 ## Packages:
 Robot description:
-* `a1_description`
-* `aliengo_description`
-* `aliengoZ1_description`
-* `b1_description`
-* `b2_description`
-* `b2w_description`
-* `g1_description`
-* `go1_description`
-* `go2_description`
-* `go2w_description`
-* `h1_2_description`
-* `h1_description`
-* `laikago_description`
-* `z1_description`
+
+* [`a1_description`](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/a1_description)
+* [`aliengo_description`](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/aliengo_description)
+* [`aliengoZ1_description`](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/aliengoZ1_description)
+* [`b1_description`](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/b1_description)
+* [`b2_description`](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/b2_description)
+* [`b2w_description`](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/b2w_description)
+* [`g1_description`](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/g1_description)
+* [`go1_description`](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/go1_description)
+* [`go2_description`](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/go2_description)
+* [`go2w_description`](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/go2w_description)
+* [`h1_2_description`](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/h1_2_description)
+* [`h1_description`](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/h1_description)
+* [`laikago_description`](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/laikago_description)
+* [`z1_description`](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/z1_description)
 
 Robot and joints controller:
 * `unitree_controller`
