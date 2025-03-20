@@ -1,4 +1,4 @@
-<robot name="g1_29dof_with_hand_rev_1_0">
+<robot name="dex3_1_r">
   <mujoco>
     <compiler meshdir="meshes" discardvisual="false"/>
   </mujoco>
