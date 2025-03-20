@@ -896,12 +896,12 @@
         <color rgba="0.2 0.2 0.2 1"/>
       </material>
     </visual>
-    <collision>
+    <!-- <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="meshes/xl330_link.STL"/>
       </geometry>
-    </collision>
+    </collision> -->
   </link>
   <joint name="xl330_joint" type="revolute">
     <origin xyz="0.030518 0 0.52486" rpy="0 0.039968 0"/>
@@ -914,7 +914,7 @@
     <inertial>
       <origin xyz="0.030219 -0.000416 -0.011779" rpy="0 0 0"/>
       <mass value="0.096"/>
-      <inertia ixx="0.000133424" ixy="1.565E-06" ixz="4.1904E-05" iyy="0.000128108" iyz="-7.27E-07" izz="0.000214338"/>
+      <inertia ixx="0.0001232" ixy="-3.1E-08" ixz="3.1246E-05" iyy="0.000106321" iyz="-5E-09" izz="0.000194649"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -926,9 +926,10 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin xyz="0.03 0 -0.01" rpy="1.5707963267948966 0 0"/>
       <geometry>
-        <mesh filename="meshes/d455_link.STL"/>
+        <!-- <mesh filename="meshes/d455_link.STL"/> -->
+        <cylinder length="0.1" radius="0.015"/>
       </geometry>
     </collision>
   </link>
