@@ -48,7 +48,7 @@
     <parent link="waist_yaw_link"/>
     <child link="waist_roll_link"/>
     <axis xyz="1 0 0"/>
-    <limit lower="-0.52" upper="0.52" effort="50" velocity="37"/>
+    <limit lower="-0.52" upper="0.52" effort="35" velocity="30"/>
   </joint>
   <link name="torso_link">
     <inertial>
@@ -77,7 +77,7 @@
     <parent link="waist_roll_link"/>
     <child link="torso_link"/>
     <axis xyz="0 1 0"/>
-    <limit lower="-0.52" upper="0.52" effort="50" velocity="37"/>
+    <limit lower="-0.52" upper="0.52" effort="35" velocity="30"/>
   </joint>
 
   <!-- LOGO -->
