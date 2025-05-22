@@ -1,0 +1,197 @@
+<robot name="Z1_JAW">
+  <mujoco>
+    <compiler meshdir="meshes" discardvisual="false"/>
+  </mujoco>
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0.0001178 0.036886 0.0080974" rpy="0 0 0"/>
+      <mass value="0.11"/>
+      <inertia ixx="4.9533E-05" ixy="5.9474E-08" ixz="-3.1979E-08" iyy="6.8944E-05" iyz="-1.7064E-06" izz="3.4443E-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/base_link.STL"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.93333 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/base_link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="Link1_1">
+    <inertial>
+      <origin xyz="-0.041607 0.0039411 -0.00047344" rpy="0 0 0"/>
+      <mass value="0.0084398"/>
+      <inertia ixx="1.0466E-07" ixy="4.1386E-09" ixz="1.086E-09" iyy="3.5113E-06" iyz="-1.1358E-09" izz="3.523E-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Link1_1.STL"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.93333 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Link1_1.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Joint1_1" type="prismatic">
+    <origin xyz="0.04055 0.0593 0.0152" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="Link1_1"/>
+    <axis xyz="-1 0 0"/>
+    <limit lower="-0.02" upper="0.0245" effort="20" velocity="0.2"/>
+  </joint>
+  <link name="Link1_2">
+    <inertial>
+      <origin xyz="0.0046767 0.026417 -0.014407" rpy="0 0 0"/>
+      <mass value="0.028354"/>
+      <inertia ixx="1.3423E-05" ixy="3.5258E-07" ixz="5.8181E-08" iyy="2.249E-06" iyz="6.3947E-07" izz="1.1892E-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Link1_2.STL"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.89804 0.91765 0.92941 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Link1_2.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Joint1_2" type="fixed">
+    <origin xyz="-0.013 0.013 0" rpy="0 0 0"/>
+    <parent link="Link1_1"/>
+    <child link="Link1_2"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  <link name="Link1_3">
+    <inertial>
+      <origin xyz="0.0018267 0.017456 -0.0142" rpy="0 0 0"/>
+      <mass value="0.004583"/>
+      <inertia ixx="9.6165E-07" ixy="6.207E-09" ixz="-5.9626E-16" iyy="2.5948E-07" iyz="3.3171E-15" izz="7.1226E-07"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Link1_3.STL"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.29804 0.29804 0.29804 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Link1_3.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Joint1_3" type="fixed">
+    <origin xyz="-0.0025165 0.025043 -0.001" rpy="0 0 0"/>
+    <parent link="Link1_2"/>
+    <child link="Link1_3"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  <link name="Link2_1">
+    <inertial>
+      <origin xyz="0.041607 0.0039411 0.00047344" rpy="0 0 0"/>
+      <mass value="0.0084398"/>
+      <inertia ixx="1.0466E-07" ixy="-4.1386E-09" ixz="1.086E-09" iyy="3.5113E-06" iyz="1.1358E-09" izz="3.523E-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Link2_1.STL"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.93333 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Link2_1.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Joint2_1" type="prismatic">
+    <origin xyz="-0.04055 0.0593 -0.0152" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="Link2_1"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-0.02" upper="0.0245" effort="20" velocity="0.2"/>
+  </joint>
+  <link name="Link2_2">
+    <inertial>
+      <origin xyz="-0.0046767 0.026417 0.014407" rpy="0 0 0"/>
+      <mass value="0.028354"/>
+      <inertia ixx="1.3423E-05" ixy="-3.5258E-07" ixz="5.8181E-08" iyy="2.249E-06" iyz="-6.3947E-07" izz="1.1892E-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Link2_2.STL"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.89804 0.91765 0.92941 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Link2_2.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Joint2_2" type="fixed">
+    <origin xyz="0.013 0.013 0" rpy="0 0 0"/>
+    <parent link="Link2_1"/>
+    <child link="Link2_2"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  <link name="Link2_3">
+    <inertial>
+      <origin xyz="-0.0018267 0.017456 -0.0142" rpy="0 0 0"/>
+      <mass value="0.004583"/>
+      <inertia ixx="9.6165E-07" ixy="-6.207E-09" ixz="-5.9626E-16" iyy="2.5948E-07" iyz="-3.3171E-15" izz="7.1226E-07"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Link2_3.STL"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.29804 0.29804 0.29804 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Link2_3.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Joint2_3" type="fixed">
+    <origin xyz="0.0025165 0.025043 0.0294" rpy="0 0 0"/>
+    <parent link="Link2_2"/>
+    <child link="Link2_3"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+</robot>
