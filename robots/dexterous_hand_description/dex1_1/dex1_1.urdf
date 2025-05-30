@@ -1,4 +1,4 @@
-<robot name="Z1_JAW">
+<robot name="dex1_1">
   <mujoco>
     <compiler meshdir="meshes" discardvisual="false"/>
   </mujoco>
