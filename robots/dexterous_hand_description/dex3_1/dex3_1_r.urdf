@@ -66,7 +66,7 @@
     <axis xyz="0 0 1"/>
     <parent link="right_hand_thumb_0_link"/>
     <child link="right_hand_thumb_1_link"/>
-    <limit effort="1.4" velocity="12" lower="-1.04719755" upper="0.72431163"/>
+    <limit effort="1.4" velocity="12" lower="-1.04719755" upper="0.61086523"/>
   </joint>
   <link name="right_hand_thumb_1_link">
     <inertial>
