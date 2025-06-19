@@ -1,4 +1,8 @@
 <robot name="dex3_1_r">
+  <material name="dark">
+    <color rgba="0.2 0.2 0.2 1"/>
+  </material>
+
   <mujoco>
     <compiler meshdir="meshes" discardvisual="false"/>
   </mujoco>
@@ -21,9 +25,7 @@
       <geometry>
         <mesh filename="meshes/right_hand_palm_link.STL"/>
       </geometry>
-      <material name="white">
-        <color rgba="0.7 0.7 0.7 1"/>
-      </material>
+      <material name="dark"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -50,9 +52,7 @@
       <geometry>
         <mesh filename="meshes/right_hand_thumb_0_link.STL"/>
       </geometry>
-      <material name="white">
-        <color rgba="0.7 0.7 0.7 1"/>
-      </material>
+      <material name="dark"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -79,9 +79,7 @@
       <geometry>
         <mesh filename="meshes/right_hand_thumb_1_link.STL"/>
       </geometry>
-      <material name="white">
-        <color rgba="0.7 0.7 0.7 1"/>
-      </material>
+      <material name="dark"/>
     </visual>
     <collision>
       <origin xyz="-0.001 0.032 0" rpy="0 0 0"/>
@@ -108,9 +106,7 @@
       <geometry>
         <mesh filename="meshes/right_hand_thumb_2_link.STL"/>
       </geometry>
-      <material name="white">
-        <color rgba="0.7 0.7 0.7 1"/>
-      </material>
+      <material name="dark"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -137,9 +133,7 @@
       <geometry>
         <mesh filename="meshes/right_hand_middle_0_link.STL"/>
       </geometry>
-      <material name="white">
-        <color rgba="0.7 0.7 0.7 1"/>
-      </material>
+      <material name="dark"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -166,9 +160,7 @@
       <geometry>
         <mesh filename="meshes/right_hand_middle_1_link.STL"/>
       </geometry>
-      <material name="white">
-        <color rgba="0.7 0.7 0.7 1"/>
-      </material>
+      <material name="dark"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -195,9 +187,7 @@
       <geometry>
         <mesh filename="meshes/right_hand_index_0_link.STL"/>
       </geometry>
-      <material name="white">
-        <color rgba="0.7 0.7 0.7 1"/>
-      </material>
+      <material name="dark"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -224,9 +214,7 @@
       <geometry>
         <mesh filename="meshes/right_hand_index_1_link.STL"/>
       </geometry>
-      <material name="white">
-        <color rgba="0.7 0.7 0.7 1"/>
-      </material>
+      <material name="dark"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
