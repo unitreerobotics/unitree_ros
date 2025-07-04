@@ -28,6 +28,8 @@ MJCF/URDF for the G1 robot:
 | ~~`g1_29dof_with_hand`~~                 |       2        | {14.3, 14.5}                 | 4010        |            | Deprecated    |   6*2   |     3     |   7*2   |   7*2    |
 | ~~`g1_29dof_lock_waist`~~                |       3        | {14.3, 14.5}                 | 4010        |            | Deprecated    |   6*2   |     3     |   7*2   |   null   |
 
+💡**Note:** The robot's `mode_machine` ID can be viewed in the app by navigating to **Device** → **Data** → **Robot** → **Machine Type**.
+
 ## Visulization with [MuJoCo](https://github.com/google-deepmind/mujoco)
 
 1. Open MuJoCo Viewer
