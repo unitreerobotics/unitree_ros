@@ -29,7 +29,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <sphere radius="0.05"/>
+        <mesh filename="meshes/pelvis.STL"/>
       </geometry>
     </collision>
   </link>
@@ -50,12 +50,6 @@
         <color rgba="0.1 0.1 0.1 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0.02 0 0" rpy="0 1.5707963267948966192313216916398 0"/>
-      <geometry>
-        <cylinder radius="0.01" length="0.02"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="left_hip_yaw_joint" type="revolute">
     <origin xyz="0 0.0875 -0.1632" rpy="0 0 0"/>
@@ -80,9 +74,9 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 -0.2" rpy="0 0 0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <cylinder radius="0.02" length="0.2"/>
+        <mesh filename="meshes/left_hip_pitch_link.STL"/>
       </geometry>
     </collision>
   </link>
@@ -109,9 +103,9 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0.06 0" rpy="1.5707963267948966192313216916398 0 0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <cylinder radius="0.02" length="0.01"/>
+        <mesh filename="meshes/left_hip_roll_link.STL"/>
       </geometry>
     </collision>
   </link>
@@ -140,7 +134,7 @@
     <collision>
       <origin xyz="0 0 -0.2" rpy="0 0 0"/>
       <geometry>
-        <cylinder radius="0.02" length="0.2"/>
+        <cylinder radius="0.04" length="0.2"/>
       </geometry>
     </collision>
   </link>
@@ -166,12 +160,6 @@
         <color rgba="0.1 0.1 0.1 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="meshes/left_ankle_pitch_link.STL"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="left_ankle_pitch_joint" type="revolute">
     <origin xyz="0 0 -0.4" rpy="0 0 0"/>
@@ -226,12 +214,6 @@
         <color rgba="0.1 0.1 0.1 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0.02 0 0" rpy="0 1.5707963267948966192313216916398 0"/>
-      <geometry>
-        <cylinder radius="0.01" length="0.02"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="right_hip_yaw_joint" type="revolute">
     <origin xyz="0 -0.0875 -0.1632" rpy="0 0 0"/>
@@ -256,9 +238,9 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 -0.2" rpy="0 0 0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <cylinder radius="0.02" length="0.2"/>
+        <mesh filename="meshes/right_hip_pitch_link.STL"/>
       </geometry>
     </collision>
   </link>
@@ -285,9 +267,9 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 -0.06 0" rpy="1.5707963267948966192313216916398 0 0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <cylinder radius="0.02" length="0.01"/>
+        <mesh filename="meshes/right_hip_roll_link.STL"/>
       </geometry>
     </collision>
   </link>
@@ -316,7 +298,7 @@
     <collision>
       <origin xyz="0 0 -0.2" rpy="0 0 0"/>
       <geometry>
-        <cylinder radius="0.02" length="0.2"/>
+        <cylinder radius="0.04" length="0.2"/>
       </geometry>
     </collision>
   </link>
@@ -342,12 +324,6 @@
         <color rgba="0.1 0.1 0.1 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="meshes/right_ankle_pitch_link.STL"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="right_ankle_pitch_joint" type="revolute">
     <origin xyz="0 0 -0.4" rpy="0 0 0"/>
@@ -403,9 +379,9 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0.15" rpy="0 0 0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <box size="0.08 0.16 0.1"/>
+        <mesh filename="meshes/torso_link.STL"/>
       </geometry>
     </collision>
   </link>
