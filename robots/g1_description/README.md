@@ -6,7 +6,7 @@ This package includes a universal humanoid robot description (URDF & MJCF) for t
 
 MJCF/URDF for the G1 robot:
 
-| MJCF/URDF file name                      | `mode_machine` | hip.{roll, pitch} gear ratio | wrist motor | lock waist | Update status | dof#leg | dof#waist | dof#arm | dof#hand |
+| MJCF/URDF file name                      | `mode_machine` | hip.{pitch, roll} gear ratio | wrist motor | lock waist | Update status | dof#leg | dof#waist | dof#arm | dof#hand |
 |------------------------------------------|:--------------:|------------------------------|-------------|------------|---------------|:-------:|:---------:|:-------:|:--------:|
 | `g1_23dof_mode_10`                       |       10       | {22.5, 22.5}                 | null        | no         | Up-to-date    |   6*2   |     1     |   5*2   |   null   |
 | `g1_29dof_mode_11`                       |       11       | {22.5, 22.5}                 | 4010        | no         | Up-to-date    |   6*2   |     3     |   7*2   |   null   |
