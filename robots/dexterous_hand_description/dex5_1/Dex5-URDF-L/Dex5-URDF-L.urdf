@@ -2,7 +2,7 @@
   <mujoco>
     <compiler meshdir="meshes" discardvisual="false"/>
   </mujoco>
-  <link name="base_link_L">
+  <link name="base_link00L">
     <inertial>
       <origin xyz="-0.0227590758806084 0.027982 0.0119348470032202" rpy="0 0 0"/>
       <mass value="0.732177466301149"/>
@@ -11,16 +11,16 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/base_link_L.STL"/>
+        <mesh filename="meshes/base_link00L.STL"/>
       </geometry>
       <material name="">
-        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1"/>
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 0.7"/>
       </material>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/base_link_L.STL"/>
+        <mesh filename="meshes/base_link00L.STL"/>
       </geometry>
     </collision>
   </link>
@@ -48,10 +48,10 @@
   </link>
   <joint name="Yaw_11L" type="revolute">
     <origin xyz="0 0 -0.0143499999999992" rpy="0 0 0"/>
-    <parent link="base_link_L"/>
+    <parent link="base_link00L"/>
     <child link="Link_11L"/>
     <axis xyz="0 0 1"/>
-    <limit lower="-0.57596" upper="0.76794" effort="0.93" velocity="4.18"/>
+    <limit lower="-0.5867" upper="0.6803" effort="0.93" velocity="4.18"/>
   </joint>
   <link name="Link_12L">
     <inertial>
@@ -109,7 +109,7 @@
     <parent link="Link_12L"/>
     <child link="Link_13L"/>
     <axis xyz="0 0 1"/>
-    <limit lower="0" upper="1.9548" effort="0.93" velocity="4.18"/>
+    <limit lower="0" upper="1.7652" effort="0.93" velocity="4.18"/>
   </joint>
   <link name="Link_14L">
     <inertial>
@@ -164,7 +164,7 @@
   </link>
   <joint name="Roll_21L" type="revolute">
     <origin xyz="0.0100000000000016 0.0731433586578309 0.00347021644327265" rpy="-3.14159265358979 0 1.5707963267949"/>
-    <parent link="base_link_L"/>
+    <parent link="base_link00L"/>
     <child link="Link_21L"/>
     <axis xyz="0 0 1"/>
     <limit lower="-0.38397" upper="0.38397" effort="0.93" velocity="0.76794"/>
@@ -280,7 +280,7 @@
   </link>
   <joint name="Roll_31L" type="revolute">
     <origin xyz="-0.012 0.077143 0.0034702" rpy="-3.1416 0 1.5708"/>
-    <parent link="base_link_L"/>
+    <parent link="base_link00L"/>
     <child link="Link_31L"/>
     <axis xyz="0 0 1"/>
     <limit lower="-0.38397" upper="0.38397" effort="0.93" velocity="0.76794"/>
@@ -396,7 +396,7 @@
   </link>
   <joint name="Link_41L" type="revolute">
     <origin xyz="-0.034 0.073143 0.0034702" rpy="-3.1416 0 1.5708"/>
-    <parent link="base_link_L"/>
+    <parent link="base_link00L"/>
     <child link="Link_41L"/>
     <axis xyz="0 0 1"/>
     <limit lower="-0.38397" upper="0.38397" effort="0.93" velocity="0.76794"/>
@@ -512,7 +512,7 @@
   </link>
   <joint name="Roll_51L" type="revolute">
     <origin xyz="-0.0559999999999983 0.069143358657831 0.00347021644327289" rpy="-3.14159265358979 0 1.5707963267949"/>
-    <parent link="base_link_L"/>
+    <parent link="base_link00L"/>
     <child link="Link_51L"/>
     <axis xyz="0 0 1"/>
     <limit lower="-0.38397" upper="0.38397" effort="0.93" velocity="0.767944858"/>
