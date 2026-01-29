@@ -5,6 +5,7 @@ Here are the ROS simulation packages for Unitree robots, You can load robots and
 Robot description:
 
 * [`a1`](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/a1_description)
+* [`a2`](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/a2_description)
 * [`aliengo`](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/aliengo_description)
 * [`aliengoZ1`](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/aliengoZ1_description)
 * [`b1`](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/b1_description)
@@ -18,6 +19,7 @@ Robot description:
 * [`h1_2`](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/h1_2_description)
 * [`h1`](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/h1_description)
 * [`laikago`](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/laikago_description)
+* [`r1`](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/r1_description)
 * [`z1`](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/z1_description)
 
 Robot and joints controller:
