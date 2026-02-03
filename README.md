@@ -20,6 +20,7 @@ Robot description:
 * [`h1`](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/h1_description)
 * [`laikago`](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/laikago_description)
 * [`r1`](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/r1_description)
+* [`r1_air`](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/r1_air_description)
 * [`z1`](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/z1_description)
 
 Robot and joints controller:
