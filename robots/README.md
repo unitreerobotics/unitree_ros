@@ -9,6 +9,7 @@ Robot descriptions (URDF, MJCF):
 * [`B2-W`](robots/b2w_description)
 * [`Dexterous Hand`](robots/dexterous_hand_description)
 * [`G1`](robots/g1_description)
+* [`G1-D`](robots/g1_d_description)
 * [`Go1`](robots/go1_description)
 * [`Go2`](robots/go2_description)
 * [`Go2-W`](robots/go2w_description)
