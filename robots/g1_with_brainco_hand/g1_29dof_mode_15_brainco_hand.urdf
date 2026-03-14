@@ -1667,7 +1667,7 @@
       </geometry>
     </collision>
   </link>
-  <joint name="right_thumb_tip" type="revolute">
+  <joint name="right_thumb_tip_joint" type="revolute">
     <origin xyz="0 0.026529 -0.0017734" rpy="-0.06675 0 0"/>
     <parent link="right_thumb_distal_link"/>
     <child link="right_thumb_tip"/>
