@@ -545,14 +545,28 @@
 
 
   <!-- IMU -->
-  <link name="imu_in_torso"></link>
+  <link name="imu_in_torso">
+    <visual>
+      <geometry>
+        <sphere radius="0.001"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+  </link>
   <joint name="imu_in_torso_joint" type="fixed">
     <origin xyz="-0.03959 -0.00224 0.14792" rpy="0 0 0"/>
     <parent link="torso_link"/>
     <child link="imu_in_torso"/>
   </joint>
 
-  <link name="imu_in_pelvis"></link>
+  <link name="imu_in_pelvis">
+    <visual>
+      <geometry>
+        <sphere radius="0.001"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+  </link>
   <joint name="imu_in_pelvis_joint" type="fixed">
     <origin xyz="0.04525 0 -0.08339" rpy="0 0 0"/>
     <parent link="pelvis"/>
@@ -560,7 +574,14 @@
   </joint>
 
   <!-- d435 -->
-  <link name="d435_link"></link>
+  <link name="d435_link">
+    <visual>
+      <geometry>
+        <sphere radius="0.001"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+  </link>
   <joint name="d435_joint" type="fixed">
     <origin xyz="0.0576235 0.01753 0.42987" rpy="0 0.8307767239493009 0"/>
     <parent link="torso_link"/>
@@ -568,7 +589,14 @@
   </joint>
 
   <!-- mid360 -->
-  <link name="mid360_link"></link>
+  <link name="mid360_link">
+    <visual>
+      <geometry>
+        <sphere radius="0.001"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+  </link>
   <joint name="mid360_joint" type="fixed">
     <origin xyz="0.0002835 0.00003 0.41618" rpy="0 0.04014257279586953 0"/>
     <parent link="torso_link"/>
@@ -1635,7 +1663,7 @@
     <limit lower="0" upper="1.0472" effort="1.1" velocity="2.5303"/>
     <mimic joint="right_thumb_proximal_joint" multiplier="1" offset="0"/>
   </joint>
-  <link name="right_thumb_tip">
+  <link name="right_thumb_tip_link">
     <inertial>
       <origin xyz="0 -8.79922039356273E-05 -1.73472347597681E-18" rpy="0 0 0"/>
       <mass value="0.001"/>
@@ -1644,7 +1672,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/right_thumb_tip.STL"/>
+        <mesh filename="meshes/right_thumb_tip_link.STL"/>
       </geometry>
       <material name="">
         <color rgba="1 1 1 1"/>
@@ -1653,14 +1681,14 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/right_thumb_tip.STL"/>
+        <mesh filename="meshes/right_thumb_tip_link.STL"/>
       </geometry>
     </collision>
   </link>
   <joint name="right_thumb_tip_joint" type="fixed">
     <origin xyz="0 0.026529 -0.0017734" rpy="-0.06675 0 0"/>
     <parent link="right_thumb_distal_link"/>
-    <child link="right_thumb_tip"/>
+    <child link="right_thumb_tip_link"/>
   </joint>
   <link name="right_index_proximal_link">
     <inertial>
@@ -1721,7 +1749,7 @@
     <limit lower="0" upper="1.693" effort="2" velocity="2.2685"/>
     <mimic joint="right_index_proximal_joint" multiplier="1.155" offset="0"/>
   </joint>
-  <link name="right_index_tip">
+  <link name="right_index_tip_link">
     <inertial>
       <origin xyz="0 6.93889390390723E-18 2.77555756156289E-17" rpy="0 0 0"/>
       <mass value="0.001"/>
@@ -1730,7 +1758,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/right_index_tip.STL"/>
+        <mesh filename="meshes/right_index_tip_link.STL"/>
       </geometry>
       <material name="">
         <color rgba="1 1 1 1"/>
@@ -1739,14 +1767,14 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/right_index_tip.STL"/>
+        <mesh filename="meshes/right_index_tip_link.STL"/>
       </geometry>
     </collision>
   </link>
   <joint name="right_index_tip_joint" type="fixed">
     <origin xyz="0.011097 0 0.035739" rpy="0 0.4756 0"/>
     <parent link="right_index_distal_link"/>
-    <child link="right_index_tip"/>
+    <child link="right_index_tip_link"/>
   </joint>
   <link name="right_middle_proximal_link">
     <inertial>
@@ -1807,7 +1835,7 @@
     <limit lower="0" upper="1.693" effort="2" velocity="2.2685"/>
     <mimic joint="right_middle_proximal_joint" multiplier="1.155" offset="0"/>
   </joint>
-  <link name="right_middle_tip">
+  <link name="right_middle_tip_link">
     <inertial>
       <origin xyz="0 -3.46944695195361E-18 0" rpy="0 0 0"/>
       <mass value="0.001"/>
@@ -1816,7 +1844,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/right_middle_tip.STL"/>
+        <mesh filename="meshes/right_middle_tip_link.STL"/>
       </geometry>
       <material name="">
         <color rgba="1 1 1 1"/>
@@ -1825,14 +1853,14 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/right_middle_tip.STL"/>
+        <mesh filename="meshes/right_middle_tip_link.STL"/>
       </geometry>
     </collision>
   </link>
   <joint name="right_middle_tip_joint" type="fixed">
     <origin xyz="0.012558 0 0.040442" rpy="0 0.4756 0"/>
     <parent link="right_middle_distal_link"/>
-    <child link="right_middle_tip"/>
+    <child link="right_middle_tip_link"/>
   </joint>
   <link name="right_ring_proximal_link">
     <inertial>
@@ -1893,7 +1921,7 @@
     <limit lower="0" upper="1.693" effort="2" velocity="2.2685"/>
     <mimic joint="right_ring_proximal_joint" multiplier="1.155" offset="0"/>
   </joint>
-  <link name="right_ring_tip">
+  <link name="right_ring_tip_link">
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <mass value="0.001"/>
@@ -1902,7 +1930,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/right_ring_tip.STL"/>
+        <mesh filename="meshes/right_ring_tip_link.STL"/>
       </geometry>
       <material name="">
         <color rgba="1 1 1 1"/>
@@ -1911,14 +1939,14 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/right_ring_tip.STL"/>
+        <mesh filename="meshes/right_ring_tip_link.STL"/>
       </geometry>
     </collision>
   </link>
   <joint name="right_ring_tip_joint" type="fixed">
     <origin xyz="0.012266 0 0.039501" rpy="0 0.4756 0"/>
     <parent link="right_ring_distal_link"/>
-    <child link="right_ring_tip"/>
+    <child link="right_ring_tip_link"/>
   </joint>
   <link name="right_pinky_proximal_link">
     <inertial>
@@ -1979,7 +2007,7 @@
     <limit lower="0" upper="1.693" effort="2" velocity="2.2685"/>
     <mimic joint="right_pinky_proximal_joint" multiplier="1.155" offset="0"/>
   </joint>
-  <link name="right_pinky_tip">
+  <link name="right_pinky_tip_link">
     <inertial>
       <origin xyz="3.46944695195361E-18 -5.20417042793042E-18 0" rpy="0 0 0"/>
       <mass value="0.001"/>
@@ -1988,7 +2016,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/right_pinky_tip.STL"/>
+        <mesh filename="meshes/right_pinky_tip_link.STL"/>
       </geometry>
       <material name="">
         <color rgba="1 1 1 1"/>
@@ -1997,14 +2025,14 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/right_pinky_tip.STL"/>
+        <mesh filename="meshes/right_pinky_tip_link.STL"/>
       </geometry>
     </collision>
   </link>
   <joint name="right_pinky_tip_joint" type="fixed">
     <origin xyz="0.010221 0 0.032918" rpy="0 0.4756 0"/>
     <parent link="right_pinky_distal_link"/>
-    <child link="right_pinky_tip"/>
+    <child link="right_pinky_tip_link"/>
   </joint>
   <!-- BrainCo end -->
 </robot>
