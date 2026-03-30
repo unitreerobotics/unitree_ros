@@ -345,7 +345,7 @@
       <geometry>
         <mesh filename="meshes/right_wrist_yaw_link.stl"/>
       </geometry>
-      <material name="white"/>
+      <material name="dark"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -534,7 +534,7 @@
       <geometry>
         <mesh filename="meshes/left_wrist_yaw_link.stl"/>
       </geometry>
-      <material name="white"/>
+      <material name="dark"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -561,7 +561,7 @@
       <geometry>
         <mesh filename="meshes/left_hip_pitch_link.stl"/>
       </geometry>
-      <material name="white"/>
+      <material name="dark"/>
     </visual>
     <!-- <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -696,7 +696,7 @@
       <geometry>
         <mesh filename="meshes/left_ankle_pitch_link.stl"/>
       </geometry>
-      <material name="white"/>
+      <material name="dark"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -723,7 +723,7 @@
       <geometry>
         <mesh filename="meshes/right_hip_pitch_link.stl"/>
       </geometry>
-      <material name="white"/>
+      <material name="dark"/>
     </visual>
     <!-- <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -858,7 +858,7 @@
       <geometry>
         <mesh filename="meshes/right_ankle_pitch_link.stl"/>
       </geometry>
-      <material name="white"/>
+      <material name="dark"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>

@@ -1,4 +1,15 @@
 <robot name="R1_AIR">
+  <material name="dark">
+    <color rgba="0.4 0.4 0.4 1"/>
+  </material>
+  <material name="light_grey">
+    <color rgba="0.7 0.7 0.7 1"/>
+  </material>
+  <material name="white">
+    <color rgba="0.95 0.95 0.95 1"/>
+  </material>
+
+
   <mujoco>
     <compiler meshdir="meshes" discardvisual="false"/>
   </mujoco>
@@ -6,18 +17,16 @@
 
   <link name="pelvis_link">
     <inertial>
-      <origin xyz="0.030305 0.001648 0.202416" rpy="0 0 0"/>
-      <mass value="6.988703"/>
-      <inertia ixx="0.120638" ixy="0.000112" ixz="-0.001343" iyy="0.113439" iyz="0.000472" izz="0.020835"/>
+      <origin xyz="0.029268 0.001406 0.132018" rpy="0 0 0"/>
+      <mass value="9.134"/>
+      <inertia ixx="0.245434" ixy="0.000108" ixz="-0.002336" iyy="0.234859" iyz="-0.000391" izz="0.027651"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="meshes/pelvis_link.stl"/>
       </geometry>
-      <material name="blue">
-        <color rgba="0.79216 0.81961 0.93333 1"/>
-      </material>
+      <material name="white"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -39,9 +48,7 @@
       <geometry>
         <mesh filename="meshes/left_hip_pitch_link.STL"/>
       </geometry>
-      <material name="blue">
-        <color rgba="0.79216 0.81961 0.93333 1"/>
-      </material>
+      <material name="light_grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -68,9 +75,7 @@
       <geometry>
         <mesh filename="meshes/left_hip_roll_link.STL"/>
       </geometry>
-      <material name="blue">
-        <color rgba="0.79216 0.81961 0.93333 1"/>
-      </material>
+      <material name="white"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -97,9 +102,7 @@
       <geometry>
         <mesh filename="meshes/left_hip_yaw_link.STL"/>
       </geometry>
-      <material name="blue">
-        <color rgba="0.79216 0.81961 0.93333 1"/>
-      </material>
+      <material name="white"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -126,9 +129,7 @@
       <geometry>
         <mesh filename="meshes/left_knee_link.STL"/>
       </geometry>
-      <material name="blue">
-        <color rgba="0.79216 0.81961 0.93333 1"/>
-      </material>
+      <material name="white"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -259,9 +260,7 @@
       <geometry>
         <mesh filename="meshes/left_ankle_pitch_link.STL"/>
       </geometry>
-      <material name="blue">
-        <color rgba="0.79216 0.81961 0.93333 1"/>
-      </material>
+      <material name="white"/>
     </visual>
   </link>
   <joint name="left_ankle_pitch_joint" type="revolute">
@@ -282,9 +281,7 @@
       <geometry>
         <mesh filename="meshes/left_ankle_roll_link.STL"/>
       </geometry>
-      <material name="blue">
-        <color rgba="0.79216 0.81961 0.93333 1"/>
-      </material>
+      <material name="dark"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -369,9 +366,7 @@
       <geometry>
         <mesh filename="meshes/right_hip_pitch_link.STL"/>
       </geometry>
-      <material name="blue">
-        <color rgba="0.79216 0.81961 0.93333 1"/>
-      </material>
+      <material name="light_grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -398,9 +393,7 @@
       <geometry>
         <mesh filename="meshes/right_hip_roll_link.STL"/>
       </geometry>
-      <material name="blue">
-        <color rgba="0.79216 0.81961 0.93333 1"/>
-      </material>
+      <material name="white"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -427,9 +420,7 @@
       <geometry>
         <mesh filename="meshes/right_hip_yaw_link.STL"/>
       </geometry>
-      <material name="blue">
-        <color rgba="0.79216 0.81961 0.93333 1"/>
-      </material>
+      <material name="white"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -456,9 +447,7 @@
       <geometry>
         <mesh filename="meshes/right_knee_link.STL"/>
       </geometry>
-      <material name="blue">
-        <color rgba="0.79216 0.81961 0.93333 1"/>
-      </material>
+      <material name="white"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -589,9 +578,7 @@
       <geometry>
         <mesh filename="meshes/right_ankle_pitch_link.STL"/>
       </geometry>
-      <material name="blue">
-        <color rgba="0.79216 0.81961 0.93333 1"/>
-      </material>
+      <material name="white"/>
     </visual>
   </link>
   <joint name="right_ankle_pitch_joint" type="revolute">
@@ -612,9 +599,7 @@
       <geometry>
         <mesh filename="meshes/right_ankle_roll_link.STL"/>
       </geometry>
-      <material name="blue">
-        <color rgba="0.79216 0.81961 0.93333 1"/>
-      </material>
+      <material name="dark"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -699,9 +684,7 @@
       <geometry>
         <mesh filename="meshes/imu_in_pelvis_link.STL"/>
       </geometry>
-      <material name="blue">
-        <color rgba="0.79216 0.81961 0.93333 1"/>
-      </material>
+      <material name="white"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -730,9 +713,7 @@
       <geometry>
         <mesh filename="meshes/left_shoulder_pitch_link.stl"/>
       </geometry>
-      <material name="blue">
-        <color rgba="0.79216 0.81961 0.93333 1"/>
-      </material>
+      <material name="white"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -759,9 +740,7 @@
       <geometry>
         <mesh filename="meshes/left_shoulder_roll_link.stl"/>
       </geometry>
-      <material name="blue">
-        <color rgba="0.79216 0.81961 0.93333 1"/>
-      </material>
+      <material name="white"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -779,18 +758,16 @@
   </joint>
   <link name="left_shoulder_yaw_link">
     <inertial>
-      <origin xyz="0.013143 -0.004355 -0.072948" rpy="0 0 0"/>
-      <mass value="0.738441"/>
-      <inertia ixx="0.000829" ixy="0.000015" ixz="0.000108" iyy="0.000852" iyz="-0.000035" izz="0.000469"/>
+      <origin xyz="0.012113 -0.004109 -0.071067" rpy="0 0 0"/>
+      <mass value="0.725600"/>
+      <inertia ixx="0.000880" ixy="0.000017" ixz="0.000124" iyy="0.000926" iyz="-0.000039" izz="0.000491"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="meshes/left_shoulder_yaw_link.stl"/>
       </geometry>
-      <material name="blue">
-        <color rgba="0.79216 0.81961 0.93333 1"/>
-      </material>
+      <material name="white"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -808,18 +785,16 @@
   </joint>
   <link name="left_elbow_link">
     <inertial>
-      <origin xyz="0.147283  -0.026821 -0.010613" rpy="0 0 0"/>
-      <mass value="0.986213"/>
-      <inertia ixx="0.000680" ixy="0.000581" ixz="-0.000026" iyy="0.005824" iyz="-0.000003" izz="0.005872"/>
+      <origin xyz="0.121961  -0.024533 -0.010930" rpy="0 0 0"/>
+      <mass value="0.655100"/>
+      <inertia ixx="0.000511" ixy="0.000388" ixz="-0.000001" iyy="0.003563" iyz="-0.000010" izz="0.003598"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="meshes/left_elbow_link.stl"/>
       </geometry>
-      <material name="blue">
-        <color rgba="0.79216 0.81961 0.93333 1"/>
-      </material>
+      <material name="white"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -846,9 +821,7 @@
       <geometry>
         <mesh filename="meshes/right_shoulder_pitch_link.stl"/>
       </geometry>
-      <material name="blue">
-        <color rgba="0.79216 0.81961 0.93333 1"/>
-      </material>
+      <material name="white"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -875,9 +848,7 @@
       <geometry>
         <mesh filename="meshes/right_shoulder_roll_link.stl"/>
       </geometry>
-      <material name="blue">
-        <color rgba="0.79216 0.81961 0.93333 1"/>
-      </material>
+      <material name="white"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -895,18 +866,16 @@
   </joint>
   <link name="right_shoulder_yaw_link">
     <inertial>
-      <origin xyz="0.013143 0.004355 -0.072948" rpy="0 0 0"/>
-      <mass value="0.738441"/>
-      <inertia ixx="0.000829" ixy="-0.000015" ixz="0.000108" iyy="0.000852" iyz="0.000035" izz="0.000469"/>
+      <origin xyz="0.012113 0.004109 -0.071067" rpy="0 0 0"/>
+      <mass value="0.725600"/>
+      <inertia ixx="0.000880" ixy="-0.000017" ixz="0.000124" iyy="0.000926" iyz="0.000039" izz="0.000491"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="meshes/right_shoulder_yaw_link.stl"/>
       </geometry>
-      <material name="blue">
-        <color rgba="0.79216 0.81961 0.93333 1"/>
-      </material>
+      <material name="white"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -924,18 +893,16 @@
   </joint>
   <link name="right_elbow_link">
     <inertial>
-      <origin xyz="0.147283  0.026821 -0.010613" rpy="0 0 0"/>
-      <mass value="0.986213"/>
-      <inertia ixx="0.000680" ixy="-0.000581" ixz="-0.000026" iyy="0.005824" iyz="0.000003" izz="0.005872"/>
+      <origin xyz="0.121961  0.024533 -0.010930" rpy="0 0 0"/>
+      <mass value="0.655100"/>
+      <inertia ixx="0.000511" ixy="-0.000388" ixz="-0.000001" iyy="0.003563" iyz="0.000010" izz="0.003598"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="meshes/right_elbow_link.stl"/>
       </geometry>
-      <material name="blue">
-        <color rgba="0.79216 0.81961 0.93333 1"/>
-      </material>
+      <material name="white"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
