@@ -3,7 +3,7 @@ project(g1_description)
 
 find_package(ament_cmake REQUIRED)
 
-install(DIRECTORY meshes inspire_hand images
+install(DIRECTORY meshes inspire_hand images launch
   DESTINATION share/${PROJECT_NAME}
 )
 
