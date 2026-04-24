@@ -695,7 +695,7 @@
     <parent link="left_wrist_pitch_link"/>
     <child link="left_wrist_yaw_link"/>
     <axis xyz="0 0 1"/>
-    <limit lower="-1.22" upper="1.22" effort="60" velocity="37.7"/>
+    <limit lower="-1.22" upper="1.22" effort="10" velocity="37.7"/>
   </joint>
   <link name="right_shoulder_pitch_link">
     <inertial>
