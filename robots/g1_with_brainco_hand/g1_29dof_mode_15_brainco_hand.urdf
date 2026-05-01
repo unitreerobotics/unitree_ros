@@ -545,14 +545,28 @@
 
 
   <!-- IMU -->
-  <link name="imu_in_torso"></link>
+  <link name="imu_in_torso">
+    <visual>
+      <geometry>
+        <sphere radius="0.001"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+  </link>
   <joint name="imu_in_torso_joint" type="fixed">
     <origin xyz="-0.03959 -0.00224 0.14792" rpy="0 0 0"/>
     <parent link="torso_link"/>
     <child link="imu_in_torso"/>
   </joint>
 
-  <link name="imu_in_pelvis"></link>
+  <link name="imu_in_pelvis">
+    <visual>
+      <geometry>
+        <sphere radius="0.001"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+  </link>
   <joint name="imu_in_pelvis_joint" type="fixed">
     <origin xyz="0.04525 0 -0.08339" rpy="0 0 0"/>
     <parent link="pelvis"/>
@@ -560,7 +574,14 @@
   </joint>
 
   <!-- d435 -->
-  <link name="d435_link"></link>
+  <link name="d435_link">
+    <visual>
+      <geometry>
+        <sphere radius="0.001"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+  </link>
   <joint name="d435_joint" type="fixed">
     <origin xyz="0.0576235 0.01753 0.42987" rpy="0 0.8307767239493009 0"/>
     <parent link="torso_link"/>
@@ -568,7 +589,14 @@
   </joint>
 
   <!-- mid360 -->
-  <link name="mid360_link"></link>
+  <link name="mid360_link">
+    <visual>
+      <geometry>
+        <sphere radius="0.001"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+  </link>
   <joint name="mid360_joint" type="fixed">
     <origin xyz="0.0002835 0.00003 0.41618" rpy="0 0.04014257279586953 0"/>
     <parent link="torso_link"/>
@@ -830,7 +858,7 @@
       </geometry>
     </collision>
   </link>
-  <link name="left_thumb_metacarpal_Link">
+  <link name="left_thumb_metacarpal_link">
     <inertial>
       <origin xyz="1.52303696287007E-05 -0.00707240283482268 -0.00420839832903629" rpy="0 0 0"/>
       <mass value="0.01"/>
@@ -839,7 +867,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/left_thumb_metacarpal_Link.STL"/>
+        <mesh filename="meshes/left_thumb_metacarpal_link.STL"/>
       </geometry>
       <material name="">
         <color rgba="1 1 1 1"/>
@@ -848,18 +876,18 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/left_thumb_metacarpal_Link.STL"/>
+        <mesh filename="meshes/left_thumb_metacarpal_link.STL"/>
       </geometry>
     </collision>
   </link>
   <joint name="left_thumb_metacarpal_joint" type="revolute">
     <origin xyz="0.0045 -0.019 0.027825" rpy="0 0 0.16787"/>
     <parent link="left_base_link"/>
-    <child link="left_thumb_metacarpal_Link"/>
+    <child link="left_thumb_metacarpal_link"/>
     <axis xyz="0 0 1"/>
     <limit lower="0" upper="1.5184" effort="0.5" velocity="2.6175"/>
   </joint>
-  <link name="left_thumb_proximal_Link">
+  <link name="left_thumb_proximal_link">
     <inertial>
       <origin xyz="3.41001513141231E-07 0.0250090688174992 -0.0017505675193664" rpy="0 0 0"/>
       <mass value="0.05"/>
@@ -868,7 +896,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/left_thumb_proximal_Link.STL"/>
+        <mesh filename="meshes/left_thumb_proximal_link.STL"/>
       </geometry>
       <material name="">
         <color rgba="1 1 1 1"/>
@@ -877,18 +905,18 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/left_thumb_proximal_Link.STL"/>
+        <mesh filename="meshes/left_thumb_proximal_link.STL"/>
       </geometry>
     </collision>
   </link>
   <joint name="left_thumb_proximal_joint" type="revolute">
     <origin xyz="0 -0.014227 0" rpy="0.17488 -0.23736 2.9737"/>
-    <parent link="left_thumb_metacarpal_Link"/>
-    <child link="left_thumb_proximal_Link"/>
+    <parent link="left_thumb_metacarpal_link"/>
+    <child link="left_thumb_proximal_link"/>
     <axis xyz="1 0 0"/>
     <limit lower="0" upper="1.0472" effort="1.1" velocity="2.5303"/>
   </joint>
-  <link name="left_thumb_distal_Link">
+  <link name="left_thumb_distal_link">
     <inertial>
       <origin xyz="-1.65618684180163E-07 0.0117550891981017 1.1366609064185E-05" rpy="0 0 0"/>
       <mass value="0.01"/>
@@ -897,7 +925,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/left_thumb_distal_Link.STL"/>
+        <mesh filename="meshes/left_thumb_distal_link.STL"/>
       </geometry>
       <material name="">
         <color rgba="1 1 1 1"/>
@@ -906,19 +934,19 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/left_thumb_distal_Link.STL"/>
+        <mesh filename="meshes/left_thumb_distal_link.STL"/>
       </geometry>
     </collision>
   </link>
   <joint name="left_thumb_distal_joint" type="revolute">
     <origin xyz="0 0.052 0" rpy="0 0 0"/>
-    <parent link="left_thumb_proximal_Link"/>
-    <child link="left_thumb_distal_Link"/>
+    <parent link="left_thumb_proximal_link"/>
+    <child link="left_thumb_distal_link"/>
     <axis xyz="1 0 0"/>
     <limit lower="0" upper="1.0472" effort="1.1" velocity="2.5303"/>
     <mimic joint="left_thumb_proximal_joint" multiplier="1" offset="0"/>
   </joint>
-  <link name="left_thumb_tip_Link">
+  <link name="left_thumb_tip_link">
     <inertial>
       <origin xyz="-4.85722573273506E-17 -4.16333634234434E-17 -3.46944695195361E-18" rpy="0 0 0"/>
       <mass value="0.001"/>
@@ -927,7 +955,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/left_thumb_tip_Link.STL"/>
+        <mesh filename="meshes/left_thumb_tip_link.STL"/>
       </geometry>
       <material name="">
         <color rgba="1 1 1 1"/>
@@ -936,18 +964,16 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/left_thumb_tip_Link.STL"/>
+        <mesh filename="meshes/left_thumb_tip_link.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint name="left_thumb_tip_joint" type="revolute">
+  <joint name="left_thumb_tip_joint" type="fixed">
     <origin xyz="0 0.026528781163583 -0.00177344281307927" rpy="0.0667504507189052 0 3.14159265358979"/>
-    <parent link="left_thumb_distal_Link"/>
-    <child link="left_thumb_tip_Link"/>
-    <axis xyz="-1 0 0"/>
-    <limit lower="0" upper="0" effort="0" velocity="0"/>
+    <parent link="left_thumb_distal_link"/>
+    <child link="left_thumb_tip_link"/>
   </joint>
-  <link name="left_index_proximal_Link">
+  <link name="left_index_proximal_link">
     <inertial>
       <origin xyz="-0.002235387426012 -3.80544615179342E-06 0.0176439423080373" rpy="0 0 0"/>
       <mass value="0.009"/>
@@ -956,7 +982,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/left_index_proximal_Link.STL"/>
+        <mesh filename="meshes/left_index_proximal_link.STL"/>
       </geometry>
       <material name="">
         <color rgba="1 1 1 1"/>
@@ -965,18 +991,18 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/left_index_proximal_Link.STL"/>
+        <mesh filename="meshes/left_index_proximal_link.STL"/>
       </geometry>
     </collision>
   </link>
   <joint name="left_index_proximal_joint" type="revolute">
     <origin xyz="-0.0021349 -0.029578 0.080876" rpy="0.11819 0.14743 0.17422"/>
     <parent link="left_base_link"/>
-    <child link="left_index_proximal_Link"/>
+    <child link="left_index_proximal_link"/>
     <axis xyz="0 1 0"/>
     <limit lower="0" upper="1.4661" effort="2" velocity="2.2685"/>
   </joint>
-  <link name="left_index_distal_Link">
+  <link name="left_index_distal_link">
     <inertial>
       <origin xyz="0.00418325886379583 -8.45607972810303E-08 0.0153641608762859" rpy="0 0 0"/>
       <mass value="0.009"/>
@@ -985,7 +1011,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/left_index_distal_Link.STL"/>
+        <mesh filename="meshes/left_index_distal_link.STL"/>
       </geometry>
       <material name="">
         <color rgba="1 1 1 1"/>
@@ -994,19 +1020,19 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/left_index_distal_Link.STL"/>
+        <mesh filename="meshes/left_index_distal_link.STL"/>
       </geometry>
     </collision>
   </link>
   <joint name="left_index_distal_joint" type="revolute">
     <origin xyz="0 0 0.032" rpy="0 0 0"/>
-    <parent link="left_index_proximal_Link"/>
-    <child link="left_index_distal_Link"/>
+    <parent link="left_index_proximal_link"/>
+    <child link="left_index_distal_link"/>
     <axis xyz="0 1 0"/>
     <limit lower="0" upper="1.693" effort="2" velocity="2.2685"/>
     <mimic joint="left_index_proximal_joint" multiplier="1.155" offset="0"/>
   </joint>
-  <link name="left_index_tip_Link">
+  <link name="left_index_tip_link">
     <inertial>
       <origin xyz="6.69832245225876E-13 9.73495589695617E-12 2.23557283796083E-13" rpy="0 0 0"/>
       <mass value="0.001"/>
@@ -1015,7 +1041,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/left_index_tip_Link.STL"/>
+        <mesh filename="meshes/left_index_tip_link.STL"/>
       </geometry>
       <material name="">
         <color rgba="1 1 1 1"/>
@@ -1024,18 +1050,16 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/left_index_tip_Link.STL"/>
+        <mesh filename="meshes/left_index_tip_link.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint name="left_index_tip_joint" type="revolute">
+  <joint name="left_index_tip_joint" type="fixed">
     <origin xyz="0.011097 0 0.035739" rpy="0 0.48723 0"/>
-    <parent link="left_index_distal_Link"/>
-    <child link="left_index_tip_Link"/>
-    <axis xyz="0 1 0"/>
-    <limit lower="1" upper="1" effort="1" velocity="1"/>
+    <parent link="left_index_distal_link"/>
+    <child link="left_index_tip_link"/>
   </joint>
-  <link name="left_middle_proximal_Link">
+  <link name="left_middle_proximal_link">
     <inertial>
       <origin xyz="-0.00222419445309931 -3.61990820813615E-06 0.0203049526045434" rpy="0 0 0"/>
       <mass value="0.009"/>
@@ -1044,7 +1068,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/left_middle_proximal_Link.STL"/>
+        <mesh filename="meshes/left_middle_proximal_link.STL"/>
       </geometry>
       <material name="">
         <color rgba="1 1 1 1"/>
@@ -1053,18 +1077,18 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/left_middle_proximal_Link.STL"/>
+        <mesh filename="meshes/left_middle_proximal_link.STL"/>
       </geometry>
     </collision>
   </link>
   <joint name="left_middle_proximal_joint" type="revolute">
     <origin xyz="-0.0045935 -0.010061 0.084993" rpy="0.039468 0.1483 0.057975"/>
     <parent link="left_base_link"/>
-    <child link="left_middle_proximal_Link"/>
+    <child link="left_middle_proximal_link"/>
     <axis xyz="0 1 0"/>
     <limit lower="0" upper="1.4661" effort="2" velocity="2.2685"/>
   </joint>
-  <link name="left_middle_distal_Link">
+  <link name="left_middle_distal_link">
     <inertial>
       <origin xyz="0.00269750139301865 3.27210103736979E-07 0.0183076461156786" rpy="0 0 0"/>
       <mass value="0.009"/>
@@ -1073,7 +1097,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/left_middle_distal_Link.STL"/>
+        <mesh filename="meshes/left_middle_distal_link.STL"/>
       </geometry>
       <material name="">
         <color rgba="1 1 1 1"/>
@@ -1082,19 +1106,19 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/left_middle_distal_Link.STL"/>
+        <mesh filename="meshes/left_middle_distal_link.STL"/>
       </geometry>
     </collision>
   </link>
   <joint name="left_middle_distal_joint" type="revolute">
     <origin xyz="0 0 0.037" rpy="0 0.12654 0"/>
-    <parent link="left_middle_proximal_Link"/>
-    <child link="left_middle_distal_Link"/>
+    <parent link="left_middle_proximal_link"/>
+    <child link="left_middle_distal_link"/>
     <axis xyz="0 1 0"/>
     <limit lower="0" upper="1.693" effort="2" velocity="2.2685"/>
     <mimic joint="left_middle_proximal_joint" multiplier="1.155" offset="0"/>
   </joint>
-  <link name="left_middle_tip_Link">
+  <link name="left_middle_tip_link">
     <inertial>
       <origin xyz="3.12250225675825E-16 -1.90819582357449E-17 5.55111512312578E-17" rpy="0 0 0"/>
       <mass value="0.001"/>
@@ -1103,7 +1127,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/left_middle_tip_Link.STL"/>
+        <mesh filename="meshes/left_middle_tip_link.STL"/>
       </geometry>
       <material name="">
         <color rgba="1 1 1 1"/>
@@ -1112,18 +1136,16 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/left_middle_tip_Link.STL"/>
+        <mesh filename="meshes/left_middle_tip_link.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint name="left_middle_tip_joint" type="revolute">
+  <joint name="left_middle_tip_joint" type="fixed">
     <origin xyz="0.0073534 0 0.041703" rpy="0 0.34907 0"/>
-    <parent link="left_middle_distal_Link"/>
-    <child link="left_middle_tip_Link"/>
-    <axis xyz="0 1 0"/>
-    <limit lower="1" upper="1" effort="1" velocity="1"/>
+    <parent link="left_middle_distal_link"/>
+    <child link="left_middle_tip_link"/>
   </joint>
-  <link name="left_ring_proximal_Link">
+  <link name="left_ring_proximal_link">
     <inertial>
       <origin xyz="-0.00234461360118865 -5.32058096490429E-06 0.0191785931520923" rpy="0 0 0"/>
       <mass value="0.009"/>
@@ -1132,7 +1154,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/left_ring_proximal_Link.STL"/>
+        <mesh filename="meshes/left_ring_proximal_link.STL"/>
       </geometry>
       <material name="">
         <color rgba="1 1 1 1"/>
@@ -1141,18 +1163,18 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/left_ring_proximal_Link.STL"/>
+        <mesh filename="meshes/left_ring_proximal_link.STL"/>
       </geometry>
     </collision>
   </link>
   <joint name="left_ring_proximal_joint" type="revolute">
     <origin xyz="-0.00468767815858587 0.0100262714211602 0.0839819548795939" rpy="-0.0394618478609065 0.147209177132223 -0.0579317909005277"/>
     <parent link="left_base_link"/>
-    <child link="left_ring_proximal_Link"/>
+    <child link="left_ring_proximal_link"/>
     <axis xyz="0 1 0"/>
     <limit lower="0" upper="1.4661" effort="2" velocity="2.2685"/>
   </joint>
-  <link name="left_ring_distal_Link">
+  <link name="left_ring_distal_link">
     <inertial>
       <origin xyz="0.00249839540877306 -2.78996376279483E-08 0.0177055538603162" rpy="0 0 0"/>
       <mass value="0.009"/>
@@ -1161,7 +1183,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/left_ring_distal_Link.STL"/>
+        <mesh filename="meshes/left_ring_distal_link.STL"/>
       </geometry>
       <material name="">
         <color rgba="1 1 1 1"/>
@@ -1170,19 +1192,19 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/left_ring_distal_Link.STL"/>
+        <mesh filename="meshes/left_ring_distal_link.STL"/>
       </geometry>
     </collision>
   </link>
   <joint name="left_ring_distal_joint" type="revolute">
     <origin xyz="0 0 0.035" rpy="0 0.12654 0"/>
-    <parent link="left_ring_proximal_Link"/>
-    <child link="left_ring_distal_Link"/>
+    <parent link="left_ring_proximal_link"/>
+    <child link="left_ring_distal_link"/>
     <axis xyz="0 1 0"/>
     <limit lower="0" upper="1.693" effort="2" velocity="2.2685"/>
     <mimic joint="left_ring_proximal_joint" multiplier="1.155" offset="0"/>
   </joint>
-  <link name="left_ring_tip_Link">
+  <link name="left_ring_tip_link">
     <inertial>
       <origin xyz="3.05311331771918E-16 3.46944695195361E-17 2.77555756156289E-17" rpy="0 0 0"/>
       <mass value="0.001"/>
@@ -1191,7 +1213,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/left_ring_tip_Link.STL"/>
+        <mesh filename="meshes/left_ring_tip_link.STL"/>
       </geometry>
       <material name="">
         <color rgba="1 1 1 1"/>
@@ -1200,18 +1222,16 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/left_ring_tip_Link.STL"/>
+        <mesh filename="meshes/left_ring_tip_link.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint name="left_ring_tip_joint" type="revolute">
+  <joint name="left_ring_tip_joint" type="fixed">
     <origin xyz="0.0071824 0 0.040734" rpy="0 0.34907 0"/>
-    <parent link="left_ring_distal_Link"/>
-    <child link="left_ring_tip_Link"/>
-    <axis xyz="0 1 0"/>
-    <limit lower="1" upper="1" effort="1" velocity="1"/>
+    <parent link="left_ring_distal_link"/>
+    <child link="left_ring_tip_link"/>
   </joint>
-  <link name="left_pinky_proximal_Link">
+  <link name="left_pinky_proximal_link">
     <inertial>
       <origin xyz="-0.00213266608574047 -7.02260316783054E-06 0.0160680350593264" rpy="0 0 0"/>
       <mass value="0.009"/>
@@ -1220,7 +1240,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/left_pinky_proximal_Link.STL"/>
+        <mesh filename="meshes/left_pinky_proximal_link.STL"/>
       </geometry>
       <material name="">
         <color rgba="1 1 1 1"/>
@@ -1229,18 +1249,18 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/left_pinky_proximal_Link.STL"/>
+        <mesh filename="meshes/left_pinky_proximal_link.STL"/>
       </geometry>
     </collision>
   </link>
   <joint name="left_pinky_proximal_joint" type="revolute">
     <origin xyz="-0.0023733 0.029356 0.078694" rpy="-0.11815 0.14491 -0.17392"/>
     <parent link="left_base_link"/>
-    <child link="left_pinky_proximal_Link"/>
+    <child link="left_pinky_proximal_link"/>
     <axis xyz="0 1 0"/>
     <limit lower="0" upper="1.4661" effort="2" velocity="2.2685"/>
   </joint>
-  <link name="left_pinky_distal_Link">
+  <link name="left_pinky_distal_link">
     <inertial>
       <origin xyz="0.0039856213046876 -8.08551930131518E-08 0.014106664402408" rpy="0 0 0"/>
       <mass value="0.009"/>
@@ -1249,7 +1269,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/left_pinky_distal_Link.STL"/>
+        <mesh filename="meshes/left_pinky_distal_link.STL"/>
       </geometry>
       <material name="">
         <color rgba="1 1 1 1"/>
@@ -1258,19 +1278,19 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/left_pinky_distal_Link.STL"/>
+        <mesh filename="meshes/left_pinky_distal_link.STL"/>
       </geometry>
     </collision>
   </link>
   <joint name="left_pinky_distal_joint" type="revolute">
     <origin xyz="0 0 0.029" rpy="0 0 0"/>
-    <parent link="left_pinky_proximal_Link"/>
-    <child link="left_pinky_distal_Link"/>
+    <parent link="left_pinky_proximal_link"/>
+    <child link="left_pinky_distal_link"/>
     <axis xyz="0 1 0"/>
     <limit lower="0" upper="1.693" effort="2" velocity="2.2685"/>
     <mimic joint="left_pinky_proximal_joint" multiplier="1.155" offset="0"/>
   </joint>
-  <link name="left_pinky_tip_Link">
+  <link name="left_pinky_tip_link">
     <inertial>
       <origin xyz="2.63677968348475E-16 -4.09394740330526E-16 5.55111512312578E-17" rpy="0 0 0"/>
       <mass value="0.001"/>
@@ -1279,7 +1299,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/left_pinky_tip_Link.STL"/>
+        <mesh filename="meshes/left_pinky_tip_link.STL"/>
       </geometry>
       <material name="">
         <color rgba="1 1 1 1"/>
@@ -1288,16 +1308,14 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/left_pinky_tip_Link.STL"/>
+        <mesh filename="meshes/left_pinky_tip_link.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint name="left_pinky_tip_joint" type="revolute">
+  <joint name="left_pinky_tip_joint" type="fixed">
     <origin xyz="0.010221 0 0.032918" rpy="0 0.4756 0"/>
-    <parent link="left_pinky_distal_Link"/>
-    <child link="left_pinky_tip_Link"/>
-    <axis xyz="0 1 0"/>
-    <limit lower="1" upper="1" effort="1" velocity="1"/>
+    <parent link="left_pinky_distal_link"/>
+    <child link="left_pinky_tip_link"/>
   </joint>
   <!-- BrainCo end -->
 
@@ -1645,7 +1663,7 @@
     <limit lower="0" upper="1.0472" effort="1.1" velocity="2.5303"/>
     <mimic joint="right_thumb_proximal_joint" multiplier="1" offset="0"/>
   </joint>
-  <link name="right_thumb_tip">
+  <link name="right_thumb_tip_link">
     <inertial>
       <origin xyz="0 -8.79922039356273E-05 -1.73472347597681E-18" rpy="0 0 0"/>
       <mass value="0.001"/>
@@ -1654,7 +1672,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/right_thumb_tip.STL"/>
+        <mesh filename="meshes/right_thumb_tip_link.STL"/>
       </geometry>
       <material name="">
         <color rgba="1 1 1 1"/>
@@ -1663,16 +1681,14 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/right_thumb_tip.STL"/>
+        <mesh filename="meshes/right_thumb_tip_link.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint name="right_thumb_tip" type="revolute">
+  <joint name="right_thumb_tip_joint" type="fixed">
     <origin xyz="0 0.026529 -0.0017734" rpy="-0.06675 0 0"/>
     <parent link="right_thumb_distal_link"/>
-    <child link="right_thumb_tip"/>
-    <axis xyz="1 0 0"/>
-    <limit lower="0" upper="0" effort="0" velocity="0"/>
+    <child link="right_thumb_tip_link"/>
   </joint>
   <link name="right_index_proximal_link">
     <inertial>
@@ -1733,7 +1749,7 @@
     <limit lower="0" upper="1.693" effort="2" velocity="2.2685"/>
     <mimic joint="right_index_proximal_joint" multiplier="1.155" offset="0"/>
   </joint>
-  <link name="right_index_tip">
+  <link name="right_index_tip_link">
     <inertial>
       <origin xyz="0 6.93889390390723E-18 2.77555756156289E-17" rpy="0 0 0"/>
       <mass value="0.001"/>
@@ -1742,7 +1758,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/right_index_tip.STL"/>
+        <mesh filename="meshes/right_index_tip_link.STL"/>
       </geometry>
       <material name="">
         <color rgba="1 1 1 1"/>
@@ -1751,16 +1767,14 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/right_index_tip.STL"/>
+        <mesh filename="meshes/right_index_tip_link.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint name="right_index_tip_joint" type="revolute">
+  <joint name="right_index_tip_joint" type="fixed">
     <origin xyz="0.011097 0 0.035739" rpy="0 0.4756 0"/>
     <parent link="right_index_distal_link"/>
-    <child link="right_index_tip"/>
-    <axis xyz="0 1 0"/>
-    <limit lower="0" upper="0" effort="0" velocity="0"/>
+    <child link="right_index_tip_link"/>
   </joint>
   <link name="right_middle_proximal_link">
     <inertial>
@@ -1821,7 +1835,7 @@
     <limit lower="0" upper="1.693" effort="2" velocity="2.2685"/>
     <mimic joint="right_middle_proximal_joint" multiplier="1.155" offset="0"/>
   </joint>
-  <link name="right_middle_tip">
+  <link name="right_middle_tip_link">
     <inertial>
       <origin xyz="0 -3.46944695195361E-18 0" rpy="0 0 0"/>
       <mass value="0.001"/>
@@ -1830,7 +1844,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/right_middle_tip.STL"/>
+        <mesh filename="meshes/right_middle_tip_link.STL"/>
       </geometry>
       <material name="">
         <color rgba="1 1 1 1"/>
@@ -1839,16 +1853,14 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/right_middle_tip.STL"/>
+        <mesh filename="meshes/right_middle_tip_link.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint name="right_middle_tip_joint" type="revolute">
+  <joint name="right_middle_tip_joint" type="fixed">
     <origin xyz="0.012558 0 0.040442" rpy="0 0.4756 0"/>
     <parent link="right_middle_distal_link"/>
-    <child link="right_middle_tip"/>
-    <axis xyz="0 1 0"/>
-    <limit lower="0" upper="0" effort="0" velocity="0"/>
+    <child link="right_middle_tip_link"/>
   </joint>
   <link name="right_ring_proximal_link">
     <inertial>
@@ -1909,7 +1921,7 @@
     <limit lower="0" upper="1.693" effort="2" velocity="2.2685"/>
     <mimic joint="right_ring_proximal_joint" multiplier="1.155" offset="0"/>
   </joint>
-  <link name="right_ring_tip">
+  <link name="right_ring_tip_link">
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <mass value="0.001"/>
@@ -1918,7 +1930,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/right_ring_tip.STL"/>
+        <mesh filename="meshes/right_ring_tip_link.STL"/>
       </geometry>
       <material name="">
         <color rgba="1 1 1 1"/>
@@ -1927,16 +1939,14 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/right_ring_tip.STL"/>
+        <mesh filename="meshes/right_ring_tip_link.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint name="right_ring_tip_joint" type="revolute">
+  <joint name="right_ring_tip_joint" type="fixed">
     <origin xyz="0.012266 0 0.039501" rpy="0 0.4756 0"/>
     <parent link="right_ring_distal_link"/>
-    <child link="right_ring_tip"/>
-    <axis xyz="0 1 0"/>
-    <limit lower="0" upper="0" effort="0" velocity="0"/>
+    <child link="right_ring_tip_link"/>
   </joint>
   <link name="right_pinky_proximal_link">
     <inertial>
@@ -1997,7 +2007,7 @@
     <limit lower="0" upper="1.693" effort="2" velocity="2.2685"/>
     <mimic joint="right_pinky_proximal_joint" multiplier="1.155" offset="0"/>
   </joint>
-  <link name="right_pinky_tip">
+  <link name="right_pinky_tip_link">
     <inertial>
       <origin xyz="3.46944695195361E-18 -5.20417042793042E-18 0" rpy="0 0 0"/>
       <mass value="0.001"/>
@@ -2006,7 +2016,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/right_pinky_tip.STL"/>
+        <mesh filename="meshes/right_pinky_tip_link.STL"/>
       </geometry>
       <material name="">
         <color rgba="1 1 1 1"/>
@@ -2015,16 +2025,14 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/right_pinky_tip.STL"/>
+        <mesh filename="meshes/right_pinky_tip_link.STL"/>
       </geometry>
     </collision>
   </link>
-  <joint name="right_pinky_tip_joint" type="revolute">
+  <joint name="right_pinky_tip_joint" type="fixed">
     <origin xyz="0.010221 0 0.032918" rpy="0 0.4756 0"/>
     <parent link="right_pinky_distal_link"/>
-    <child link="right_pinky_tip"/>
-    <axis xyz="0 1 0"/>
-    <limit lower="0" upper="0" effort="0" velocity="0"/>
+    <child link="right_pinky_tip_link"/>
   </joint>
   <!-- BrainCo end -->
 </robot>
