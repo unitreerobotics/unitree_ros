@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="model" default="g1_29dof"/>
+  <arg name="rvizconfig" default="$(find-pkg-share g1_description)/launch/display.rviz"/>
+
+  <node pkg="robot_state_publisher" exec="robot_state_publisher" name="robot_state_publisher" output="screen">
+    <param name="robot_description"
+           value="$(command 'cat $(find-pkg-share g1_description)/$(var model).urdf')"/>
+  </node>
+
+  <node pkg="joint_state_publisher_gui" exec="joint_state_publisher_gui"
+        name="joint_state_publisher_gui" output="screen"/>
+
+  <node pkg="rviz2" exec="rviz2" name="rviz2" output="screen"
+        args="-d $(var rvizconfig)"/>
+</launch>
