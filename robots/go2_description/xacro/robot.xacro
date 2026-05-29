@@ -10,6 +10,12 @@
     <!-- <xacro:include filename="$(find go2_description)/xacro/stairs.xacro"/> -->
     <xacro:include filename="$(find go2_description)/xacro/gazebo.xacro"/>
     <!-- <xacro:include filename="$(find go2_gazebo)/launch/stairs.urdf.xacro"/> -->
+    <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
+
+    <xacro:arg name="gpu" default="false"/>
+    <xacro:property name="gpu" value="$(arg gpu)"/>
+    <xacro:arg name="organize_cloud" default="false"/>
+    <xacro:property name="organize_cloud" value="$(arg organize_cloud)"/>
 
     <!-- <xacro:stairs stairs="15" xpos="0" ypos="0" zpos="0" /> -->
 
@@ -34,6 +40,11 @@
             </geometry>
         </visual>
     </link>
+
+    <xacro:VLP-16 parent="base" name="velodyne" topic="/velodyne_points" organize_cloud="${organize_cloud}" hz="10" samples="440" gpu="${gpu}">
+        <origin xyz="0 0 0.11" rpy="0 0 0" />
+    </xacro:VLP-16>
+
 
     <joint name="floating_base" type="fixed">
         <origin rpy="0 0 0" xyz="0 0 0"/>
