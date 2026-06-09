@@ -1058,4 +1058,28 @@
     <axis
       xyz="0 0 0" />
   </joint>
+
+  <link name="camera_link"/>
+  <joint name="camera_joint" type="fixed">
+    <origin xyz="0.3381 0.0336 0.0525" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="camera_link"/>
+  </joint>
+
+  <link name="front_lidar_link"/>
+
+  <joint name="front_lidar_joint" type="fixed">
+    <origin xyz="0.33767 0.0 0.08134" rpy="1.5708 0 1.5708"/>
+    <parent link="base_link"/>
+    <child link="front_lidar_link"/>
+  </joint>
+
+  <link name="rear_lidar_link"/>
+
+  <joint name="rear_lidar_joint" type="fixed">
+    <origin xyz="0.0 0.005997 -0.617643765" rpy="0 3.14159 0"/>
+    <parent link="front_lidar_link"/>
+    <child link="rear_lidar_link"/>
+  </joint>
+
 </robot>
