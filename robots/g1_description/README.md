@@ -40,3 +40,40 @@ MJCF/URDF for the G1 robot:
    ```
 
 2. Drag and drop the MJCF/URDF model file (`g1_XXX.xml`/`g1_XXX.urdf`) to the MuJoCo Viewer.
+
+## Visulization with VSCode + [Urdf Visualizer](https://github.com/MorningFrog/urdf-visualizer)
+
+Install VSCode and [Urdf Visualizer](https://github.com/MorningFrog/urdf-visualizer)
+
+## Q&A: How to Add AGX Backpack?
+
+Add the following code snippet to the URDF file.
+
+```xml
+<!-- ADD AGX Backpack -->
+<link name="backpack_link">
+  <inertial>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <mass value="1.9"/>
+    <inertia ixx="0.015510" ixy="0.000017" ixz="0.000563" iyy="0.010909" iyz="0.000059" izz="0.007288"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/backpack_link.STL"/>
+    </geometry>
+    <material name="white"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="meshes/backpack_link.STL"/>
+    </geometry>
+  </collision>
+</link>
+<joint name="backpack_joint" type="fixed">
+  <origin xyz="-0.094605 -0.0005 0.165324" rpy="0 0 0"/>
+  <parent link="torso_link"/>
+  <child link="backpack_link"/>
+</joint>
+```
