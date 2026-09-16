@@ -16,7 +16,7 @@ Use of this source code is governed by the MPL-2.0 license, see LICENSE.
 #define posStopF (2.146E+9f)  // stop position control mode
 #define velStopF (16000.0f)   // stop velocity control mode
 
-typedef struct 
+typedef struct
 {
     uint8_t mode;
     double pos;
@@ -26,8 +26,31 @@ typedef struct
     double torque;
 } ServoCmd;
 
-double clamp(double&, double, double);  // eg. clamp(1.5, -1, 1) = 1
-double computeVel(double current_position, double last_position, double last_velocity, double duration);  // get current velocity
-double computeTorque(double current_position, double current_velocity, ServoCmd&);  // get torque
+/* eg. clamp(1.5, -1, 1) = 1 */
+inline double clamp(double &val, double min_val, double max_val)
+{
+    return val = std::min(std::max(val, min_val), max_val);
+}
+
+/* get current velocity */
+inline double computeVel(double currentPos, double lastPos, double lastVel, double period)
+{
+    return lastVel*0.35f + 0.65f*(currentPos-lastPos)/period;
+}
+
+/* get torque */
+inline double computeTorque(double currentPos, double currentVel, ServoCmd &cmd)
+{
+    double targetPos, targetVel, targetTorque, posStiffness, velStiffness, calcTorque;
+    targetPos = cmd.pos;
+    targetVel = cmd.vel;
+    targetTorque = cmd.torque;
+    posStiffness = cmd.posStiffness;
+    velStiffness = cmd.velStiffness;
+    if(fabs(targetPos-posStopF) < 1e-6) posStiffness = 0;
+    if(fabs(targetVel-velStopF) < 1e-6) velStiffness = 0;
+    calcTorque = posStiffness*(targetPos-currentPos) + velStiffness*(targetVel-currentVel) + targetTorque;
+    return calcTorque;
+}
 
 #endif
