@@ -1,4 +1,4 @@
-<robot name="g1_29dof_mode_18_with_2dof_head">
+<robot name="g1_plus">
   <material name="dark">
     <color rgba="0.2 0.2 0.2 1"/>
   </material>

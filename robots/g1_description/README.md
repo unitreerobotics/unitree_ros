@@ -24,6 +24,7 @@ MJCF/URDF for the G1 robot:
 | `g1_29dof_lock_waist_with_hand_rev_1_0`  |       6        | {14.3, 22.5}                 | 4010        |            | Up-to-date    |   6*2   |     3     |   7*2   |   7*2    |
 | `g1_dual_arm`                            |       9        | null                         | 4010        |            | Up-to-date    |  null   |   null    |   7*2   |   null   |
 | `g1_29dof_mode_18`                       |       18       | {22.5, 22.5}                 | 5010(new)   | no         | Up-to-date    |   6*2   |     3     |   7*2   |   null   |
+| `g1_plus`                                |       18       | {14.3, 22.5}                 | 5010(new)   | no         | Up-to-date    |   6*2   |     3     |   7*2   |   null   |
 | `g1_29dof_mode_15_with_dex1_1`           |       15       | {22.5, 22.5}                 | 5010(new)   | no         | Up-to-date    |   6*2   |     3     |   7*2   |   2*2    |
 | `g1_comp`                                |                |                              |             | no         | Up-to-date    |   6*2   |     1     |   5*2   |   null   |
 | ~~`g1_23dof`~~                           |       1        | {14.3, 14.5}                 | null        |            | Deprecated    |   6*2   |     1     |   5*2   |   null   |
@@ -32,6 +33,14 @@ MJCF/URDF for the G1 robot:
 | ~~`g1_29dof_lock_waist`~~                |       3        | {14.3, 14.5}                 | 4010        |            | Deprecated    |   6*2   |     3     |   7*2   |   null   |
 
 💡**Note:** The robot's `mode_machine` ID can be viewed in the app by navigating to **Device** → **Data** → **Robot** → **Machine Type**.
+
+## G1+ (31 DoF)
+
+`g1_plus.urdf` extends `g1_29dof_mode_18.urdf` with the G1+ upper body dated 2026-09-23. It has 12 leg, 3 waist, 14 arm, and 2 neck degrees of freedom.
+
+- The head uses `neck_pitch_joint` and `neck_yaw_joint`; the head links use the `dark` material.
+- The model includes the updated torso and head meshes, a torso handle, and camera/lidar reference frames attached to `head_link`.
+- Motor effort and velocity limits follow [`motor_info.md`](motor_info.md). In `g1_plus.urdf`, the ankle pitch/roll effort is increased from 41 to 61.5 N·m, and the waist roll/pitch effort is increased from 60 to 90 N·m. Velocities are unchanged.
 
 ## Visulization with [MuJoCo](https://github.com/google-deepmind/mujoco)
 
