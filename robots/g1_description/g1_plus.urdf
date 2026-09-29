@@ -166,7 +166,7 @@
     <parent link="left_knee_link"/>
     <child link="left_ankle_pitch_link"/>
     <axis xyz="0 1 0"/>
-    <limit lower="-0.87267" upper="0.5236" effort="41" velocity="34.1"/>
+    <limit lower="-0.87267" upper="0.5236" effort="61.5" velocity="34.1"/>
   </joint>
   <link name="left_ankle_roll_link">
     <inertial>
@@ -211,7 +211,7 @@
     <parent link="left_ankle_pitch_link"/>
     <child link="left_ankle_roll_link"/>
     <axis xyz="1 0 0"/>
-    <limit lower="-0.2618" upper="0.2618" effort="41" velocity="34.1"/>
+    <limit lower="-0.2618" upper="0.2618" effort="61.5" velocity="34.1"/>
   </joint>
   <link name="right_hip_pitch_link">
     <inertial>
@@ -346,7 +346,7 @@
     <parent link="right_knee_link"/>
     <child link="right_ankle_pitch_link"/>
     <axis xyz="0 1 0"/>
-    <limit lower="-0.87267" upper="0.5236" effort="41" velocity="34.1"/>
+    <limit lower="-0.87267" upper="0.5236" effort="61.5" velocity="34.1"/>
   </joint>
   <link name="right_ankle_roll_link">
     <inertial>
@@ -391,7 +391,7 @@
     <parent link="right_ankle_pitch_link"/>
     <child link="right_ankle_roll_link"/>
     <axis xyz="1 0 0"/>
-    <limit lower="-0.2618" upper="0.2618" effort="41" velocity="34.1"/>
+    <limit lower="-0.2618" upper="0.2618" effort="61.5" velocity="34.1"/>
   </joint>
 
   <!-- Torso -->
@@ -435,7 +435,7 @@
     <parent link="waist_yaw_link"/>
     <child link="waist_roll_link"/>
     <axis xyz="1 0 0"/>
-    <limit lower="-0.52" upper="0.52" effort="60" velocity="30.6"/>
+    <limit lower="-0.52" upper="0.52" effort="90" velocity="30.6"/>
   </joint>
   <link name="torso_link">
     <inertial>
@@ -462,7 +462,7 @@
     <parent link="waist_roll_link"/>
     <child link="torso_link"/>
     <axis xyz="0 1 0"/>
-    <limit lower="-0.52" upper="0.52" effort="60" velocity="30.6"/>
+    <limit lower="-0.52" upper="0.52" effort="90" velocity="30.6"/>
   </joint>
 
   <!-- LOGO -->
