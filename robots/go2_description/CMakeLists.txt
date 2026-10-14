@@ -2,8 +2,9 @@ cmake_minimum_required(VERSION 2.8.3)
 
 project(go2_description)
 
-find_package(catkin REQUIRED)
-
+find_package(catkin REQUIRED
+	velodyne_description
+)
 catkin_package()
 
 find_package(roslaunch)
