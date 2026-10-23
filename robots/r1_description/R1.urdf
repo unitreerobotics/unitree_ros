@@ -736,7 +736,7 @@
   <link name="waist_yaw_link">
     <inertial>
       <origin xyz="-0.000648 -0.000052 0.144497" rpy="0 0 0"/>
-      <mass value="6.024198"/>
+      <mass value="6.324198"/>
       <inertia ixx="0.060949" ixy="-0.000060" ixz="0.001044" iyy="0.050645" iyz="-0.000164" izz="0.024602"/>
     </inertial>
     <visual>
@@ -758,7 +758,7 @@
     <parent link="waist_roll_link"/>
     <child link="waist_yaw_link"/>
     <axis xyz="0 0 1"/>
-    <limit lower="-2.618" upper="2.618" effort="60" velocity="18.8"/>
+    <limit lower="-2.618" upper="2.618" effort="60" velocity="18.7"/>
   </joint>
   <link name="left_shoulder_pitch_link">
     <inertial>
@@ -785,7 +785,7 @@
     <parent link="waist_yaw_link"/>
     <child link="left_shoulder_pitch_link"/>
     <axis xyz="0 1 0"/>
-    <limit lower="-3.1416" upper="2.0944" effort="60" velocity="18.8"/>
+    <limit lower="-3.1416" upper="2.0944" effort="60" velocity="18.7"/>
   </joint>
   <link name="left_shoulder_roll_link">
     <inertial>
@@ -812,7 +812,7 @@
     <parent link="left_shoulder_pitch_link"/>
     <child link="left_shoulder_roll_link"/>
     <axis xyz="1 0 0"/>
-    <limit lower="-0.22689" upper="2.4784" effort="60" velocity="18.8"/>
+    <limit lower="-0.22689" upper="2.4784" effort="60" velocity="18.7"/>
   </joint>
   <link name="left_shoulder_yaw_link">
     <inertial>
@@ -920,7 +920,7 @@
     <parent link="waist_yaw_link"/>
     <child link="right_shoulder_pitch_link"/>
     <axis xyz="0 1 0"/>
-    <limit lower="-3.1416" upper="2.0944" effort="60" velocity="18.8"/>
+    <limit lower="-3.1416" upper="2.0944" effort="60" velocity="18.7"/>
   </joint>
   <link name="right_shoulder_roll_link">
     <inertial>
@@ -947,7 +947,7 @@
     <parent link="right_shoulder_pitch_link"/>
     <child link="right_shoulder_roll_link"/>
     <axis xyz="1 0 0"/>
-    <limit lower="-2.47849" upper="0.2268" effort="60" velocity="18.8"/>
+    <limit lower="-2.47849" upper="0.2268" effort="60" velocity="18.7"/>
   </joint>
   <link name="right_shoulder_yaw_link">
     <inertial>
@@ -1082,6 +1082,32 @@
     <parent link="head_pitch_link"/>
     <child link="head_yaw_link"/>
     <axis xyz="0 0 1"/>
-    <limit lower="-2.0071" upper="2.0071" effort="33" velocity="33.4"/>
+    <limit lower="-2.0071" upper="2.0071" effort="0.86" velocity="11"/>
+  </joint>
+  <link name="camera_link">
+    <inertial>
+      <origin xyz="0.0118 0 0" rpy="0 0 0"/>
+      <mass value="0.00224"/>
+      <inertia ixx="0.000000015086" ixy="0" ixz="0" iyy="0.0000000077482" iyz="0" izz="0.0000000077482"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/camera_link.STL"/>
+      </geometry>
+      <material name="light_grey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/camera_link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="camera_joint" type="fixed">
+    <origin xyz="0.066971 0 -0.021637" rpy="0 0.34907 0"/>
+    <parent link="head_yaw_link"/>
+    <child link="camera_link"/>
+    <axis xyz="0 0 0"/>
   </joint>
 </robot>
