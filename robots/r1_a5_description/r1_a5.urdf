@@ -28,7 +28,7 @@
   <link name="waist_yaw_link">
     <inertial>
       <origin xyz="-0.000648 -0.000052  0.144497" rpy="0 0 0"/>
-      <mass value="6.024198"/>
+      <mass value="6.324198"/>
       <inertia ixx="0.060949" ixy="-0.000060" ixz="0.001044" iyy="0.050645" iyz="-0.000164" izz="0.024602"/>
     </inertial>
     <visual>
@@ -375,5 +375,31 @@
     <child link="head_yaw_link"/>
     <axis xyz="0 0 1"/>
     <limit lower="-2.0071" upper="2.0071" effort="0.86" velocity="11"/>
+  </joint>
+  <link name="camera_link">
+    <inertial>
+      <origin xyz="0.0118 0 0" rpy="0 0 0"/>
+      <mass value="0.00224"/>
+      <inertia ixx="0.000000015086" ixy="0" ixz="0" iyy="0.0000000077482" iyz="0" izz="0.0000000077482"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/camera_link.STL"/>
+      </geometry>
+      <material name="silvery"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/camera_link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="camera_joint" type="fixed">
+    <origin xyz="0.066971 0 -0.021637" rpy="0 0.349066 0"/>
+    <parent link="head_yaw_link"/>
+    <child link="camera_link"/>
+    <axis xyz="0 0 0"/>
   </joint>
 </robot>
