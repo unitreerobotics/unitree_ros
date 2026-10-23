@@ -28,7 +28,7 @@
   <link name="waist_yaw_link">
     <inertial>
       <origin xyz="-0.000648 -0.000052  0.144497" rpy="0 0 0"/>
-      <mass value="6.024198"/>
+      <mass value="6.384198"/>
       <inertia ixx="0.060949" ixy="-0.000060" ixz="0.001044" iyy="0.050645" iyz="-0.000164" izz="0.024602"/>
     </inertial>
     <visual>
@@ -216,9 +216,9 @@
   </joint>
   <link name="left_wrist_yaw_link">
     <inertial>
-      <origin xyz="0.09491001 -0.0002172 -0.02384582" rpy="0 0 0"/>
-      <mass value="0.63414044"/>
-      <inertia ixx="0.00046864" ixy="-6.59E-06" ixz="-6.83E-06" iyy="0.00125049" iyz="-1.98E-06" izz="0.00137808"/>
+      <origin xyz="0.02586884 -0.00000183 -0.02283894" rpy="0 0 0"/>
+      <mass value="0.08314044"/>
+      <inertia ixx="0.00004675" ixy="0" ixz="-0.00000011" iyy="0.00005064" iyz="0" izz="0.00003201"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -405,9 +405,9 @@
   </joint>
   <link name="right_wrist_yaw_link">
     <inertial>
-      <origin xyz="0.09491001 0.0002172 0.02384582" rpy="0 0 0"/>
-      <mass value="0.63414044"/>
-      <inertia ixx="0.00046864" ixy="6.59E-06" ixz="-6.83E-06" iyy="0.00125049" iyz="1.98E-06" izz="0.00137808"/>
+      <origin xyz="0.02586884 -0.00000183 0.02283894" rpy="0 0 0"/>
+      <mass value="0.08314044"/>
+      <inertia ixx="0.00004675" ixy="0" ixz="-0.00000011" iyy="0.00005064" iyz="0" izz="0.00003201"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -483,5 +483,31 @@
     <child link="head_yaw_link"/>
     <axis xyz="0 0 1"/>
     <limit lower="-2.0071" upper="2.0071" effort="0.86" velocity="11"/>
+  </joint>
+  <link name="camera_link">
+    <inertial>
+      <origin xyz="0.0118 0 0" rpy="0 0 0"/>
+      <mass value="0.024"/>
+      <inertia ixx="0.000000015086" ixy="0" ixz="0" iyy="0.0000000077482" iyz="0" izz="0.0000000077482"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/camera_link.STL"/>
+      </geometry>
+      <material name="silvery"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/camera_link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="camera_joint" type="fixed">
+    <origin xyz="0.066971 0 -0.021637" rpy="0 0.34907 0"/>
+    <parent link="head_yaw_link"/>
+    <child link="camera_link"/>
+    <axis xyz="0 0 0"/>
   </joint>
 </robot>
