@@ -28,9 +28,9 @@
   </link>
   <link name="pelvis_link">
     <inertial>
-      <origin xyz="-0.0371 0.0023 0.0833" rpy="0 0 0"/>
-      <mass value="97.063"/>
-      <inertia ixx="4.8974606848" ixy="0.0156598062" ixz="0.6091668923" iyy="5.4522042574" iyz="0.0139441979" izz="3.1526101078"/>
+      <origin xyz="-0.039 0.0015 0.0923" rpy="0 0 0"/>
+      <mass value="86.0"/>
+      <inertia ixx="5.0802249051" ixy="-0.0236712007" ixz="0.6058975198" iyy="5.5198444718" iyz="0.0183982874" izz="3.0735656812"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -52,7 +52,6 @@
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <parent link="base_link"/>
     <child link="pelvis_link"/>
-    <axis xyz="0 0 0"/>
     <limit lower="-1.7453" upper="1.7453" effort="120" velocity="28.375"/>
   </joint>
   <link name="waist_heave_link">
@@ -110,8 +109,8 @@
     <origin xyz="0.1315 0.0693 0" rpy="0 0.017453 0"/>
     <parent link="waist_heave_link"/>
     <child link="waist_pitch_link"/>
-    <axis xyz="0 -1 0"/>
-    <limit lower="-2" upper="0" effort="200" velocity="30"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="0" upper="2" effort="200" velocity="30"/>
   </joint>
   <link name="right_shoulder_pitch_link">
     <inertial>
@@ -139,8 +138,8 @@
     <origin xyz="0.0021575 -0.18055 0.389" rpy="-0.26914 0 0"/>
     <parent link="waist_pitch_link"/>
     <child link="right_shoulder_pitch_link"/>
-    <axis xyz="0 -1 0"/>
-    <limit lower="-2.618" upper="1.833" effort="130" velocity="21.9"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.833" upper="2.618" effort="130" velocity="21.9"/>
   </joint>
   <link name="right_shoulder_roll_link">
     <inertial>
@@ -168,8 +167,8 @@
     <origin xyz="-0.0032074 -0.059938 -0.039865" rpy="0.26914 0 0"/>
     <parent link="right_shoulder_pitch_link"/>
     <child link="right_shoulder_roll_link"/>
-    <axis xyz="-1 0 0"/>
-    <limit lower="-2.494" upper="0.517" effort="60" velocity="18.7"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-0.517" upper="2.494" effort="60" velocity="18.7"/>
   </joint>
   <link name="right_shoulder_yaw_link">
     <inertial>
@@ -197,7 +196,7 @@
     <origin xyz="-0.0025601 -0.0036752 -0.10421" rpy="0 0 0"/>
     <parent link="right_shoulder_roll_link"/>
     <child link="right_shoulder_yaw_link"/>
-    <axis xyz="0 -6.4058E-05 1"/>
+    <axis xyz="0 0 1"/>
     <limit lower="-2.618" upper="2.618" effort="60" velocity="18.7"/>
   </joint>
   <link name="right_elbow_link">
@@ -226,7 +225,7 @@
     <origin xyz="0.016653 -0.02331 -0.12792" rpy="0 0 0"/>
     <parent link="right_shoulder_yaw_link"/>
     <child link="right_elbow_link"/>
-    <axis xyz="0.00089601 1 -0.00013173"/>
+    <axis xyz="0 1 0"/>
     <limit lower="-0.986" upper="3.071" effort="60" velocity="18.7"/>
   </joint>
   <link name="right_wrist_roll_link">
@@ -255,7 +254,7 @@
     <origin xyz="0.13119 0.022697 -0.013769" rpy="0 0 0"/>
     <parent link="right_elbow_link"/>
     <child link="right_wrist_roll_link"/>
-    <axis xyz="-1 -3.0614E-05 0"/>
+    <axis xyz="1 0 0"/>
     <limit lower="-2.618" upper="2.618" effort="60" velocity="18.7"/>
   </joint>
   <link name="right_wrist_pitch_link">
@@ -284,7 +283,7 @@
     <origin xyz="0.037994 -0.031144 0.00045104" rpy="0 0 0"/>
     <parent link="right_wrist_roll_link"/>
     <child link="right_wrist_pitch_link"/>
-    <axis xyz="0.00085677 -0.99993 -0.011791"/>
+    <axis xyz="0 1 0"/>
     <limit lower="-0.576" upper="0.576" effort="10" velocity="37.7"/>
   </joint>
   <link name="right_wrist_yaw_link">
@@ -313,7 +312,7 @@
     <origin xyz="0.072574 0.031041 -0.00079054" rpy="0 0 0"/>
     <parent link="right_wrist_pitch_link"/>
     <child link="right_wrist_yaw_link"/>
-    <axis xyz="-0.0042346 -0.00012806 -0.99999"/>
+    <axis xyz="0 0 1"/>
     <limit lower="-1.22" upper="1.22" effort="10" velocity="37.7"/>
   </joint>
   <!-- Dex11 hand (from g1_29dof_mode_15_with_dex1_1.urdf) -->
@@ -370,8 +369,8 @@
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <parent link="right_dex1_base_link"/>
     <child link="right_dex1_finger_link_1"/>
-    <axis xyz="0 -1 0"/>
-    <limit lower="-0.02" upper="0.0245" effort="20" velocity="0.2"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-0.0245" upper="0.02" effort="20" velocity="0.2"/>
   </joint>
   <link name="right_dex1_finger_link_2">
     <inertial>
@@ -457,8 +456,8 @@
     <origin xyz="-0.0032073 0.059938 -0.039865" rpy="-0.26914 0 0"/>
     <parent link="left_shoulder_pitch_link"/>
     <child link="left_shoulder_roll_link"/>
-    <axis xyz="-1 0 0"/>
-    <limit lower="-0.517" upper="2.494" effort="60" velocity="18.7"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-2.494" upper="0.517" effort="60" velocity="18.7"/>
   </joint>
   <link name="left_shoulder_yaw_link">
     <inertial>
@@ -486,7 +485,7 @@
     <origin xyz="-0.0025601 0.0036752 -0.10421" rpy="0 0 0"/>
     <parent link="left_shoulder_roll_link"/>
     <child link="left_shoulder_yaw_link"/>
-    <axis xyz="0 -6.4058E-05 1"/>
+    <axis xyz="0 0 1"/>
     <limit lower="-2.618" upper="2.618" effort="60" velocity="18.7"/>
   </joint>
   <link name="left_elbow_link">
@@ -515,8 +514,8 @@
     <origin xyz="0.016653 0.02331 -0.12792" rpy="0 0 0"/>
     <parent link="left_shoulder_yaw_link"/>
     <child link="left_elbow_link"/>
-    <axis xyz="0.00089601 -1 -0.00013173"/>
-    <limit lower="-0.986" upper="3.071" effort="60" velocity="18.7"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-3.071" upper="0.986" effort="60" velocity="18.7"/>
   </joint>
   <link name="left_wrist_roll_link">
     <inertial>
@@ -544,7 +543,7 @@
     <origin xyz="0.13119 -0.022697 -0.013769" rpy="0 0 0"/>
     <parent link="left_elbow_link"/>
     <child link="left_wrist_roll_link"/>
-    <axis xyz="-1 3.0614E-05 0"/>
+    <axis xyz="1 0 0"/>
     <limit lower="-2.618" upper="2.618" effort="60" velocity="18.7"/>
   </joint>
   <link name="left_wrist_pitch_link">
@@ -573,7 +572,7 @@
     <origin xyz="0.037994 0.031144 0.00045104" rpy="0 0 0"/>
     <parent link="left_wrist_roll_link"/>
     <child link="left_wrist_pitch_link"/>
-    <axis xyz="0.00085677 -0.99993 -0.011791"/>
+    <axis xyz="0 1 0"/>
     <limit lower="-0.576" upper="0.576" effort="10" velocity="37.7"/>
   </joint>
   <link name="left_wrist_yaw_link">
@@ -602,7 +601,7 @@
     <origin xyz="0.069283 -0.031045 -0.0006247" rpy="0 0 0"/>
     <parent link="left_wrist_pitch_link"/>
     <child link="left_wrist_yaw_link"/>
-    <axis xyz="-0.0042346 0.00012806 -0.99999"/>
+    <axis xyz="0 0 1"/>
     <limit lower="-1.22" upper="1.22" effort="10" velocity="37.7"/>
   </joint>
   <!-- Dex11 hand (from g1_29dof_mode_15_with_dex1_1.urdf) -->
@@ -659,8 +658,8 @@
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <parent link="left_dex1_base_link"/>
     <child link="left_dex1_finger_link_1"/>
-    <axis xyz="0 -1 0"/>
-    <limit lower="-0.02" upper="0.0245" effort="20" velocity="0.2"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-0.0245" upper="0.02" effort="20" velocity="0.2"/>
   </joint>
   <link name="left_dex1_finger_link_2">
     <inertial>
@@ -717,8 +716,8 @@
     <origin xyz="-0.0010421 -0.085791 0.45073" rpy="0 -0.017453 0"/>
     <parent link="waist_pitch_link"/>
     <child link="head_pitch_link"/>
-    <axis xyz="0 -1 0"/>
-    <limit lower="-0.5236" upper="0.83775" effort="50" velocity="10"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-0.83775" upper="0.5236" effort="50" velocity="10"/>
   </joint>
   <link name="head_yaw_link">
     <inertial>
@@ -775,7 +774,7 @@
     <origin xyz="0 0.246 0" rpy="0 0 0"/>
     <parent link="pelvis_link"/>
     <child link="left_wheel_roll_link"/>
-    <axis xyz="0 -1 0"/>
+    <axis xyz="0 1 0"/>
   </joint>
   <link name="right_wheel_roll_link">
     <inertial>
