@@ -1189,4 +1189,118 @@
       </geometry>
     </collision>
   </link>
+  <link name="Lidar_Link">
+    <inertial>
+      <origin xyz="-4.996E-16 0 -0.0088499" rpy="0 0 0"/>
+      <mass value="0.24404"/>
+      <inertia ixx="0.00014782" ixy="0" ixz="4.3095E-37" iyy="0.00014782" iyz="0" izz="0.00022043"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Lidar_Link.STL"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Lidar_Link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="RIght_depth_Camera_Link">
+    <inertial>
+      <origin xyz="0.246495981 -0.090876247 -0.002656756" rpy="0 0 0"/>
+      <mass value="0.01577"/>
+      <inertia ixx="9.8225E-06" ixy="-7.3186E-07" ixz="7.5925E-08" iyy="9.3961E-07" iyz="-5.8023E-08" izz="9.7432E-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/RIght_depth_Camera_Link.STL"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/RIght_depth_Camera_Link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="Left_depth_Camera_Link">
+    <inertial>
+      <origin xyz="0.249925151 0.091113702 -0.004567121" rpy="0 0 0"/>
+      <mass value="0.01577"/>
+      <inertia ixx="9.8178E-06" ixy="7.3076E-07" ixz="7.9785E-08" iyy="9.3948E-07" iyz="5.9912E-08" izz="9.7481E-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Left_depth_Camera_Link.STL"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Left_depth_Camera_Link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="Body_Depth_Camera_Link">
+    <inertial>
+      <origin xyz="-0.00474098968210224 -0.0325000000000002 -1.11022302462516E-16" rpy="0 0 0"/>
+      <mass value="0.0034103483590604"/>
+      <inertia ixx="2.06566517067031E-06" ixy="3.10591007700887E-21" ixz="-3.17637355220363E-22" iyy="4.62287046773044E-08" iyz="-1.30773670904902E-22" izz="2.03962869018485E-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Body_Depth_Camera_Link.STL"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Body_Depth_Camera_Link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Lidar_Joint" type="fixed">
+    <origin xyz="0.1871 -0.016137 0.10085" rpy="0 0 0"/>
+    <parent link="AGV_link"/>
+    <child link="Lidar_Link"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="0" upper="0" effort="0" velocity="0"/>
+  </joint>
+  <joint name="RIght_depth_Camera_Joint" type="fixed">
+    <origin xyz="0.246495981 -0.090876247 -0.002656756" rpy="0 0 0"/>
+    <parent link="AGV_link"/>
+    <child link="RIght_depth_Camera_Link"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  <joint name="Left_depth_Camera_Joint" type="fixed">
+    <origin xyz="0.249925151 0.091113702 -0.004567121" rpy="0 0 0"/>
+    <parent link="AGV_link"/>
+    <child link="Left_depth_Camera_Link"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  <joint name="Body_Depth_Camera_Joint" type="fixed">
+    <origin xyz="0.058 0.0325 0.5205" rpy="0 0.83103 0"/>
+    <parent link="Yaw_Link"/>
+    <child link="Body_Depth_Camera_Link"/>
+    <axis xyz="0 0 0"/>
+    <limit lower="0" upper="0" effort="0" velocity="0"/>
+  </joint>
 </robot>
