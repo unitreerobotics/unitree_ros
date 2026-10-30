@@ -1201,7 +1201,7 @@
   </link>
   <link name="RIght_depth_Camera_Link">
     <inertial>
-      <origin xyz="0.246495981 -0.090876247 -0.002656756" rpy="0 0 0"/>
+      <origin xyz="0 0 -0.002656756" rpy="0 0 0"/>
       <mass value="0.01577"/>
       <inertia ixx="9.8225E-06" ixy="-7.3186E-07" ixz="7.5925E-08" iyy="9.3961E-07" iyz="-5.8023E-08" izz="9.7432E-06"/>
     </inertial>
@@ -1223,7 +1223,7 @@
   </link>
   <link name="Left_depth_Camera_Link">
     <inertial>
-      <origin xyz="0.249925151 0.091113702 -0.004567121" rpy="0 0 0"/>
+      <origin xyz="0 0 -0.002656756" rpy="0 0 0"/>
       <mass value="0.01577"/>
       <inertia ixx="9.8178E-06" ixy="7.3076E-07" ixz="7.9785E-08" iyy="9.3948E-07" iyz="5.9912E-08" izz="9.7481E-06"/>
     </inertial>
@@ -1279,7 +1279,7 @@
     <axis xyz="0 0 0"/>
   </joint>
   <joint name="Left_depth_Camera_Joint" type="fixed">
-    <origin xyz="0.249925151 0.091113702 -0.004567121" rpy="0 0 0"/>
+    <origin xyz="0.246495981 0.090876247 -0.002656756" rpy="0 0 0"/>
     <parent link="AGV_link"/>
     <child link="Left_depth_Camera_Link"/>
     <axis xyz="0 0 0"/>
