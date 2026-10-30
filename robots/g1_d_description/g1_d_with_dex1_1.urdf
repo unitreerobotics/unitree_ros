@@ -91,6 +91,230 @@
     <axis xyz="0 1 0"/>
     <limit lower="-3.1416" upper="3.1416" effort="8" velocity="100"/>
   </joint>
+  <joint name="Caster_FL_Joint" type="continuous">
+    <origin xyz="0.167225030065905 0.171 -0.0148569592560352" rpy="0 0 0"/>
+    <parent link="AGV_link"/>
+    <child link="Caster_FL_Link"/>
+    <axis xyz="0.0151106556171685 -3.50561964968218E-05 -0.999885826911194"/>
+  </joint>
+  <link name="Caster_FL_Link">
+    <inertial>
+      <origin xyz="-0.00401313992477251 0.000197432465079833 -0.023268037299874" rpy="0 0 0"/>
+      <mass value="0.0574593243579511"/>
+      <inertia ixx="5.74085265155623E-05" ixy="2.06612130520643E-07" ixz="-7.89461243602046E-06" iyy="4.80452502001471E-05" iyz="4.77552565881468E-07" izz="4.82756766118262E-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Caster_FL_Link.STL"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Caster_FL_Link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Caster_FL_Wheel_Joint" type="continuous">
+    <origin xyz="-0.025518 5.9202E-05 -0.065143" rpy="0 0 0"/>
+    <parent link="Caster_FL_Link"/>
+    <child link="Caster_FL_Wheel_Link"/>
+    <axis xyz="0.00232 1 0"/>
+  </joint>
+  <link name="Caster_FL_Wheel_Link">
+    <inertial>
+      <origin xyz="6.18204307911707E-07 7.80773797522116E-05 1.14813890866872E-07" rpy="0 0 0"/>
+      <mass value="0.0925647599142116"/>
+      <inertia ixx="2.77324722859719E-05" ixy="2.5625987767224E-08" ixz="9.93499997468975E-11" iyy="3.87336918663469E-05" iyz="3.23749068907031E-10" izz="2.77536938642419E-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Caster_FL_Wheel_Link.STL"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Caster_FL_Wheel_Link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Caster_FR_Joint" type="continuous">
+    <origin xyz="0.16643 -0.17177 -0.014857" rpy="0 0 0"/>
+    <parent link="AGV_link"/>
+    <child link="Caster_FR_Link"/>
+    <axis xyz="0.015111 -3.5056E-05 -0.99989"/>
+  </joint>
+  <link name="Caster_FR_Link">
+    <inertial>
+      <origin xyz="-0.0040131399155062 0.000197432465005254 -0.0232680372996966" rpy="0 0 0"/>
+      <mass value="0.0574593243577952"/>
+      <inertia ixx="5.7408526639053E-05" ixy="2.06613356521613E-07" ixz="-7.8946204268145E-06" iyy="4.80457795108683E-05" iyz="4.77552584358802E-07" izz="4.82762058046514E-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Caster_FR_Link.STL"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Caster_FR_Link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Caster_FR_Wheel_Joint" type="continuous">
+    <origin xyz="-0.0255184881556991 5.92020066988441E-05 -0.0651430407439647" rpy="0 0 0"/>
+    <parent link="Caster_FR_Link"/>
+    <child link="Caster_FR_Wheel_Link"/>
+    <axis xyz="-0.00231995904376139 -0.999997308891397 0"/>
+  </joint>
+  <link name="Caster_FR_Wheel_Link">
+    <inertial>
+      <origin xyz="6.18204303637349E-07 7.80773797459111E-05 1.14813913348888E-07" rpy="0 0 0"/>
+      <mass value="0.0925647599142605"/>
+      <inertia ixx="2.77324722859816E-05" ixy="2.56259877533702E-08" ixz="9.93491343844824E-11" iyy="3.87336918663506E-05" iyz="3.23749082355692E-10" izz="2.77536938642618E-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Caster_FR_Wheel_Link.STL"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Caster_FR_Wheel_Link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Caster_RL_Joint" type="continuous">
+    <origin xyz="-0.16598 0.17177 -0.019893" rpy="0 0 0"/>
+    <parent link="AGV_link"/>
+    <child link="Caster_RL_Link"/>
+    <axis xyz="0.015111 -3.5056E-05 -0.99989"/>
+  </joint>
+  <link name="Caster_RL_Link">
+    <inertial>
+      <origin xyz="-0.00401313991952043 0.000197432465026515 -0.0232680372997654" rpy="0 0 0"/>
+      <mass value="0.057459324357813"/>
+      <inertia ixx="5.74085266103616E-05" ixy="2.06613057370708E-07" ixz="-7.89461857031377E-06" iyy="4.80456564347533E-05" iyz="4.77552579868216E-07" izz="4.82760827557902E-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Caster_RL_Link.STL"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Caster_RL_Link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Caster_RL_Wheel_Joint" type="continuous">
+    <origin xyz="-0.025518 5.9202E-05 -0.065143" rpy="0 0 0"/>
+    <parent link="Caster_RL_Link"/>
+    <child link="Caster_RL_Wheel_Link"/>
+    <axis xyz="0.00232 1 0"/>
+  </joint>
+  <link name="Caster_RL_Wheel_Link">
+    <inertial>
+      <origin xyz="6.18204302277325E-07 7.80773797473822E-05 1.14813912127643E-07" rpy="0 0 0"/>
+      <mass value="0.0925647599142039"/>
+      <inertia ixx="2.77324722859648E-05" ixy="2.56259877558196E-08" ixz="9.93491334192621E-11" iyy="3.87336918663459E-05" iyz="3.23749076431685E-10" izz="2.77536938642459E-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Caster_RL_Wheel_Link.STL"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Caster_RL_Wheel_Link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Caster_RR_Joint" type="continuous">
+    <origin xyz="-0.16677 -0.171 -0.019893" rpy="0 0 0"/>
+    <parent link="AGV_link"/>
+    <child link="Caster_RR_Link"/>
+    <axis xyz="0.015111 -3.5056E-05 -0.99989"/>
+  </joint>
+  <link name="Caster_RR_Link">
+    <inertial>
+      <origin xyz="-0.00401313992412458 0.00019743246507245 -0.023268037299856" rpy="0 0 0"/>
+      <mass value="0.0574593243579309"/>
+      <inertia ixx="5.74085265196889E-05" ixy="2.06612168155811E-07" ixz="-7.89461269591223E-06" iyy="4.80452675791729E-05" iyz="4.7755256643795E-07" izz="4.82756939868693E-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Caster_RR_Link.STL"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Caster_RR_Link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Caster_RR_Wheel_Joint" type="continuous">
+    <origin xyz="-0.025518 5.9202E-05 -0.065143" rpy="0 0 0"/>
+    <parent link="Caster_RR_Link"/>
+    <child link="Caster_RR_Wheel_Link"/>
+    <axis xyz="-0.00232 -1 0"/>
+  </joint>
+  <link name="Caster_RR_Wheel_Link">
+    <inertial>
+      <origin xyz="6.18204300362191E-07 7.80773797426637E-05 1.14813913543177E-07" rpy="0 0 0"/>
+      <mass value="0.0925647599142061"/>
+      <inertia ixx="2.77324722859643E-05" ixy="2.56259877565796E-08" ixz="9.93491332129187E-11" iyy="3.87336918663473E-05" iyz="3.23749076115613E-10" izz="2.7753693864247E-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Caster_RR_Wheel_Link.STL"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Caster_RR_Wheel_Link.STL"/>
+      </geometry>
+    </collision>
+  </link>
   <link name="LZ_ot_Link">
     <inertial>
       <origin xyz="0.000375 0.000025 -0.000249652" rpy="0 0 0"/>
@@ -533,9 +757,9 @@
   </joint>
   <link name="left_dex1_base_link">
     <inertial>
-      <origin xyz="0.043853 -0.0001306 1.4003E-05" rpy="0 0 0"/>
-      <mass value="0.19138"/>
-      <inertia ixx="7.4842E-05" ixy="1.6252E-07" ixz="-8.0516E-09" iyy="5.861E-05" iyz="-3.5931E-08" izz="3.9364E-05"/>
+      <origin xyz="0.038124 -5.1021E-05 7.257E-05" rpy="0 0 0"/>
+      <mass value="0.3649"/>
+      <inertia ixx="0.00013059" ixy="6.8208E-08" ixz="-8.5905E-08" iyy="9.1848E-05" iyz="-5.2808E-07" izz="7.1401E-05"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -554,17 +778,17 @@
     </collision>
   </link>
   <joint name="left_dex1_finger_joint_1" type="prismatic">
-    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <origin xyz="0.0633 0.024916 0.010658" rpy="0 0 0"/>
     <parent link="left_dex1_base_link"/>
     <child link="left_dex1_finger_link_1"/>
     <axis xyz="0 -1 0"/>
-    <limit effort="20" velocity="0.2" lower="-0.02" upper="0.0245"/>
+    <limit effort="20" velocity="0.2" lower="0" upper="0.041"/>
   </joint>
   <link name="left_dex1_finger_link_1">
     <inertial>
-      <origin xyz="0.073453 -0.011173 0.0086355" rpy="0 0 0"/>
-      <mass value="0.086783"/>
-      <inertia ixx="2.5583E-05" ixy="5.1557E-07" ixz="-6.3178E-07" iyy="1.4549E-05" iyz="7.8542E-08" izz="3.6013E-05"/>
+      <origin xyz="0.010081 -0.013559 -0.00195" rpy="0 0 0"/>
+      <mass value="0.092189"/>
+      <inertia ixx="2.5828E-05" ixy="-5.9643E-07" ixz="7.4348E-07" iyy="1.5329E-05" iyz="-7.9102E-08" izz="3.671E-05"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -578,22 +802,22 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/dex1_col_1.stl"/>
+        <mesh filename="meshes/Dex1_finger_link_1.STL"/>
       </geometry>
     </collision>
   </link>
   <joint name="left_dex1_finger_joint_2" type="prismatic">
-    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <origin xyz="0.0633 -0.024916 -0.010658" rpy="0 0 0"/>
     <parent link="left_dex1_base_link"/>
     <child link="left_dex1_finger_link_2"/>
     <axis xyz="0 1 0"/>
-    <limit effort="20" velocity="0.2" lower="-0.02" upper="0.0245"/>
+    <limit effort="20" velocity="0.2" lower="0" upper="0.041"/>
   </joint>
   <link name="left_dex1_finger_link_2">
     <inertial>
-      <origin xyz="0.073453 0.011173 -0.0086355" rpy="0 0 0"/>
-      <mass value="0.086783"/>
-      <inertia ixx="2.5583E-05" ixy="-5.1557E-07" ixz="6.3178E-07" iyy="1.4549E-05" iyz="7.8542E-08" izz="3.6013E-05"/>
+      <origin xyz="0.010081 0.013559 0.00195" rpy="0 0 0"/>
+      <mass value="0.092189"/>
+      <inertia ixx="2.5828E-05" ixy="5.9643E-07" ixz="-7.4348E-07" iyy="1.5329E-05" iyz="-7.9102E-08" izz="3.671E-05"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -607,7 +831,34 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/dex1_col_2.stl"/>
+        <mesh filename="meshes/Dex1_finger_link_2.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_dex1_camera_joint" type="fixed">
+    <origin xyz="0.068743 0 0.047476" rpy="1.5708 0.5236 0"/>
+    <parent link="left_dex1_base_link"/>
+    <child link="left_dex1_camera_link"/>
+  </joint>
+  <link name="left_dex1_camera_link">
+    <inertial>
+      <origin xyz="-0.015578 -0.0064842 -5.8235E-05" rpy="0 0 0"/>
+      <mass value="0.021494"/>
+      <inertia ixx="6.1432E-06" ixy="1.4654E-07" ixz="-2.1999E-08" iyy="3.395E-06" iyz="-2.18E-08" izz="4.1823E-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Camera.STL"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Camera.STL"/>
       </geometry>
     </collision>
   </link>
@@ -821,9 +1072,9 @@
   </joint>
   <link name="right_dex1_base_link">
     <inertial>
-      <origin xyz="0.043853 -0.0001306 1.4003E-05" rpy="0 0 0"/>
-      <mass value="0.19138"/>
-      <inertia ixx="7.4842E-05" ixy="1.6252E-07" ixz="-8.0516E-09" iyy="5.861E-05" iyz="-3.5931E-08" izz="3.9364E-05"/>
+      <origin xyz="0.038124 -5.1021E-05 7.257E-05" rpy="0 0 0"/>
+      <mass value="0.3649"/>
+      <inertia ixx="0.00013059" ixy="6.8208E-08" ixz="-8.5905E-08" iyy="9.1848E-05" iyz="-5.2808E-07" izz="7.1401E-05"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -842,17 +1093,17 @@
     </collision>
   </link>
   <joint name="right_dex1_finger_joint_1" type="prismatic">
-    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <origin xyz="0.0633 0.024916 0.010658" rpy="0 0 0"/>
     <parent link="right_dex1_base_link"/>
     <child link="right_dex1_finger_link_1"/>
     <axis xyz="0 -1 0"/>
-    <limit effort="20" velocity="0.2" lower="-0.02" upper="0.0245"/>
+    <limit effort="20" velocity="0.2" lower="0" upper="0.041"/>
   </joint>
   <link name="right_dex1_finger_link_1">
     <inertial>
-      <origin xyz="0.073453 -0.011173 0.0086355" rpy="0 0 0"/>
-      <mass value="0.086783"/>
-      <inertia ixx="2.5583E-05" ixy="5.1557E-07" ixz="-6.3178E-07" iyy="1.4549E-05" iyz="7.8542E-08" izz="3.6013E-05"/>
+      <origin xyz="0.010081 -0.013559 -0.00195" rpy="0 0 0"/>
+      <mass value="0.092189"/>
+      <inertia ixx="2.5828E-05" ixy="-5.9643E-07" ixz="7.4348E-07" iyy="1.5329E-05" iyz="-7.9102E-08" izz="3.671E-05"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -866,22 +1117,22 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/dex1_col_1.stl"/>
+        <mesh filename="meshes/Dex1_finger_link_1.STL"/>
       </geometry>
     </collision>
   </link>
   <joint name="right_dex1_finger_joint_2" type="prismatic">
-    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <origin xyz="0.0633 -0.024916 -0.010658" rpy="0 0 0"/>
     <parent link="right_dex1_base_link"/>
     <child link="right_dex1_finger_link_2"/>
     <axis xyz="0 1 0"/>
-    <limit effort="20" velocity="0.2" lower="-0.02" upper="0.0245"/>
+    <limit effort="20" velocity="0.2" lower="0" upper="0.041"/>
   </joint>
   <link name="right_dex1_finger_link_2">
     <inertial>
-      <origin xyz="0.073453 0.011173 -0.0086355" rpy="0 0 0"/>
-      <mass value="0.086783"/>
-      <inertia ixx="2.5583E-05" ixy="-5.1557E-07" ixz="6.3178E-07" iyy="1.4549E-05" iyz="7.8542E-08" izz="3.6013E-05"/>
+      <origin xyz="0.010081 0.013559 0.00195" rpy="0 0 0"/>
+      <mass value="0.092189"/>
+      <inertia ixx="2.5828E-05" ixy="5.9643E-07" ixz="-7.4348E-07" iyy="1.5329E-05" iyz="-7.9102E-08" izz="3.671E-05"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -895,7 +1146,34 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/dex1_col_2.stl"/>
+        <mesh filename="meshes/Dex1_finger_link_2.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_dex1_camera_joint" type="fixed">
+    <origin xyz="0.068743 0 0.047476" rpy="1.5708 0.5236 0"/>
+    <parent link="right_dex1_base_link"/>
+    <child link="right_dex1_camera_link"/>
+  </joint>
+  <link name="right_dex1_camera_link">
+    <inertial>
+      <origin xyz="-0.015578 -0.0064842 -5.8235E-05" rpy="0 0 0"/>
+      <mass value="0.021494"/>
+      <inertia ixx="6.1432E-06" ixy="1.4654E-07" ixz="-2.1999E-08" iyy="3.395E-06" iyz="-2.18E-08" izz="4.1823E-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Camera.STL"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Camera.STL"/>
       </geometry>
     </collision>
   </link>
