@@ -62,7 +62,7 @@ Every robot model lives under [`robots/`](robots). See [`robots/README.md`](robo
 
 For ROS Melodic:
 ```
-sudo apt-get install ros-melodic-controller-interface  ros-melodic-gazebo-ros-control ros-melodic-joint-state-controller ros-melodic-effort-controllers ros-melodic-joint-trajectory-controller
+sudo apt-get install ros-melodic-controller-interface  ros-melodic-gazebo-ros-control ros-melodic-joint-state-controller ros-melodic-effort-controllers ros-melodic-joint-trajectory-controller ros-melodic-robot-state-publisher
 ```
 For ROS Kinetic:
 ```
