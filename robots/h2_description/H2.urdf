@@ -667,26 +667,26 @@
   </joint>
   <link name="left_wrist_pitch_link">
     <inertial>
-      <origin xyz="0.06510927 -0.03176065 0.00235463" rpy="0 0 0"/>
+      <origin xyz="0.02509627 -0.03176065 0.00235463" rpy="0 0 0"/>
       <mass value="0.61525753"/>
       <inertia ixx="0.00040102" ixy="-9.65E-06" ixz="3.88E-06" iyy="0.00041766" iyz="-9.3E-07" izz="0.000419"/>
     </inertial>
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin xyz="-0.040013 0 0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="meshes/left_wrist_pitch_link.stl"/>
       </geometry>
       <material name="white"/>
     </visual>
     <!-- <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin xyz="-0.040013 0 0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="meshes/left_wrist_pitch_link.stl"/>
       </geometry>
     </collision> -->
   </link>
   <joint name="left_wrist_pitch_joint" type="revolute">
-    <origin xyz="0.037994 0.031144 0.00045104" rpy="0 0 0"/>
+    <origin xyz="0.078007 0.031144 0.00045104" rpy="0 0 0"/>
     <parent link="left_wrist_roll_link"/>
     <child link="left_wrist_pitch_link"/>
     <axis xyz="0 1 0"/>
@@ -713,7 +713,7 @@
     </collision>
   </link>
   <joint name="left_wrist_yaw_joint" type="revolute">
-    <origin xyz="0.069283 -0.031045 -0.0006247" rpy="0 0 0"/>
+    <origin xyz="0.02927 -0.031045 -0.0006247" rpy="0 0 0"/>
     <parent link="left_wrist_pitch_link"/>
     <child link="left_wrist_yaw_link"/>
     <axis xyz="0 0 1"/>
@@ -881,26 +881,26 @@
   </joint>
   <link name="right_wrist_pitch_link">
     <inertial>
-      <origin xyz="0.06511306 0.03175232 0.00231986" rpy="0 0 0"/>
+      <origin xyz="0.02510006 0.03175232 0.00231986" rpy="0 0 0"/>
       <mass value="0.61583659"/>
       <inertia ixx="0.00040172" ixy="9.63E-06" ixz="4E-06" iyy="0.0004185" iyz="9.4E-07" izz="0.00041927"/>
     </inertial>
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin xyz="-0.040013 0 0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="meshes/right_wrist_pitch_link.stl"/>
       </geometry>
       <material name="white"/>
     </visual>
     <!-- <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin xyz="-0.040013 0 0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="meshes/right_wrist_pitch_link.stl"/>
       </geometry>
     </collision> -->
   </link>
   <joint name="right_wrist_pitch_joint" type="revolute">
-    <origin xyz="0.037994 -0.031144 0.00045104" rpy="0 0 0"/>
+    <origin xyz="0.078007 -0.031144 0.00045104" rpy="0 0 0"/>
     <parent link="right_wrist_roll_link"/>
     <child link="right_wrist_pitch_link"/>
     <axis xyz="0 1 0"/>
@@ -927,7 +927,7 @@
     </collision>
   </link>
   <joint name="right_wrist_yaw_joint" type="revolute">
-    <origin xyz="0.069283 0.031045 -0.0006247" rpy="0 0 0"/>
+    <origin xyz="0.02927 0.031045 -0.0006247" rpy="0 0 0"/>
     <parent link="right_wrist_pitch_link"/>
     <child link="right_wrist_yaw_link"/>
     <axis xyz="0 0 1"/>
