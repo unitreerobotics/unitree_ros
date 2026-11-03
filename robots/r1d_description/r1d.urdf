@@ -650,6 +650,118 @@
     <axis xyz="0 0 1"/>
     <limit lower="-1.5708" upper="1.5708" effort="10" velocity="37.7"/>
   </joint>
+  <joint name="left_dex1_base_joint" type="fixed">
+    <origin xyz="0.0485 -0.003 0.02" rpy="0 0 0"/>
+    <parent link="left_wrist_yaw_link"/>
+    <child link="left_dex1_base_link"/>
+  </joint>
+  <link name="left_dex1_base_link">
+    <inertial>
+      <origin xyz="0.038124 -5.1021E-05 7.257E-05" rpy="0 0 0"/>
+      <mass value="0.3649"/>
+      <inertia ixx="0.00013059" ixy="6.8208E-08" ixz="-8.5905E-08" iyy="9.1848E-05" iyz="-5.2808E-07" izz="7.1401E-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Dex1_base_link.STL"/>
+      </geometry>
+      <material name="silvery">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Dex1_base_link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_dex1_finger_joint_1" type="prismatic">
+    <origin xyz="0.0633 0.024916 0.010658" rpy="0 0 0"/>
+    <parent link="left_dex1_base_link"/>
+    <child link="left_dex1_finger_link_1"/>
+    <axis xyz="0 -1 0"/>
+    <limit effort="20" velocity="0.2" lower="0" upper="0.041"/>
+  </joint>
+  <link name="left_dex1_finger_link_1">
+    <inertial>
+      <origin xyz="0.010081 -0.013559 -0.00195" rpy="0 0 0"/>
+      <mass value="0.092189"/>
+      <inertia ixx="2.5828E-05" ixy="-5.9643E-07" ixz="7.4348E-07" iyy="1.5329E-05" iyz="-7.9102E-08" izz="3.671E-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Dex1_finger_link_1.STL"/>
+      </geometry>
+      <material name="dark gray">
+        <color rgba="0.41176 0.41176 0.41176 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Dex1_finger_link_1.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_dex1_finger_joint_2" type="prismatic">
+    <origin xyz="0.0633 -0.024916 -0.010658" rpy="0 0 0"/>
+    <parent link="left_dex1_base_link"/>
+    <child link="left_dex1_finger_link_2"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="20" velocity="0.2" lower="0" upper="0.041"/>
+  </joint>
+  <link name="left_dex1_finger_link_2">
+    <inertial>
+      <origin xyz="0.010081 0.013559 0.00195" rpy="0 0 0"/>
+      <mass value="0.092189"/>
+      <inertia ixx="2.5828E-05" ixy="5.9643E-07" ixz="-7.4348E-07" iyy="1.5329E-05" iyz="-7.9102E-08" izz="3.671E-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Dex1_finger_link_2.STL"/>
+      </geometry>
+      <material name="silvery">
+        <color rgba="0.89804 0.91765 0.92941 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Dex1_finger_link_2.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_dex1_camera_joint" type="fixed">
+    <origin xyz="0.068743 0 0.047476" rpy="1.5708 0.5236 0"/>
+    <parent link="left_dex1_base_link"/>
+    <child link="left_dex1_camera_link"/>
+  </joint>
+  <link name="left_dex1_camera_link">
+    <inertial>
+      <origin xyz="-0.015578 -0.0064842 -5.8235E-05" rpy="0 0 0"/>
+      <mass value="0.021494"/>
+      <inertia ixx="6.1432E-06" ixy="1.4654E-07" ixz="-2.1999E-08" iyy="3.395E-06" iyz="-2.18E-08" izz="4.1823E-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Camera.STL"/>
+      </geometry>
+      <material name="silvery">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Camera.STL"/>
+      </geometry>
+    </collision>
+  </link>
   <link name="right_shoulder_pitch_Link">
     <inertial>
       <origin xyz="0.00294386 -0.04476868 -0.02286868" rpy="0 0 0"/>
@@ -853,6 +965,118 @@
     <axis xyz="0 0 1"/>
     <limit lower="-1.5708" upper="1.5708" effort="10" velocity="37.7"/>
   </joint>
+  <joint name="right_dex1_base_joint" type="fixed">
+    <origin xyz="0.0485 0.003 0.02" rpy="0 0 0"/>
+    <parent link="right_wrist_yaw_link"/>
+    <child link="right_dex1_base_link"/>
+  </joint>
+  <link name="right_dex1_base_link">
+    <inertial>
+      <origin xyz="0.038124 -5.1021E-05 7.257E-05" rpy="0 0 0"/>
+      <mass value="0.3649"/>
+      <inertia ixx="0.00013059" ixy="6.8208E-08" ixz="-8.5905E-08" iyy="9.1848E-05" iyz="-5.2808E-07" izz="7.1401E-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Dex1_base_link.STL"/>
+      </geometry>
+      <material name="silvery">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Dex1_base_link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_dex1_finger_joint_1" type="prismatic">
+    <origin xyz="0.0633 0.024916 0.010658" rpy="0 0 0"/>
+    <parent link="right_dex1_base_link"/>
+    <child link="right_dex1_finger_link_1"/>
+    <axis xyz="0 -1 0"/>
+    <limit effort="20" velocity="0.2" lower="0" upper="0.041"/>
+  </joint>
+  <link name="right_dex1_finger_link_1">
+    <inertial>
+      <origin xyz="0.010081 -0.013559 -0.00195" rpy="0 0 0"/>
+      <mass value="0.092189"/>
+      <inertia ixx="2.5828E-05" ixy="-5.9643E-07" ixz="7.4348E-07" iyy="1.5329E-05" iyz="-7.9102E-08" izz="3.671E-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Dex1_finger_link_1.STL"/>
+      </geometry>
+      <material name="dark gray">
+        <color rgba="0.41176 0.41176 0.41176 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Dex1_finger_link_1.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_dex1_finger_joint_2" type="prismatic">
+    <origin xyz="0.0633 -0.024916 -0.010658" rpy="0 0 0"/>
+    <parent link="right_dex1_base_link"/>
+    <child link="right_dex1_finger_link_2"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="20" velocity="0.2" lower="0" upper="0.041"/>
+  </joint>
+  <link name="right_dex1_finger_link_2">
+    <inertial>
+      <origin xyz="0.010081 0.013559 0.00195" rpy="0 0 0"/>
+      <mass value="0.092189"/>
+      <inertia ixx="2.5828E-05" ixy="5.9643E-07" ixz="-7.4348E-07" iyy="1.5329E-05" iyz="-7.9102E-08" izz="3.671E-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Dex1_finger_link_2.STL"/>
+      </geometry>
+      <material name="silvery">
+        <color rgba="0.89804 0.91765 0.92941 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Dex1_finger_link_2.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_dex1_camera_joint" type="fixed">
+    <origin xyz="0.068743 0 0.047476" rpy="1.5708 0.5236 0"/>
+    <parent link="right_dex1_base_link"/>
+    <child link="right_dex1_camera_link"/>
+  </joint>
+  <link name="right_dex1_camera_link">
+    <inertial>
+      <origin xyz="-0.015578 -0.0064842 -5.8235E-05" rpy="0 0 0"/>
+      <mass value="0.021494"/>
+      <inertia ixx="6.1432E-06" ixy="1.4654E-07" ixz="-2.1999E-08" iyy="3.395E-06" iyz="-2.18E-08" izz="4.1823E-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Camera.STL"/>
+      </geometry>
+      <material name="silvery">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Camera.STL"/>
+      </geometry>
+    </collision>
+  </link>
   <link name="head_pitch_Link">
     <inertial>
       <origin xyz="-0.00006956 -0.03077972 0.08058589" rpy="0 0 0"/>
