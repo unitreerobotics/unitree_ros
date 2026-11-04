@@ -48,6 +48,7 @@
     <parent link="base_link"/>
     <child link="Left_Wheel_link"/>
     <axis xyz="0 -1 0"/>
+    <limit effort="31.7" velocity="27.9"/>
   </joint>
   <link name="Right_Wheel_link">
     <inertial>
@@ -76,6 +77,7 @@
     <parent link="base_link"/>
     <child link="Right_Wheel_link"/>
     <axis xyz="0 -1 0"/>
+    <limit effort="31.7" velocity="27.9"/>
   </joint>
   <link name="lift_mount_link">
     <inertial>
@@ -132,7 +134,7 @@
     <parent link="lift_mount_link"/>
     <child link="lift_stage1_link"/>
     <axis xyz="0 0 1"/>
-    <limit lower="0" upper="0.425" effort="0" velocity="0"/>
+    <limit lower="0" upper="0.425" effort="3000" velocity="0.04"/>
   </joint>
   <link name="lift_stage2_link">
     <inertial>
@@ -161,7 +163,8 @@
     <parent link="lift_stage1_link"/>
     <child link="lift_stage2_link"/>
     <axis xyz="0 0 1"/>
-    <limit lower="0" upper="0.425" effort="0" velocity="0"/>
+    <limit lower="0" upper="0.425" effort="3000" velocity="0.04"/>
+    <mimic joint="lift_stage1_joint" multiplier="1" offset="0"/>
   </joint>
   <link name="front_left_caster_Yaw_link">
     <inertial>
@@ -302,7 +305,6 @@
     <parent link="base_link"/>
     <child link="rear_left_caster_Yaw_link"/>
     <axis xyz="0 0 -1"/>
-    <limit lower="0" upper="0" effort="0" velocity="0"/>
   </joint>
   <link name="rear_left_caster_Roll_link">
     <inertial>
