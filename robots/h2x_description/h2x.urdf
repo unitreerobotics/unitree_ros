@@ -822,7 +822,7 @@
     <parent link="torso_link"/>
     <child link="head_pitch_link"/>
     <axis xyz="0 1 0"/>
-    <limit lower="-0.5236" upper="0.83775" effort="24.8" velocity="40.13"/>
+    <limit lower="-0.4363323129985824" upper="0.6370451769779303" effort="24.8" velocity="40.13"/>
   </joint>
   <link name="head_yaw_link">
     <inertial>
