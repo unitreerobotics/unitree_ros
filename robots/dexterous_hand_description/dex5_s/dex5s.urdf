@@ -1,11 +1,8 @@
-<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
-     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
-     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
-<robot name="Dex5-S-20261103">
+<robot name="Dex5-S-20261120-right">
   <link name="right_palm_link">
     <inertial>
       <origin xyz="0.00696745 0.05533136 -0.0019307" rpy="0 0 0"/>
-      <mass value="0.19610693"/>
+      <mass value="0.16610693"/>
       <inertia ixx="0.00011803" ixy="-1.285E-05" ixz="4.3E-07" iyy="5.527E-05" iyz="8.2E-07" izz="0.00015585"/>
     </inertial>
     <visual>
@@ -109,7 +106,7 @@
     <parent link="right_thumb_roll_link"/>
     <child link="right_thumb_yaw1_link"/>
     <axis xyz="0 0 -1"/>
-    <limit lower="0" upper="1.57" effort="1.5" velocity="11"/>
+    <limit lower="-0.175" upper="1.57" effort="1.5" velocity="11"/>
   </joint>
   <link name="right_thumb_yaw2_link">
     <inertial>
@@ -1248,6 +1245,34 @@
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <parent link="right_palm_link"/>
     <child link="right_palm-silicone_link"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  <link name="right_imu_link">
+    <inertial>
+      <origin xyz="0 3.4694E-18 0.000485" rpy="0 0 0"/>
+      <mass value="7.4205E-06"/>
+      <inertia ixx="4.4467E-12" ixy="-5.1379E-28" ixz="2.5287E-29" iyy="6.1472E-12" iyz="-4.8543E-30" izz="9.4302E-12"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/right_imu_link.STL"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.69804 0.69804 0.69804 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/right_imu_link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_imu_joint" type="fixed">
+    <origin xyz="0.0137 0.05955 0.00453" rpy="0 0 0"/>
+    <parent link="right_palm_link"/>
+    <child link="right_imu_link"/>
     <axis xyz="0 0 0"/>
   </joint>
 </robot>
